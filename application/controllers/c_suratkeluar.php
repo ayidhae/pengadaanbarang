@@ -13,7 +13,7 @@ class c_suratKeluar extends CI_Controller {
 		$this->load->model('m_pesanan');
 		$this->load->model('model_template');
 
-		
+	
 	}
 		 //call model
 	public function home(){
@@ -58,7 +58,7 @@ class c_suratKeluar extends CI_Controller {
     $tgl_surat =$this->input->post('tgl_surat');
     
     $config['upload_path'] 		= 'asset/upload/surat_keluar';
-		$config['allowed_types'] 	= 'gif|jpg|png|pdf|doc|docx';
+		$config['allowed_types'] 	= 'gif|jpg|png|pdf';
 		$config['max_size']			= '2000';
 		$config['max_width']  		= '3000';
 		$config['max_height'] 		= '3000';
@@ -317,7 +317,6 @@ class c_suratKeluar extends CI_Controller {
 	    $this->m_suratKeluar->insertData($data, 'surat_keluar');
 	    redirect(base_url('c_suratKeluar/viewSuratKeluarLogistik'));
 	}
-
 
 }
 

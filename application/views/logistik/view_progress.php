@@ -176,6 +176,7 @@
           </div>
       </div>
   </div>
+  
   <!-- END Modal Tambah -->
              <td>
             <center><a href="<?=base_url()?>c_progress/hapusProgress/<?=$prog->id_progress?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a> 
