@@ -121,7 +121,7 @@
         <div class="form-group">
         <label class="control-label col-sm-2" for="pesanan_id">PESANAN ID</label>
         <div class="col-sm-10">
-          <select class="form-control" class="form-control" id="pesanan_id" name="pesanan_id" required>
+          <select class="form-control" class="form-control" id="pesanan_id" onchange="setDropdown()" name="pesanan_id" required>
           <?php
           foreach ($mdraft->result() as $row) {
             echo'<option value="'.$row->pesanan_id.'">'.$row->pesanan_id.' | '.$row->nama_pengadaan.'</option>';
@@ -139,7 +139,7 @@
     
            <div class="form-group">
              <label class="control-label col-sm-2" for="nama_pengadaan">PERIHAL SURAT</label>
-        <div class="col-sm-10"> 
+        <!-- <div class="col-sm-10"> 
         <select class="form-control" class="form-control" id="nama_pengadaan" name="nama_pengadaan" required>
           <?php
           foreach ($mdraft->result() as $row) {
@@ -147,6 +147,9 @@
           }
           ?>
           </select>
+        </div> -->
+        <div class="col-sm-10"> 
+          <input type="text" class="form-control" id="nama_pengadaan" name="nama_pengadaan" placeholder="Perihal Surat" required>
         </div>
         
         <div class="form-group">
@@ -176,3 +179,12 @@
    </div>
 </main>
 </div>
+<script type="text/javascript">
+  function setDropdown(){
+    var abc = $('#pesanan_id option:selected').text();
+    var text = abc.substring(10, abc.length);
+    $('#nama_pengadaan').val(text);
+    console.log(abc);
+
+  }
+</script>
