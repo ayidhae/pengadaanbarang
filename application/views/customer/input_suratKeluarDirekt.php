@@ -181,9 +181,10 @@
                       </div>
                     </div> -->
                     <div class="form-group">
-                      <label for="tipe" class="col-md-3 control-label">upload</label>
+                      <label for="tipe" class="col-md-3 control-label">upload SPPH</label>
                       <div class="col-md-7 required">
                         <input type="file" class="form-control" placeholder="choose file" name="file"  value="" >
+
                       </div>
                     </div>
                     
