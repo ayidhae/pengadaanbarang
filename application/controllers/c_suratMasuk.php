@@ -74,14 +74,6 @@ class c_suratMasuk extends CI_Controller {
 	}
 
 
-	// public function surat_masukApprove(){ //dihalaman logistik
-	// 	$data ['surat_approve'] = $this->m_suratMasuk->approveDirektur($this->session->userdata('username'));
-	// 	$this->load->view('template/header');
-	// 	$this->load->view('logistik/view_suratmasuk',$data);
-	// 	$this->load->view('template/footer'); 
-	// 	print_r($data);
-	
-	// }
 
 	 
 	public function surat_masukCustomer(){ //dihalaman customer

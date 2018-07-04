@@ -111,7 +111,7 @@
                     <th>tanggal</th>
                     <th> surat </th>
                     <th>pesan</th>
-                    <!--  <th> aksi </th> -->
+                     <th> balas </th> 
                     
                   </tr>
                 </thead>
@@ -157,7 +157,9 @@
                     </div>
                   </div>
                   <!-- END Modal Tambah -->
-                  
+                   <td>
+            <center>
+            <a href="<?=base_url()?>c_suratKeluar/inputSuratLogistik/<?=$st['id_surat'] ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a></td></center>
                   
                 </tr>
                 <?php
@@ -180,18 +182,6 @@
 </div>
 </div>
 </main>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5ac440b44b401e45400e5212/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+
 </body>
 </div>
