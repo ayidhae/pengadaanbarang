@@ -134,7 +134,7 @@
                 </thead>
                 <tbody>
                   <?php              
-                  
+              
                   foreach($progress as $prog):
                 
                   ?>
