@@ -135,7 +135,11 @@
                 </thead>
                 <tbody>
                   <?php              
+<<<<<<< HEAD
                   $i = 1;
+=======
+              
+>>>>>>> 6ce9bb440064e5ff3c2c693eb3a1e8997fcd2f7f
                   foreach($progress as $prog):
                 
                   ?>
