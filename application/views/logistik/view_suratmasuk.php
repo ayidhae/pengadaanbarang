@@ -130,6 +130,7 @@
                 <thead>
                    <tr>
               <th> dari </th>
+              <th> Hak Akses</th>
               <th> penanggung jawab </th>
               <th> contact </th>
                 <th> jenis_surat </th>
@@ -152,6 +153,7 @@
                   
                   <tr>
                   <td><?php echo $st['username'] ;?></td>
+                     <td><?php echo $st['hak_akses'] ;?></td> 
                      <td><?php echo $st['penanggung_jawab'] ;?></td>
                      <td><?php echo $st['no_hp'] ;?></td>
                    <td><?php echo $st['jenis_surat'] ;?></td>

@@ -112,7 +112,7 @@
     <div class="container-fluid">
       <div class="card card-accent-success">
         <div class="card-header">
-           <h3 class="panel-title pull-left">Kirim SPPH</h3>
+           <h3 class="panel-title pull-left">Form Kirim SPPH</h3>
       <a href="<?php echo site_url('c_templateSPPH/viewTemplateSPPH');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
         </div>
 
@@ -192,7 +192,7 @@
                             </div>
                           </div> -->
                           <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label">upload</label>
+                            <label for="tipe" class="col-md-3 control-label">Upload SPPH</label>
                             <div class="col-md-7 required">
                               <input type="file" class="form-control" placeholder="choose file" name="file"  value="" required>
                             </div>

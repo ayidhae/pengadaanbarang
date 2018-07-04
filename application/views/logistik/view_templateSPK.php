@@ -114,7 +114,7 @@
         <div class="card card-accent-success">
       <div class="card-header">
         <h3 class="panel-title pull-left">
-         Template SPK
+         Kelola SPK
         </h3>
        <!--  <a href="<?php echo site_url('template_spk/create');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i> Create</a>
        </div> -->
