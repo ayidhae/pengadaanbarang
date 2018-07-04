@@ -48,7 +48,7 @@ class c_progress extends CI_Controller {
          $customer = $this->input->post('nama_customer');
          $vendor = $this->input->post('nama_vendor');
         $progress      = $this->input->post('progress');
-        $kendala     = $this->input->post('kendala');
+        $kendala     = $this->input->post('kendala');   
         
         $data = array(
          'id_progress' => $id_progress,

@@ -122,6 +122,7 @@
                 <thead>
                   <tr>
                 <!--     <th>No pesanan</th> -->
+                    <th>No.</th>
                     <th>tanggal</th>
                     <th>nama customer</th>
                     <th>nama vendor</th>
@@ -134,18 +135,18 @@
                 </thead>
                 <tbody>
                   <?php              
-                  
+                  $i = 1;
                   foreach($progress as $prog):
                 
                   ?>
                   
                   <tr>
-                    
+                    <td><?php echo $i; ?></td>
                    <!--  <td><?php echo $prog->no_pesanan ;?></td> -->
                     <td><?php echo $prog->tanggal ;?></td>    
                     <td><?php echo $prog->nama_customer ;?></td>  
                    <td><?php echo $prog->nama_vendor ;?></td>                                   
-                    <td><?php echo $prog->progress ;?></td>                                     
+                    <td><?php echo $prog->progress ; $i++;?></td>                                     
            
              <td
              <a href="#view<?php echo $prog->id_progress ;?>" data-toggle="modal"> <button type="button" class="btn btn-primary"><i class="fa fa-external-link"> </i> kendala<span class="" aria-hidden="true"></span></button></a></td>
