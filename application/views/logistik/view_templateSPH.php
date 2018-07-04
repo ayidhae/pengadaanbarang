@@ -123,14 +123,7 @@
         </ul>
       
           <div class="card-body">
-    <!--     <?php
-        if ($this->session->flashdata('info')){  
-          echo'<div class="alert alert-success alert-dismissible">
-              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <strong>Info, </strong>'.$this->session->flashdata('info').'
-            </div>';
-        }
-        ?> -->        
+      
               <table id="dataVendor" class="table ">
                 <thead>
                   <tr>
