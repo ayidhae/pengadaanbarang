@@ -32,6 +32,7 @@ class m_suratMasuk extends CI_Model {
     }
   }
 
+
     function kotak_masuk_vendor($kotak_masuk){
     if($kotak_masuk) {
       $sql = "SELECT * FROM surat_keluar WHERE tujuan_vendor = ?";

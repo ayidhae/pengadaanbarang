@@ -115,7 +115,7 @@
         <div class="card card-accent-success">
       <div class="card-header">
         <h3 class="panel-title pull-left">
-         Template SPPH
+         Kelola SPPH
         </h3>
         <a href="<?php echo site_url('c_templateSPPH/inputTemplateSPPH');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
        </div>
