@@ -14,6 +14,7 @@ class m_logistik extends CI_Model {
 		return $this->db->get('logistik');
 	}
 
+
 	function profileLogistik($username){
 		if($username){
 			$sql = "SELECT * FROM logistik WHERE username = ?";

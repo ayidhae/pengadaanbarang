@@ -12,7 +12,7 @@ class m_suratKeluar extends CI_Model {
   
   function ambilDataUsernameDirektur(){
     $this->db->order_by('username','asc');
-    $query = $this->db->get('direktur');
+    $query = $this->db->get('user');
     if($query->num_rows()>0)
     {
       return $query->result();
@@ -26,7 +26,7 @@ class m_suratKeluar extends CI_Model {
 
   function ambilDataUsernameLogistik(){
       $this->db->order_by('username','asc');
-      $query = $this->db->get('logistik');
+      $query = $this->db->get('user');
       if($query->num_rows()>0)
       {
         return $query->result();

@@ -64,6 +64,14 @@ class c_templateSPPH extends CI_Controller {
 		redirect('c_templateSPPH/viewTemplateSPPH');	
 	}
 	
+	// function create_spph($id){
+		// kodingan buat nomor spph pake regex pattern
+		// $dump_spph = 'abc123';
+		// $this->model_template->update('template',$in,'id');
+
+		// update tabel template
+		// panggil fungsi export_pdf();
+	// }
 
 	function export_pdf($id='')
 	{
