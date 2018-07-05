@@ -6,9 +6,16 @@ class m_progress extends CI_Model {
 	
 
 	function viewProgress(){
+<<<<<<< HEAD
 
     return $this->db->query("SELECT * FROM progress_pengadaan ORDER BY tanggal DESC");
 	}
+=======
+    return $this->db->query("SELECT * FROM progress_pengadaan ORDER BY tanggal DESC");
+	}
+  
+	//return $this->db->get('progress_pengadaan');
+>>>>>>> be0d67c8112ae9a1ab5c71e7284176558ec09490
     
     
     function inputProgress($data,$table){

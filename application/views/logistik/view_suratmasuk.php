@@ -126,8 +126,15 @@
   <div class="card-body">
    <table id="dataCustomer" class="table ">
                 <thead>
+<<<<<<< HEAD
                   <tr>
                 <th> No </th>
+=======
+                   <tr>
+              <th> dari </th>            
+              <th> penanggung jawab </th>
+              <th> contact </th>
+>>>>>>> be0d67c8112ae9a1ab5c71e7284176558ec09490
                 <th> jenis_surat </th>
                   <th> penanggung jawab </th>
               <th> contact </th>
@@ -145,6 +152,7 @@
                 
                   ?>
                   
+<<<<<<< HEAD
                     <tr>
                   <td><?php echo $i; ?></td>
                    <td><?php echo $st->jenis_surat ;?></td>
@@ -152,6 +160,15 @@
                          <td><?php echo $st->no_hp ;?></td>
                    <td><?php echo $st->no_surat ;?></td>
                     <td><?php echo $st->tgl_surat;?></td>
+=======
+                  <tr>
+                  <td><?php echo $st['username'] ;?></td>                     
+                     <td><?php echo $st['penanggung_jawab'] ;?></td>
+                     <td><?php echo $st['no_hp'] ;?></td>
+                   <td><?php echo $st['jenis_surat'] ;?></td>
+                   <td><?php echo $st['no_surat'] ;?></td>
+                    <td><?php echo $st['tgl_surat'];?></td>
+>>>>>>> be0d67c8112ae9a1ab5c71e7284176558ec09490
                     
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$st->file."' target='_blank'>".$st->file."</a>"?></td> 
                      
