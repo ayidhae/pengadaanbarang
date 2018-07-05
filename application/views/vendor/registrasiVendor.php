@@ -101,6 +101,7 @@
               </div>
               <input type="file" class="form-control" placeholder="choose file" name="akte_pendiri"  value="akte " required>
               <em class="help-text"> *Akte Pendiri</em>
+              <br><em class="help-text"> *JPG,PNG,JPEG</em>
             </div>
 
             <button type="submit" class="btn btn-block btn-success">Register</button>

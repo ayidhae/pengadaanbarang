@@ -33,7 +33,7 @@
             <div class="card-body">
               <h1>Login</h1>
               <p class="text-muted">Login to your account</p>
-              <form action="<?php echo base_url('login/validate');?>" method="POST">
+              <form action="<?php echo base_url('c_login/validate');?>" method="POST">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-user"></i></span>

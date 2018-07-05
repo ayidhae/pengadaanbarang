@@ -23,34 +23,16 @@ class m_suratMasuk extends CI_Model {
     }
   }
 
-  //   function kotak_masuk_logistik($kotak_masuk){
-  //   if($kotak_masuk) {
-  //     $sql = "SELECT * FROM surat_keluar WHERE tujuan_logistik = ?";
-  //     $query = $this->db->query($sql, array($kotak_masuk));
-  //     $result = $query->result_array();
-
-  //     return $result;
-  //   }
-  // }
-
-  function kotak_masuk_logistik($kotak_masuk){
+    function kotak_masuk_logistik($kotak_masuk){
     if($kotak_masuk) {
-      $sql = "SELECT * from surat_keluar sk JOIN customer c on sk.username=c.username WHERE tujuan_logistik = ?";
+      $sql = "SELECT * FROM surat_keluar WHERE tujuan_logistik = ?";
       $query = $this->db->query($sql, array($kotak_masuk));
       $result = $query->result_array();
 
       return $result;
     }
   }
-  // function kotak_masuk_logistik($kotak_masuk){
-  //   if($kotak_masuk) {
-  //     $sql = "SELECT * FROM surat_keluar WHERE tujuan_logistik = ?";
-  //     $query = $this->db->query($sql, array($kotak_masuk));
-  //     $result = $query->result_array();
 
-  //     return $result;
-  //   }
-  // }
 
     function kotak_masuk_vendor($kotak_masuk){
     if($kotak_masuk) {

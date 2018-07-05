@@ -30,7 +30,7 @@
 						      <a href="c_vendor/add">Vendor</a>
 						    </div>
 						  </div>
-						<li><a href="login">Login</a></li>
+						<li><a href="c_login">Login</a></li>
 					</ul>
 				</nav>
 			</header>
