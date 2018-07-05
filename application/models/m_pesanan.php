@@ -15,16 +15,16 @@ class m_pesanan extends CI_Model {
 		$query=$this->db->query("select * from $tabel where $where");
 		return $query;
 	}
-	
+
 	function update($tabel,$data,$where)
 	{
 		$this->db->where($where,$data[$where]);
 		$this->db->update($tabel,$data);
 	}
 
-	function detail($where,$table){
-		return $this->db->get_where($table,$where);
-	}
+	// function detail($where,$table){
+	// 	return $this->db->get_where($table,$where);
+	// }
 	
 	
 	function hapus($id,$seleksi,$tabel)

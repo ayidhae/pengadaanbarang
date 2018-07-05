@@ -10,7 +10,7 @@ class m_direktur extends CI_Model {
 	function cek($username, $password){
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
-		return $this->db->get('direktur');
+		return $this->db->get('logistik');
 	}
 function detail($where,$table){		
 		return $this->db->get_where($table,$where);

@@ -85,7 +85,8 @@ class c_pesanan extends CI_Controller {
 	{
 		$id = base64_decode($id);
 		$data["pesanan_id"]= $id;
-					
+
+		//diatas mengambil pesanan id dari tabel pesanan					
 		$data["pesanandetail"] = $this->m_pesanan->edit("pesanan_detail","pesanan_id='".$id."'");
 		// $data['pesanan_id']= $this->m_pesanan->get_draft_id();
 		$this->load->view('template/header');
@@ -149,6 +150,8 @@ class c_pesanan extends CI_Controller {
 	 	$this->m_pesanan->hapus($id_detail,"detail_id","pesanan_detail");
 	 	redirect('c_pesanan/detail/'.trim(base64_encode($id),'=').'');
 	 }
+//dibawah untuk status pesanan
+
 
 public function viewStatuslog(){
 		

@@ -132,7 +132,7 @@
                       <div class="col-md-7 required">
                         <select class="form-control select2" style="min-width:250px;" required name="status_approve" id=""  value="<?php echo $approve[0]->status_approve ?>" readonly required>
                              <option>YA</option>
-                            
+                        
                             
                         </select>
                       </div>

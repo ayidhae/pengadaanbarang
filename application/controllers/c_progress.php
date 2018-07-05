@@ -110,7 +110,7 @@ class c_progress extends CI_Controller {
 		$data['tgl_end']	= $tgl_end;		
  	
 		$data['progress']	= $this->db->query("SELECT * FROM progress_pengadaan WHERE tanggal >= '$tgl_start' AND tanggal <= '$tgl_end' ORDER BY id_progress")->result(); 
-		print_r($data);
+		
 			$this->load->view('direktur/vcetaklaporan', $data);
 		 
 	}	

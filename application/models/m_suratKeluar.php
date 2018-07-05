@@ -10,7 +10,6 @@ class m_suratKeluar extends CI_Model {
   }
 
   
-	
   function ambilDataUsernameDirektur(){
     $this->db->order_by('username','asc');
     $query = $this->db->get('direktur');

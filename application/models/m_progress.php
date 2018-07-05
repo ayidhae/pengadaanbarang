@@ -6,14 +6,9 @@ class m_progress extends CI_Model {
 	
 
 	function viewProgress(){
-<<<<<<< HEAD
+
     return $this->db->query("SELECT * FROM progress_pengadaan ORDER BY tanggal DESC");
 	}
-=======
-  
-	return $this->db->get('progress_pengadaan');
-		}
->>>>>>> 6ce9bb440064e5ff3c2c693eb3a1e8997fcd2f7f
     
     
     function inputProgress($data,$table){
@@ -76,6 +71,22 @@ class m_progress extends CI_Model {
      }
    }
 
+      function ambilDataNamaPesanan($pesanan_id=''){
+    // $query=$this->db->query("select * from progress_pengadaan pp 
+    //               left join pesanan p on p.pesanan_id=pp.pesanan_id where pp.pesanan_id='".$pesanan_id."' order by p.pesanan_id");
+    // return $query;
+        $this->db->select('*');
+$this->db->from('progress_pengadaan pp');
+$this->db->join('pesanan p', 'p.pesanan_id = pesanan_id','left');
+$this->db->where('pp.pesanan_id',$pesanan_id);
+$this->db->order_by('p.id_progress');
+$this->db->get();
+     }
+
+   }
+ 
+
+  
 //   function ambilDataNamaVendor(){
 //     $query = $this->db->get('vendor');
 //     return $query->result_array();
@@ -87,9 +98,15 @@ class m_progress extends CI_Model {
 //     return $query->result_array();
 // }
 
-
+//  return $this->db
+// ->select('.....')
+// ->from('progress_pengadaan pp')
+// >join('pesanan p', 'p.pesanan_id=pp.pesanan_id', 'left')
+// ->where('pp.pesanan_id", $pesanan_id)
+// ->order_by(p.id_progres)
+// ->get()
 
     
 
 
-}
+

@@ -20,6 +20,7 @@ class model_template extends CI_Model {
 		return $query;
 	}
 	
+	
 	function edit($tabel,$seleksi)
 	{
 		$query=$this->db->query("select * from $tabel where $seleksi");

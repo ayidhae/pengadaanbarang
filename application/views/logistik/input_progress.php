@@ -125,12 +125,7 @@
                             
                           </div>
                           -->
-                          <div class="form-group">
-                            <label>Tanggal</label>
-                            <input name="tanggal" class="form-control" type="date" required>
-                            
-                          </div>
-                          
+                   
                           <div class="form-group ">
                             <label >nama customer</label>
                             

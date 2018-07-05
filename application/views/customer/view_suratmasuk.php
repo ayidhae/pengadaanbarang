@@ -57,9 +57,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href=" <?php echo base_url('/c_suratKeluar/inputSuratDirektur');?>"><i class="fa fa-paper-plane"></i> direktur </a>
                 </li>
-                <li class="nav-item">
+            <!--     <li class="nav-item">
                   <a class="nav-link" href=" <?php echo base_url('/c_suratKeluar/inputSuratLogistik');?>"><i class="fa fa-paper-plane"></i>logistik</a>
-                </li>
+                </li> -->
               </ul>
             </li>
           </li>
@@ -105,6 +105,7 @@
               <table id="dataSuratMasuk" class="table ">
                 <thead>
                   <tr>
+                      <th>No</th>
                     <th> dari </th>
                     <th> jenis surat </th>
                     <th>nomor surat </th>
@@ -117,12 +118,13 @@
                 </thead>
                 <tbody>
                   <?php
-                  
+                  $i = 1; 
                   foreach($surat_masuk as $st):
                   
                   ?>
                   
                   <tr>
+                    <td><?php echo $i; ?></td>
                     <td><?php echo $st['username'] ;?></td>
                     <td><?php echo $st['jenis_surat'] ;?></td>
                     <td><?php echo $st['no_surat'] ;?></td>
@@ -142,7 +144,7 @@
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                             </div>
                             <div class="modal-body">
-                            <?php echo $st['pesan'] ;?></td>
+                            <?php echo $st['pesan'] ;$i++;?></td>
                             
                           </div>
                           <div class="form-group">

@@ -120,78 +120,14 @@
       <div class="container-fluid">
         <div class="card card-accent-success">
           <div class="card-header">
-            <h3>  kotak masuk Dari Customer dan Vendor</h3>
+            <h3>Surat Approve Direktur</h3>
           </div>
-           <div class="pull-right">
-
-  
+           <div class="pull-right">  
   <div class="card-body">
-                <table id="dataUlasan" class="table ">
-                <thead>
-                   <tr>
-              <th> dari </th>
-              <th> penanggung jawab </th>
-              <th> contact </th>
-                <th> jenis_surat </th>
-                  <th>nomor surat </th>
-                    <th>tanggal</th>
-                    <th> surat </th>
-                    <th>pesan</th>
-                 
-
-
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php              
-                  
-                 foreach($surat_masuk as $st):
-                
-                  ?>
-                  
-                  <tr>
-                  <td><?php echo $st['username'] ;?></td>
-                     <td><?php echo $st['penanggung_jawab'] ;?></td>
-                     <td><?php echo $st['no_hp'] ;?></td>
-                   <td><?php echo $st['jenis_surat'] ;?></td>
-                   <td><?php echo $st['no_surat'] ;?></td>
-                    <td><?php echo $st['tgl_surat'];?></td>
-                    
-                      <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$st['file']."' target='_blank'>".$st['file']."</a>"?></td> 
-                       <td><?php echo $st['pesan'];?></td>
-          <!--   <a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i></a></td></center> -->
-                 
-           
-             
-            
-                  </tr>
-                  <?php
-                  endforeach;
-                  ?>
-            </tbody>
-              </table>
-            </div>
-          </div>
-      </div>
-
-</div>
-
-
-
-      <div class="container-fluid">
-        <div class="card card-accent-success">
-          <div class="card-header">
-            <h3>  Approve SPPH Dari Direktur </h3>
-          </div>
-          <div class="card-body">
-            
-            <div>
-              
-              <table id="dataCustomer" class="table ">
+   <table id="dataCustomer" class="table ">
                 <thead>
                   <tr>
-                
+                <th> No </th>
                 <th> jenis_surat </th>
                   <th> penanggung jawab </th>
               <th> contact </th>
@@ -204,13 +140,13 @@
                 </thead>
                 <tbody>
                    <?php              
-                  
+                   $i = 1;
                  foreach($surat_approve as $st):
                 
                   ?>
                   
                     <tr>
-                  
+                  <td><?php echo $i; ?></td>
                    <td><?php echo $st->jenis_surat ;?></td>
                       <td><?php echo $st->penanggung_jawab ;?></td>
                          <td><?php echo $st->no_hp ;?></td>
@@ -219,9 +155,73 @@
                     
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$st->file."' target='_blank'>".$st->file."</a>"?></td> 
                      
-                      <td><?php echo $st->status_approve ;?></td> 
+                      <td><?php echo $st->status_approve ; $i++;?></td> 
                       
     </div>
+          <!--   <a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i></a></td></center> -->
+                 
+           
+             
+            
+                  </tr>
+                  <?php
+                  endforeach;
+                  ?>
+              
+            </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+
+</div>
+
+
+
+
+      <div class="container-fluid">
+        <div class="card card-accent-success">
+          <div class="card-header">
+            <h3>  Surat Masuk Customer dan Vendor </h3>
+          </div>
+          <div class="card-body">
+            
+            <div>
+              
+              <table id="dataUlasan" class="table ">
+                <thead>
+                   <tr>
+                   <th> No </th>
+              <th> dari </th>
+              <th> penanggung jawab </th>
+              <th> contact </th>
+                <th> jenis surat </th>
+                  <th>nomor surat </th>
+                    <th>tanggal</th>
+                    <th> surat </th>
+                    <th>pesan</th>
+                 
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php              
+                    $i = 1;
+                 foreach($surat_masuk as $st):
+                
+                  ?>
+                  
+                  <tr>
+                    <td><?php echo $i; ?></td>
+                  <td><?php echo $st['username'] ;?></td>
+                     <td><?php echo $st['penanggung_jawab'] ;?></td>
+                     <td><?php echo $st['no_hp'] ;?></td>
+                   <td><?php echo $st['jenis_surat'] ;?></td>
+                   <td><?php echo $st['no_surat'] ;?></td>
+                    <td><?php echo $st['tgl_surat'];?></td>
+                    
+                      <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$st['file']."' target='_blank'>".$st['file']."</a>"?></td> 
+                       <td><?php echo $st['pesan'];$i++;?></td>
           <!--   <a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i></a></td></center> -->
                  
            
@@ -235,8 +235,12 @@
               </table>
               
             </div>
+
     </div>
+
   </div>
+
 </div>
+
 </main>
 </div>

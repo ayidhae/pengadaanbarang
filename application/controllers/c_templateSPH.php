@@ -14,7 +14,6 @@ class c_templateSPH extends CI_Controller {
 			$this->load->view('template/header');
 		$this->load->view('logistik/view_templateSPH',$data);
 		$this->load->view('template/footer'); 
-
 	
 	}
 

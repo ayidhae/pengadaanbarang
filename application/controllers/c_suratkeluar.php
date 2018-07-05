@@ -12,7 +12,6 @@ class c_suratKeluar extends CI_Controller {
 		$this->load->model('m_vendor');
 		$this->load->model('m_pesanan');
 		$this->load->model('model_template');
-
 	
 	}
 		 //call model

@@ -5,8 +5,7 @@ class c_suratMasuk extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_suratMasuk');
-	
-		
+
 		
 	}
 		 //call model
@@ -66,13 +65,11 @@ class c_suratMasuk extends CI_Controller {
 	   $data ['surat_approve'] = $this->m_suratMasuk->getApprove($where,'surat_keluar')->result();
 
 
-
 		$this->load->view('template/header');
 		$this->load->view('logistik/view_suratmasuk',$data);
 		$this->load->view('template/footer'); 
 	
 	}
-
 
 
 	 

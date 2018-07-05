@@ -134,7 +134,7 @@
           <th>NAMA CUSTOMER</th>
           <th>STATUS</th>
           <th>CATATAN </th>
-          <th>AKSI</th>
+        <th>AKSI</th>
           
         </tr>
       </thead>
