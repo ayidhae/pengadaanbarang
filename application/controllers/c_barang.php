@@ -31,6 +31,7 @@ class c_barang extends CI_Controller {
 		$this->view_barang();
 	}
 
+	//form edit
 	public function edit_barang($idbarang){
 		$where = array('idbarang' => $idbarang);
 		$data['barang'] = $this->m_barang->detail($where,'barang')->result();
@@ -38,6 +39,31 @@ class c_barang extends CI_Controller {
 		$this->load->view('template/header');
 		$this->load->view('vendor/edit_barang',$data);
 		$this->load->view('template/footer');
+	}
+
+	//update data barang
+	public function update_barang($idbarang){
+		$this->form_validation->set_rules('namabarang', 'Nama Barang','required|alpha_numeric_spaces');
+			if ($this->form_validation->run() == TRUE){	
+				$namabarang=$this->input->post('namabarang');
+				$jenis=$this->input->post('jenis');	
+				$data=array(
+					'namabarang' =>$namabarang,
+					'jenis'=>$jenis				
+					);
+				$where=array(
+					'idbarang'=>$idbarang
+					);
+				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data barang berhasil diubah</div>');
+				$this->m_barang->update_barang($where,$data,"barang");	
+				redirect(base_url('c_barang/view_barang'));
+				// $this->view_barang();
+			}else{
+				$this->load->view('template/header');		
+				$this->load->view('vendor/edit_barang');
+				$this->load->view('template/footer');
+			}
+		redirect(base_url('c_barang/view_barang'));
 	}
 
 	public function update_gambar(){
@@ -64,35 +90,11 @@ class c_barang extends CI_Controller {
 
         	}
 	}
-
-	public function update_barang($idbarang){
-		// $config['upload_path']   = 'asset/img/barang/'; 
-		// $config['allowed_types'] = 'gif|jpg|png'; 
-		// $config['max_size']      = 100; 
-		// $config['max_width']     = 1024; 
-		// $config['max_height']    = 768;
-		// $this->load->library('upload',$config); 
-		// 	if(! $this->upload->do_upload('gambar')){
-		// 		$error = array('error' => $this->upload->display_errors()); 
-		//  		?>
-  //                    <script type=text/javascript>alert("File tidak sesuai format");</script>
-  //       		<?php
-  //       	}else{
-    			
-				$namabarang=$this->input->post('namabarang');
-				$jenis=$this->input->post('jenis');	
-				$data=array(
-					'namabarang' =>$namabarang,
-					// 'gambar' =>  $this->upload->data('file_name'),
-					'jenis'=>$jenis				
-					);
-				$where=array(
-					'idbarang'=>$idbarang
-					);
-				$this->m_barang->update_barang($where,$data,"barang");	
-				$this->view_barang();
-			// }
-		redirect(base_url('c_barang/view_barang'));
+	//ganti gambar barang(belum kepake)
+	public function ubah_gambar(){
+		$this->load->view('template/header');
+		$this->load->view('vendor/edit_gambar');
+		$this->load->view('template/footer');	
 	}
 
 	public function form_add(){
@@ -101,16 +103,9 @@ class c_barang extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-	//ganti gambar barang
-	public function ubah_gambar(){
-		$this->load->view('template/header');
-		$this->load->view('vendor/edit_gambar');
-		$this->load->view('template/footer');	
-	}
-
 	public function add_barang(){
-		$id = $this->m_barang->getIdBarang();
 		$this->form_validation->set_rules('namabarang', 'Nama Barang','required|alpha_numeric_spaces');
+		$id = $this->m_barang->getIdBarang();
 		if ($this->form_validation->run() == TRUE){	
 			$config['upload_path']   = 'asset/img/barang/'; 
 			$config['allowed_types'] = 'gif|jpg|png'; 
@@ -127,16 +122,17 @@ class c_barang extends CI_Controller {
         		$this->load->view('vendor/add_barang');
 				$this->load->view('template/footer');        		
 			}else{
-				$upload=$this->upload->data();			      
+				$upload=$this->upload->data();			      				
 				$data = array(
 					'idbarang' => $id,
 					'namabarang' => $this->input->post('namabarang'),
 					'gambar' => $upload['file_name'],
 					'jenis' => $this->input->post('jenis'),
 					'username' => $this->session->userdata('username')
-				);
+				);		
 				
-				$this->m_barang->insert_barang($data);
+				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data barang berhasil ditambahkan</div>');
+				$this->m_barang->insert_barang($data);			
 				redirect(base_url('c_barang/view_barang'));				
 			}
 		}else{

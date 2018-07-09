@@ -89,9 +89,10 @@
               <div class="col-md-12">
                 <div class="panel-body">
                   <div class="form-horizontal">
+                    <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
                     <div class="row">
                       <div class="col-md-12">
-                        <form   action="<?php echo base_url(). 'c_barang/update_barang/'.$detail->idbarang; ?>" enctype="multipart/form-data" method="post">
+                        <form   action="<?php echo base_url(). 'c_barang/update_barang/'.$detail->idbarang; ?>" enctype="multipart/form-data" method="post">                          
                           <div class="row">
                             <div class="col-md-6">
     

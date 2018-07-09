@@ -64,12 +64,14 @@ class c_vendor extends CI_Controller {
 	}
 
 	function updateProfile(){
+			$this->form_validation->set_rules('nama_perusahaan', 'Nama Perusahaan','required|alpha_numeric_spaces');
+			$this->form_validation->set_rules('alamat_perusahaan', 'alamat perusahaan','required|alpha_numeric_spaces');
 			$this->form_validation->set_rules('email', 'Email','required|valid_email');
 			$this->form_validation->set_rules('contact', 'Contact','required|numeric');
+
+			if($this->form_validation->run() == TRUE) {
 			$nama_perusahaan=$this->input->post('nama_perusahaan');
 			$alamat_perusahaan=$this->input->post('alamat_perusahaan');
-			if($this->form_validation->run() == TRUE) {
-
 			$email=$this->input->post('email');
 			$contact=$this->input->post('contact');			
 
@@ -83,6 +85,7 @@ class c_vendor extends CI_Controller {
 			$where=array(
 			     'username'=>$this->session->userdata('username')
 			  );  
+			$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Profil berhasil diubah</div>');
 			$this->m_vendor->updateProfile($where,$data,'vendor');  			
 			$this->viewProfile();
 		} else {
@@ -117,34 +120,30 @@ class c_vendor extends CI_Controller {
 						}else{						
 							?>
 	                    		 <script type=text/javascript>alert("Gagal update password!");</script>
-	        				<?php
-	        				$this->load->view('template/header');
-							$this->load->view('vendor/update_pass');
-							$this->load->view('template/footer');
+	        				<?php	    
+							$this->viewProfile();
 						}
 					}else{
 						?>
 	                     <script type=text/javascript>alert("password baru dan confirm password tidak cocok!");</script>
 	        			<?php
-	        			$this->load->view('template/header');
-						$this->load->view('vendor/update_pass');
-						$this->load->view('template/footer');				
+						$this->viewProfile();
 					}
 				}else{
 					?>
                      <script type=text/javascript>alert("password lama yang anda masukan salah!");</script>
         			<?php
-        			$this->load->view('template/header');
-					$this->load->view('vendor/update_pass');
-					$this->load->view('template/footer');
+					$this->viewProfile();
 				}				
 		}else{
-			$this->load->view('vendor/update_pass');
+			$this->load->view('vendor/kelola_profil');
 		}
 	}
 
 
 	public function registrasiVendor(){
+		$this->form_validation->set_rules('nama_perusahaan', 'Nama Perusahaan','required|alpha');
+		$this->form_validation->set_rules('alamat_perusahaan', 'Alamat Perusahaan','required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('email', 'Email','required|valid_email');
 		$this->form_validation->set_rules('contact', 'Contact','required|numeric');
 		$this->form_validation->set_rules('password', 'password','required');
@@ -161,8 +160,8 @@ class c_vendor extends CI_Controller {
 					$config['upload_path']   = 'asset/img/akte/'; 
 					$config['allowed_types'] = 'gif|jpg|png'; 
 					$config['max_size']      = 10000; 
-					$config['max_width']     = 1024; 
-					$config['max_height']    = 768;
+					$config['max_width']     = 2048; 
+					$config['max_height']    = 1536;
 					$this->load->library('upload',$config);  				
 				if ( ! $this->upload->do_upload('akte_pendiri')) {
 		        	$error = array('error' => $this->upload->display_errors()); 
@@ -182,10 +181,15 @@ class c_vendor extends CI_Controller {
 							  'username' => $this->input->post('username'),
 							  'password' => md5($this->input->post('password')),
 							  'status' =>'aktif'
-							  );					
-			 			$this->m_vendor->insert($data);		
+							  );										
+			 			$this->m_vendor->insert($data);	
+			 			?>
+	                    	<script type=text/javascript>alert("Registrasi Berhasil");</script>
+	        			<?php			 		
+	        			redirect(base_url('Login/index'));
+	        			// $this->load->view('utama/login-page');
+			 			// redirect('Login/index');	
 			     } 						   
-		        redirect('Login/index');
 			}
 		}else {
 			$this->load->view('vendor/registrasiVendor');

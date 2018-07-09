@@ -84,7 +84,11 @@
             <h3 class="panel-title pull-left">Kelola Barang</h3>
             <a href="<?php echo site_url('/c_barang/form_add');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i> Tambah Barang</a>
        </div>
-            
+             <?php
+                if ($this->session->flashdata('msg')){
+                  echo $this->session->flashdata('msg');
+                }
+              ?>
           <div class="card-body">
             
             <div>

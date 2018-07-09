@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -60,6 +61,7 @@ class c_customer extends CI_Controller {
 //diatas untuk kelola user
 	public function registrasicustomer(){
 		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('alamat_perusahaan', 'Alamat Perusahaan','required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('contact', 'Contact','required|numeric');
 
 	if ($this->form_validation->run() == TRUE){
@@ -81,11 +83,10 @@ class c_customer extends CI_Controller {
 				if ( ! $this->upload->do_upload('npwp')) {
 		        	$error = array('error' => $this->upload->display_errors()); 		        	
 		        	?>
-                     <script type=text/javascript>alert("File tidak sesuai");</script>
+                     <script type=text/javascript>alert("File tidak sesuai format");</script>
 
 		        	<?php
-		        	$this->load->view('customer/registrasiCustomer');
-		        	//redirect('c_customer/add');
+		        	$this->load->view('customer/registrasiCustomer');		        
 		        }else { 
 		        	$upload=$this->upload->data();		       				        
 		       		$data = array(
@@ -101,10 +102,12 @@ class c_customer extends CI_Controller {
 						);			
 
 		 			$this->m_customer->insert($data); 
-		 			//$this->load->view('utama/v_login');		 			
-		        } 
-		        redirect('Login/index');
-			//$this->load->view('utama/footer');
+		 			?>
+	                    <script type=text/javascript>alert("Registrasi Berhasil");</script>
+	        		<?php			 		
+	        		$this->load->view('utama/login-page');
+		 			// redirect('Login/index');
+		        } 		      
 			}
 		}else {
 			$this->load->view('customer/registrasiCustomer');

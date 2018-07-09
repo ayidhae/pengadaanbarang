@@ -104,8 +104,8 @@
               <br><em class="help-text"> *JPG,PNG,JPEG</em>
             </div>
 
-            <button type="submit" class="btn btn-block btn-success">Register</button>
-              <a class="btn btn-block btn-danger" href="<?php echo base_url('Home')?>">Cancel</a>
+            <button type="submit" class="btn btn-block btn-success">Registrasi</button>
+              <a class="btn btn-block btn-danger" href="<?php echo base_url('Home')?>">Batal</a>
             </form>
         </div>
       </div>
