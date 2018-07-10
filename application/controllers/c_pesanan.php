@@ -82,18 +82,17 @@ class c_pesanan extends CI_Controller {
         }
 
 		function detail($id)
-	{
-		$id = base64_decode($id);
-		$data["pesanan_id"]= $id;
+		{
+			$id = base64_decode($id);
+			$data["pesanan_id"]= $id;
 
-		//diatas mengambil pesanan id dari tabel pesanan					
-		$data["pesanandetail"] = $this->m_pesanan->edit("pesanan_detail","pesanan_id='".$id."'");
-		// $data['pesanan_id']= $this->m_pesanan->get_draft_id();
-		$this->load->view('template/header');
-		$this->load->view('logistik/pesanan_detail',$data);
-		$this->load->view('template/footer'); 
-		
-	}
+			//diatas mengambil pesanan id dari tabel pesanan					
+			$data["pesanandetail"] = $this->m_pesanan->edit("pesanan_detail","pesanan_id='".$id."'");
+			// $data['pesanan_id']= $this->m_pesanan->get_draft_id();
+			$this->load->view('template/header');
+			$this->load->view('logistik/pesanan_detail',$data);
+			$this->load->view('template/footer'); 		
+		}
 	
 	
 	 	public function insert_detail(){

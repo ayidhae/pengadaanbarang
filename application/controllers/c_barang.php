@@ -59,6 +59,7 @@ class c_barang extends CI_Controller {
 				redirect(base_url('c_barang/view_barang'));
 				// $this->view_barang();
 			}else{
+				$this->session->set_flashdata('msg','<div class="alert alert-danger text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data barang gagal diubah</div>');
 				$this->load->view('template/header');		
 				$this->load->view('vendor/edit_barang');
 				$this->load->view('template/footer');

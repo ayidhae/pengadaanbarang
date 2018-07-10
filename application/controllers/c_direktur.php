@@ -20,12 +20,7 @@ class c_direktur extends CI_Controller {
 	public function viewProfile(){
 		  $this->load->library('session');
 		$this->load->model('m_direktur');
-         
-
 		 $data['profile'] = $this->m_direktur->profildirektur($this->session->userdata('username'));
-
-
-   
         
       $this->load->view('direktur/profileDirektur',$data); 
 	}

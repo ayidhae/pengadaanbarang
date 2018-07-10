@@ -51,15 +51,11 @@ class c_login extends CI_Controller
 
 			if($this->session->userdata('hak_akses') == 'logistik')
 			{
-				redirect('c_logistik/home');
+				redirect('c_user/homeLogistik');
 			}else if ($this->session->userdata('hak_akses') == 'direktur')
 			{
-				redirect('c_direktur/home');
-			}
-			// else{
-			// 	$_SESSION['pesan'] = 'Maaf, kombinasi username dengan password salah.';
-			// 	$this->session->mark_as_flash('pesan');
-			// }
+				redirect('c_user/homeDirektur');
+			}	
 		}
 		 else if($cekVendor->num_rows() == 1)
 		{

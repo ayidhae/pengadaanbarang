@@ -105,8 +105,8 @@ class c_customer extends CI_Controller {
 		 			?>
 	                    <script type=text/javascript>alert("Registrasi Berhasil");</script>
 	        		<?php			 		
-	        		$this->load->view('utama/login-page');
-		 			// redirect('Login/index');
+	        		// $this->load->view('utama/login-page');
+		 			redirect('Login/index');
 		        } 		      
 			}
 		}else {
@@ -152,11 +152,11 @@ class c_customer extends CI_Controller {
 		}
 	}
 
-	public function form_update(){
-		$this->load->view('template/header');
-		$this->load->view('customer/kelola_profile');
-		$this->load->view('template/footer');
-	}
+	// public function form_update(){
+	// 	$this->load->view('template/header');
+	// 	$this->load->view('customer/kelola_profile');
+	// 	$this->load->view('template/footer');
+	// }
 public function updatePassword(){
 		$this->form_validation->set_rules('curr_password', 'current password','required|alpha_numeric');
 		$this->form_validation->set_rules('new_password', 'new password','required|alpha_numeric');

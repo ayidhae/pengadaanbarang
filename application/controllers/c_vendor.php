@@ -93,12 +93,6 @@ class c_vendor extends CI_Controller {
 		}
 	}
 
-	public function form_update(){
-		$this->load->view('template/header');
-		$this->load->view('vendor/update_pass');
-		$this->load->view('template/footer');
-	}
-
 	public function update_password(){
 		$this->form_validation->set_rules('curr_password', 'current password','required|alpha_numeric');
 		$this->form_validation->set_rules('new_password', 'new password','required|alpha_numeric');
@@ -183,12 +177,8 @@ class c_vendor extends CI_Controller {
 							  'status' =>'aktif'
 							  );										
 			 			$this->m_vendor->insert($data);	
-			 			?>
-	                    	<script type=text/javascript>alert("Registrasi Berhasil");</script>
-	        			<?php			 		
-	        			redirect(base_url('Login/index'));
-	        			// $this->load->view('utama/login-page');
-			 			// redirect('Login/index');	
+			 			$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Registrasi berhasil</div>');
+	        			redirect(base_url('c_login/index'));	        			
 			     } 						   
 			}
 		}else {
