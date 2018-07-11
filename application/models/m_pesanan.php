@@ -27,6 +27,7 @@ class m_pesanan extends CI_Model {
 	// }
 	
 	
+
 	function hapus($id,$seleksi,$tabel)
 	{
 		$this->db->where($seleksi,$id);
@@ -68,6 +69,22 @@ class m_pesanan extends CI_Model {
        return false;
      }
    }
+  
+   // function ambilDataStatus(){
+   //   $this->db->order_by('detail_id','asc');
+   //   $query = $this->db->get('pesanan_detail');
+    
+   // }
+
+   function ambilDataStatus() {
+
+     $this->db->select('status2')->from('pesanan_detail');
+
+     $query = $this->db->get();
+
+     return $query->result();
+
+}
 
        function ambilDataNamaVendor(){
      $this->db->order_by('nama_perusahaan','asc');

@@ -100,6 +100,13 @@
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
 <!-- Main content -->
+  <!--   <?php
+    foreach($status2 as $row){
+  ;
+    $status2 = $row['status2'];
+  
+    }
+    ?>  -->
 <main class="main">
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Home</li>
@@ -143,6 +150,7 @@
             }
             }
             ?>
+
           </select>
         </div>
         <div class="form-group ">
@@ -160,7 +168,19 @@
           </select>
         </div>
         </div>
+           <!--    <div class="form-group ">
+                      <label for="tipe" class="col-md-3 control-label"> Approve </label>
+                      <div class="col-md-7 required">
+                        <select type="hidden" class="form-control select2" style="min-width:250px;" required name="status" id="status"  value="<?php echo $status;?>" hidden>
+                             <option>Waiting</option>
+                    
+                            
+                        </select>
+                      </div>
+                  </div> -->
         
+      <input type="hidden" name="status" id="status" value="waiting" />
+      <input type="hidden" name="status2" id="status2" value="progress" />
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>

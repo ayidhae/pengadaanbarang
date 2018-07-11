@@ -109,6 +109,7 @@
                 <thead>
                   <tr>
                    <th>No</th>
+                   <th>No pesanan </th>
                     <th>tanggal</th>
                     <th>nama customer</th>
                     <th>nama vendor</th>
@@ -129,7 +130,7 @@
                   
                   <tr>
                    <td><?php echo $i; ?></td>
-                    <!-- <td><?php echo $prog->no_pesanan ;?></td> -->
+                    <td><?php echo $prog->pesanan_id ;?></td> 
                     <td><?=date('F d Y', strtotime($prog->tanggal));?></td>    
                     <td><?php echo $prog->nama_customer ;?></td>  
                    <td><?php echo $prog->nama_vendor ;?></td>                                   

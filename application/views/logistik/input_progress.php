@@ -125,38 +125,59 @@
                             
                           </div>
                           -->
+                          <div class="form-group ">
+                    <label>no pesanan</label>
+                    <div>
+                      <select class="form-control select2" style="min-width:499px;" required name="pesanan_id" onchange="setDropdown()" id="pesanan_id">
+                        <option></option>
+                          <?php
+          foreach ($mdraft->result() as $row) {
+            if($pesanan_id==$row->pesanan_id){
+              echo'<option value="'.$row->pesanan_id.'" selected>'.$row->pesanan_id.' | '.$row->nama_vendor.' | '.$row->nama_customer.'</option>';
+            }else{
+              echo'<option value="'.$row->pesanan_id.'">'.$row->pesanan_id.' | '.$row->nama_vendor.' | '.$row->nama_customer.' </option>';
+            }
+            
+          }
+          ?>
+          
+          </select>
+                         
+                     <label>nama vendor</label>
+                    <div>
+                      <select class="form-control select2" style="min-width:499px;" required name="nama_vendor" onchange="setDropdown()" id="nama_vendor">
+                        <option></option>
+                          <?php
+          foreach ($mdraft->result() as $row) {
+            if($pesanan_id==$row->pesanan_id){
+              echo'<option value="'.$row->nama_vendor.'" selected>'.$row->nama_vendor.' </option>';
+            }else{
+              echo'<option value="'.$row->nama_vendor.'">'.$row->nama_vendor.' </option>';
+            }
+            
+          }
+          ?>
+          
+          </select>
+                         <label>nama customer</label>
+                    <div>
+                      <select class="form-control select2" style="min-width:499px;" required name="nama_customer" onchange="setDropdown()" id="nama_customer">
+                        <option></option>
+                          <?php
+          foreach ($mdraft->result() as $row) {
+            if($pesanan_id==$row->pesanan_id){
+              echo'<option value="'.$row->nama_customer.'" selected>'.$row->nama_customer.' </option>';
+            }else{
+              echo'<option value="'.$row->nama_customer.'">'.$row->nama_customer.' </option>';
+            }
+            
+          }
+          ?>
+          
+          </select>
                    
-                          <div class="form-group ">
-                            <label >nama customer</label>
-                            
-                            <select class="form-control select2" style="min-width:250px;" required name="nama_customer" id="nama_customer">
-                              <option></option>
-                              <?php
-                              if($username){
-                              foreach($username as $d){
-                              echo "<option value='$d->username'>$d->username</option>";
-                              }
-                              }
-                              ?>
-                            </select>
-                          </div>
-                          <div class="form-group ">
-                            <label >nama vendor</label>
-                            
-                            <select class="form-control select2" style="min-width:250px;" required name="nama_vendor" id="nama_vendor">
-                              <option></option>
-                              <?php
-                              if($nama_perusahaan){
-                              foreach($nama_perusahaan as $d){
-                              echo "<option value='$d->username'>$d->nama_perusahaan</option>";
-                              }
-                              }
-                              ?>
-                            </select>
-                          </div>
                           
-                          
-                          
+                     
                           <div class="form-group">
                             <label>progress</label>
                             <input name="progress" class="form-control" required>

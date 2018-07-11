@@ -46,8 +46,8 @@
      <table id="dataProgress" class="table ">
                 <thead>
                   <tr>
-                  <th> nomor</th>
-                     
+                  <th> no</th>
+                  <th>no pesan </th>
                     <th>tanggal</th>
                     <th>nama customer</th>
                     <th>nama vendor</th>
@@ -68,6 +68,7 @@
             ?>
             <tr>
                 <td><?php echo $no; ?></td>
+                <td><?php echo $d->pesanan_id; ?></td>
                 <td><?php echo $d->tanggal; ?></td>
                 <td><?php echo $d->nama_customer; ?></td>
                 <td><?php echo $d->nama_vendor; ?></td>

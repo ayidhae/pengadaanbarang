@@ -56,7 +56,6 @@ class c_suratMasuk extends CI_Controller {
         redirect('c_suratMasuk/surat_masukDirektur');
         }
 
-
 	public function surat_masukLogistik($status_approve="YA" ){ //dihalaman logitik
 		$data ['surat_masuk'] = $this->m_suratMasuk->kotak_masuk_logistik($this->session->userdata('username'));
 

@@ -14,7 +14,7 @@ class Home extends CI_Controller
 				}elseif($this->session->userdata('hak_akses')=='direktur'){
 					redirect('c_direktur/home');
 				}elseif ($this->session->userdata('hak_akses')=='customer') {
-					redirect('c_customerx/home');
+					redirect('c_customer/home');
 				}else{
 					redirect('c_vendor/home');
 				}

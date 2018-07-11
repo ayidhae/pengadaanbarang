@@ -123,7 +123,9 @@
                   <tr>
                 <!--     <th>No pesanan</th> -->
                     <th>No.</th>
-                    <th>tanggal</th>
+                   
+                    <th>no pesanan</th>
+                     <th>tanggal</th>
                     <th>nama customer</th>
                     <th>nama vendor</th>
                     <th>progress</th>
@@ -144,7 +146,7 @@
                   
                   <tr>
                     <td><?php echo $i; ?></td>
-                   <!--  <td><?php echo $prog->no_pesanan ;?></td> -->
+                   <td><?php echo $prog->pesanan_id ;?></td> 
                     <td><?php echo $prog->tanggal ;?></td>    
                     <td><?php echo $prog->nama_customer ;?></td>  
                    <td><?php echo $prog->nama_vendor ;?></td>                                   

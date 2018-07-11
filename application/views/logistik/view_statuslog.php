@@ -150,7 +150,7 @@
           <td>'.$psn->tgl_input.'</td>
           <td>'.$psn->tgl_selesai.'</td>
             <td>'.$psn->nama_customer.'</td>
-          <td>'.$psn->status.'</td>
+          <td>'.$psn->status.'|'.$psn->status2.'|'.$psn->status3.'</td>
           <td>'.$psn->catatan.'</td>
           <td class="text-center">
             <a href="'.site_url('c_pesanan/editStatus/'.trim(base64_encode($psn->pesanan_id),'=').'').'" class="btn btn-warning btn-sm" title="edit"><i class="fa fa-pencil"></i>  </a>
