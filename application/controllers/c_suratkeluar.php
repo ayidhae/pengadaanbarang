@@ -154,24 +154,24 @@ class c_suratKeluar extends CI_Controller {
 	//form kirim SPH ke customer
 	function form_kirimSPH($id){
 		$id = base64_decode($id);		
-		$data['pesanan'] = $this->model_template->detail($id)->result();			
+		$data['pesanan'] = $this->model_template->detail($id)->result();	
+		     $this->model_template->manualQuery("update template set status2='PRINT' where id='".$id."'");		
 		$this->load->view('template/header');
 		$this->load->view('logistik/form_kirimsph',$data);
 		$this->load->view('template/footer');
 	}
-
-	function inputSuratCustomer()
-		{
-			$data = array(
-				'username' => $this->m_suratKeluar->ambilDataUsernameCustomer(),
-				// 'hak_akses' => $this->m_suratkeluarcust->ambilDataUsernameLogist(),
+	// function inputSuratCustomer()
+	// 	{
+	// 		$data = array(
+	// 			'username' => $this->m_suratKeluar->ambilDataUsernameCustomer(),
+	// 			// 'hak_akses' => $this->m_suratkeluarcust->ambilDataUsernameLogist(),
 				
-			);
+	// 		);
 
-		$this->load->view('template/header');
-		$this->load->view('logistik/input_suratKeluarCust', $data);
-		$this->load->view('template/footer');
-	}
+	// 	$this->load->view('template/header');
+	// 	$this->load->view('logistik/input_suratKeluarCust', $data);
+	// 	$this->load->view('template/footer');
+	// }
 	
 
 	function inputSuratKeluarCustomer(){
@@ -209,6 +209,7 @@ class c_suratKeluar extends CI_Controller {
       );
 
      $this->m_suratKeluar->insertData($data, 'surat_keluar');
+
     redirect(base_url('c_suratKeluar/viewSuratKeluarLogistik'));
   }
 
@@ -274,18 +275,22 @@ class c_suratKeluar extends CI_Controller {
 	function form_kirimspph($id){
 		$id = base64_decode($id);
 		// $where = array('id' => $id);
-		$data['pesanan'] = $this->model_template->detail($id)->result();			
+
+		$data['pesanan'] = $this->model_template->detail($id)->result();	
+			$this->model_template->manualQuery("update template set status1='PRINT' where id='".$id."'");	
+
 		$this->load->view('template/header');
 		$this->load->view('logistik/form_kirimspph',$data);
 		$this->load->view('template/footer');
 	}
 
-	
+
 
 	//form kirim spk
 	function form_kirimspk($id){
 		$id = base64_decode($id);
 		// $where = array('id' => $id);
+		  $this->model_template->manualQuery("update template set status3='PRINT' where id='".$id."'");	
 		$data['pesanan'] = $this->model_template->detail($id)->result();			
 		$this->load->view('template/header');
 		$this->load->view('logistik/form_kirimspk',$data);
@@ -298,7 +303,7 @@ class c_suratKeluar extends CI_Controller {
 		$config['max_size']			= '2000';
 		$config['max_width']  		= '3000';
 		$config['max_height'] 		= '3000';
-
+    
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('file');
 	    $upload	 	= $this->upload->data();

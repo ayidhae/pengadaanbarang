@@ -6,6 +6,11 @@ class model_template extends CI_Model {
 	}
 	/*general function start*/
 
+	function manualQuery($q)
+	{
+		return $this->db->query($q);
+	}	
+
 	function simpan($tabel,$data)
 	{
 		$s=$this->db->insert($tabel,$data);

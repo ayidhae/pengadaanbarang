@@ -143,6 +143,11 @@
           if($mdata->num_rows()>0){
             $no = 1;
             foreach ($mdata->result() as $row) {
+              if($row->status3==''){
+                $act='<a href="'.site_url('c_templateSPK/editTemplateSPK/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-warning btn-sm" title="edit"><i class="fa fa-pencil"></i></a>';
+              }else{
+                $act='<a href="#" class="btn btn-warning btn-sm disabled" title="Edit"><i class="fa fa-pencil"></i></a>'; 
+              }
               echo'
               <tr>
                 <td width="5%" class="text-center">'.$no++.'</td>
@@ -155,7 +160,7 @@
                 <td>'.$row->tgl_negoisasi_spk.'</td>
               
                 <td class="text-center">
-                  <a href="'.site_url('c_templateSPK/editTemplateSPK/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-warning btn-sm" title="edit"><i class="fa fa-pencil"></i></a>
+                   '.$act.'
                
                   <a href="'.site_url('c_templateSPK/export_pdf/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></a>
 
