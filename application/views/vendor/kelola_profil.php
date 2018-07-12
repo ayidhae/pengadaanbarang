@@ -81,6 +81,11 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
+              <?php
+                if ($this->session->flashdata('msg')){
+                  echo $this->session->flashdata('msg');
+                }
+              ?>
             <h5> <i class="fa fa-check"></i> Profil Perusahaan</h5>
           </div>
           <div class="card-body">
@@ -167,7 +172,7 @@
       <div class="modal-content">
         <!-- heading modal -->
         <div class="modal-header">
-          <h4>Change Password</h4>
+          <h4>Ubah Password</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           
        

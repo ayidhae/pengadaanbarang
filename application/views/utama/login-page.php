@@ -31,6 +31,11 @@
         <div class="card-group">
           <div class="card p-4">
             <div class="card-body">
+               <?php
+                if ($this->session->flashdata('msg')){
+                  echo $this->session->flashdata('msg');
+                }
+              ?>
               <h1>Login</h1>
               <p class="text-muted">Login to your account</p>
               <form action="<?php echo base_url('c_login/validate');?>" method="POST">

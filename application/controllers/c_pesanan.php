@@ -20,24 +20,21 @@ class c_pesanan extends CI_Controller {
 
 	public function tambahPesanan(){
 		
-		
-		  $data = array(
-			 	 'username' => $this->m_pesanan->ambilDataNamaCustomer(),
-			 	 'nama_perusahaan' => $this->m_pesanan->ambilDataNamaVendor(),
+		// $data['pesanan_id']= $this->m_pesanan->get_pesanan_id();
+		 $data = array(
+			 	'username' => $this->m_pesanan->ambilDataNamaCustomer(),
+			 	'nama_perusahaan' => $this->m_pesanan->ambilDataNamaVendor(),
 			 	'pesanan_id' => $this->m_pesanan->get_pesanan_id(),
-			   // 'status2' => $this->m_pesanan->edit("pesanan_detail","detail_id")	
-			  );
-		 // $data["status2"] = $this->m_pesanan->edit("pesanan_detail","detail_id='".$id."'");
-	
-		 
-		 $this->load->view('template/header');
-		 $this->load->view('logistik/input_pesanan',$data);
-		 $this->load->view('template/footer'); 
+				
+			 );
+	 	
+		$this->load->view('template/header');
+		$this->load->view('logistik/input_pesanan',$data);
+		$this->load->view('template/footer'); 
 		
 	}
 
 	public function InputTambahPesanan(){
-
 	
 		$data = array(
 				
@@ -45,11 +42,7 @@ class c_pesanan extends CI_Controller {
 					'nama_pengadaan' => $this->input->post('nama_pengadaan'),
 					'nama_customer' => $this->input->post('nama_customer'),
 					'nama_vendor' => $this->input->post('nama_vendor'),
-					'tgl_input' => date('Y-m-d h:i:s'),
-					'status' => $this->input->post('status'),
-					'status2' => $this->input->post('status2'),
-					 // 'status2' => $this->input->post('status2'),
-					
+					'tgl_input' => date('Y-m-d h:i:s')
 				);
 		$this->m_pesanan->simpan('pesanan',$data);
 	redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
@@ -89,25 +82,23 @@ class c_pesanan extends CI_Controller {
         }
 
 		function detail($id)
-	{
-		$id = base64_decode($id);
-		$data["pesanan_id"]= $id;
+		{
+			$id = base64_decode($id);
+			$data["pesanan_id"]= $id;
 
-		//diatas mengambil pesanan id dari tabel pesanan					
-		$data["pesanandetail"] = $this->m_pesanan->edit("pesanan_detail","pesanan_id='".$id."'");
-		// $data['pesanan_id']= $this->m_pesanan->get_draft_id();
-		$this->load->view('template/header');
-		$this->load->view('logistik/pesanan_detail',$data);
-		$this->load->view('template/footer'); 
-		
-	}
+			//diatas mengambil pesanan id dari tabel pesanan					
+			$data["pesanandetail"] = $this->m_pesanan->edit("pesanan_detail","pesanan_id='".$id."'");
+			// $data['pesanan_id']= $this->m_pesanan->get_draft_id();
+			$this->load->view('template/header');
+			$this->load->view('logistik/pesanan_detail',$data);
+			$this->load->view('template/footer'); 		
+		}
 	
 	
 	 	public function insert_detail(){
 	
 	 	$data = array(
-
-				    'status2' => $this->input->post('status2'),
+				
 	 				'pesanan_id' => $this->input->post('pesanan_id'),
 					'nama_barang' => $this->input->post('nama_barang'),
 	 				'satuan' => $this->input->post('satuan'),
@@ -116,8 +107,7 @@ class c_pesanan extends CI_Controller {
 	 				// 'subtotal' => $harga*$jumlah
 				
 	 			);
-	 	        $this->m_pesanan->simpan('pesanan_detail',$data);
-	 			// $this->m_pesanan->simpan('pesanan_detail',$data);
+	 			$this->m_pesanan->simpan('pesanan_detail',$data);
 	
 		redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
 				
@@ -136,7 +126,6 @@ class c_pesanan extends CI_Controller {
 	
 	function update_detail()
 	{
-
 		$pesanan_id			= $this->input->post('pesanan_id');
 		$data["detail_id"] 	= $this->input->post('detail_id');
 		$data["nama_barang"] 	= $this->input->post('nama_barang');
@@ -150,6 +139,7 @@ class c_pesanan extends CI_Controller {
 
 		
 	}
+
 
 
   function hapus_detail($id,$id_detail)
@@ -175,24 +165,23 @@ public function viewStatuslog(){
 		$id = base64_decode($id);
 		
 
-	 	$data["editpesanan"]= $this->m_pesanan->edit("pesanan","pesanan_id='".$id."'");							
+	 	$data["editpesanan"]= $this->m_pesanan->edit("pesanan","pesanan_id='".$id."'");								
+
 	 	$this->load->view('template/header');
 	 	$this->load->view('logistik/edit_status',$data);
 	 	$this->load->view('template/footer'); 
 	 }
 	
-
 	 function updateStatus()
 	 {
 	 	$data['pesanan_id'] = $this->input->post('pesanan_id');
 	 	$data["tgl_input"] 	= $this->input->post('tgl_input');
 	 	$data['tgl_selesai'] = date('Y-m-d');
  	    $data['nama_customer'] = $this->input->post('nama_customer');
- 	     	$data['status3'] = $this->input->post('status3');
+ 	     	$data['status'] = $this->input->post('status');
  	     	 	$data['catatan'] = $this->input->post('catatan');
 	 	$this->m_pesanan->update('pesanan',$data,'pesanan_id');
 	 	redirect('c_pesanan/viewStatuslog');	
-
 	 }
 
 	 	public function viewStatusPesanan(){

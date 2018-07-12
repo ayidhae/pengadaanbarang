@@ -84,18 +84,13 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-9">              
-                <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
+                
                 <div class="panel-body">
                   <div class="form-horizontal">
                     <form action="<?php echo base_url(). 'c_barang/add_barang'; ?>" enctype="multipart/form-data" method="post">
+                      <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
                       <div class="row">
-                        <div class="col-md-6">
-                          <!-- <div class="form-group">
-                            <label class="control-label">Id Barang</label>
-                            <div class="">
-                              <input class="form-control" type="text" name="idbarang" value="" required>
-                            </div>
-                          </div> -->
+                        <div class="col-md-6">                       
                           <div class="form-group">
                             <label class="control-label">Nama Barang</label>
                             <div class="">
@@ -115,7 +110,7 @@
                           <div class="form-group">
                             <label class="control-label">Gambar</label>
                             <div>
-                               <input type="file" class="form-control" placeholder="choose file" name="gambar" value="barang" required>
+                               <input type="file" class="form-control" placeholder="choose file" name="gambar" value="barang" required><em class="help-text"> *JPG,PNG</em>                        
                             </div>
                           </div>                             
 
@@ -124,8 +119,7 @@
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-plus">Tambah</i></button>
                                 <a class="btn btn-danger" href="<?php echo base_url('c_barang/view_barang')?>"><i class="fa fa-close"></i> Batal</a>
                               </div>
-                            </div>
-
+                            </div>                          
                         </div>                      
                       </div>                      
                     </form>

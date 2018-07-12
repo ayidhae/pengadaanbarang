@@ -8,6 +8,7 @@ class c_customer extends CI_Controller {
 		$this->load->model('m_barang');
 
 	}
+		
 		 //call model
 	public function home(){
 		$data['barang'] = $this->m_barang->getAllBarang('barang');
@@ -101,9 +102,11 @@ class c_customer extends CI_Controller {
 						);			
 
 		 			$this->m_customer->insert($data); 
-		 			//$this->load->view('utama/v_login');		 			
+		 			//$this->load->view('utama/v_login');	
+		 			$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Registrasi berhasil</div>');	
+		 			 redirect('Login/index'); 			
 		        } 
-		        redirect('Login/index');
+		       
 			//$this->load->view('utama/footer');
 			}
 		}else {

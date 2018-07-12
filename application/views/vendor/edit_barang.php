@@ -82,16 +82,17 @@
         <div class="card">
           <div class="card-header">
            <h3 class="panel-title pull-left">Data Barang</h3>
+           <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
             <a href="<?php echo site_url('c_barang/view_barang');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">
                 <div class="panel-body">
-                  <div class="form-horizontal">
+                  <div class="form-horizontal">                  
                     <div class="row">
                       <div class="col-md-12">
-                        <form   action="<?php echo base_url(). 'c_barang/update_barang/'.$detail->idbarang; ?>" enctype="multipart/form-data" method="post">
+                        <form   action="<?php echo base_url(). 'c_barang/update_barang/'.$detail->idbarang; ?>" enctype="multipart/form-data" method="post">                          
                           <div class="row">
                             <div class="col-md-6">
     
