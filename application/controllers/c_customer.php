@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -61,6 +62,7 @@ class c_customer extends CI_Controller {
 //diatas untuk kelola user
 	public function registrasicustomer(){
 		$this->form_validation->set_rules('email', 'Email','required|valid_email');
+		$this->form_validation->set_rules('alamat_perusahaan', 'Alamat Perusahaan','required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('contact', 'Contact','required|numeric');
 
 	if ($this->form_validation->run() == TRUE){
@@ -82,11 +84,10 @@ class c_customer extends CI_Controller {
 				if ( ! $this->upload->do_upload('npwp')) {
 		        	$error = array('error' => $this->upload->display_errors()); 		        	
 		        	?>
-                     <script type=text/javascript>alert("File tidak sesuai");</script>
+                     <script type=text/javascript>alert("File tidak sesuai format");</script>
 
 		        	<?php
-		        	$this->load->view('customer/registrasiCustomer');
-		        	//redirect('c_customer/add');
+		        	$this->load->view('customer/registrasiCustomer');		        
 		        }else { 
 		        	$upload=$this->upload->data();		       				        
 		       		$data = array(
@@ -102,12 +103,21 @@ class c_customer extends CI_Controller {
 						);			
 
 		 			$this->m_customer->insert($data); 
+<<<<<<< HEAD
 		 			//$this->load->view('utama/v_login');	
 		 			$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Registrasi berhasil</div>');	
 		 			 redirect('Login/index'); 			
 		        } 
 		       
 			//$this->load->view('utama/footer');
+=======
+		 			?>
+	                    <script type=text/javascript>alert("Registrasi Berhasil");</script>
+	        		<?php			 		
+	        		// $this->load->view('utama/login-page');
+		 			redirect('Login/index');
+		        } 		      
+>>>>>>> 2e9f3c74345943f5fc9b2f239bff3f848a4f343f
 			}
 		}else {
 			$this->load->view('customer/registrasiCustomer');
@@ -152,11 +162,11 @@ class c_customer extends CI_Controller {
 		}
 	}
 
-	public function form_update(){
-		$this->load->view('template/header');
-		$this->load->view('customer/kelola_profile');
-		$this->load->view('template/footer');
-	}
+	// public function form_update(){
+	// 	$this->load->view('template/header');
+	// 	$this->load->view('customer/kelola_profile');
+	// 	$this->load->view('template/footer');
+	// }
 public function updatePassword(){
 		$this->form_validation->set_rules('curr_password', 'current password','required|alpha_numeric');
 		$this->form_validation->set_rules('new_password', 'new password','required|alpha_numeric');
