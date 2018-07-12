@@ -145,7 +145,7 @@
                       <td><?php echo $st->penanggung_jawab ;?></td>
                          <td><?php echo $st->no_hp ;?></td>
                    <td><?php echo $st->no_surat ;?></td>
-                    <td><?php echo $st->tgl_surat;?></td>
+                    <td><?php echo date('d-m-Y',strtotime($st->tgl_surat))?></td>
                     
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$st->file."' target='_blank'>".$st->file."</a>"?></td> 
                      
