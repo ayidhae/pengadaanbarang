@@ -27,8 +27,8 @@ class c_logistik extends CI_Controller {
 	public function kelola_user(){		
 		$data['vendor'] = $this->m_vendor->getAllVendor()->result();
 		$data['customer'] = $this->m_customer->getAllCustomer()->result();
-		$data['direktur'] = $this->m_direktur->getAllDirektur()->result();
-		$data['logistik'] = $this->m_logistik->getAllLogistik()->result();
+		// $data['direktur'] = $this->m_direktur->getAllDirektur()->result();
+		// $data['logistik'] = $this->m_logistik->getAllLogistik()->result();
 
 		//$data = array();
 		//array_push($data,$getVendor);

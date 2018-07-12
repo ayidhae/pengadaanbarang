@@ -12,7 +12,7 @@
     </style>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
-        <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>">Dashboard</a>
+        <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>">Dashboard</a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
@@ -25,7 +25,7 @@
             <strong>Account</strong>
           </div>
           <a class="dropdown-item" href="<?php echo base_url('/c_logistik/viewProfile');?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username');?></a>
-          <a class="dropdown-item" href="<?php echo base_url('c_logistik/keluar'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
+          <a class="dropdown-item" href="<?php echo base_url('c_user/keluar'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
       </li>
     </ul>
@@ -35,13 +35,13 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
+            <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
           </li>
           <li class="nav-title">
             Menu
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=" <?php echo base_url('/c_logistik/home');?> "><i class="fa fa-home"></i> Home</a>
+            <a class="nav-link" href=" <?php echo base_url('/c_user/homeLogistik');?> "><i class="fa fa-home"></i> Home</a>
           </li>
            <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewPesanan');?>"><i class="fa fa-shopping-cart"></i> Pesanan </a>
@@ -81,7 +81,7 @@
             <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-pencil"></i>Kelola</a>
             <ul class="nav-dropdown-items">
               <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_logistik/kelola_user');?>"><i class="fa fa-user"></i> Kelola user</a>
+                <a class="nav-link" href="<?php echo base_url('/c_users/kelola_user');?>"><i class="fa fa-user"></i> Kelola user</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress');?>"><i class="fa fa-tasks"></i> Kelola Progress Pengadaan</a>

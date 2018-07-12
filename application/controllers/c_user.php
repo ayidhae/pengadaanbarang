@@ -27,25 +27,10 @@ class c_user extends CI_Controller {
 
 	public function kelola_user(){		
 		$data['vendor'] = $this->m_vendor->getAllVendor()->result();
-		$data['customer'] = $this->m_customer->getAllCustomer()->result();
-		$data['direktur'] = $this->m_direktur->getAllDirektur()->result();
-		$data['logistik'] = $this->m_logistik->getAllLogistik()->result();
-
-		//$data = array();
-		//array_push($data,$getVendor);
-		//array_push($data,$getCustomer);
-		//array_push($data,$getDirektur);
-		//array_push($data,$getLogistik);
-		//print_r($data[0]);
-		//print_r($data);
+		$data['customer'] = $this->m_customer->getAllCustomer()->result();	
 		$this->load->view('template/header');
 		$this->load->view('logistik/kelola_user',$data);
-		$this->load->view('template/footer');
-
-		//print_r($getVendor->result());
-		//print_r($getCustomer->result());
-		//print_r($getDirektur->result());
-		//print_r($getLogistik->result());
+		$this->load->view('template/footer');	
 	}
 
 	// public function home(){
@@ -124,11 +109,10 @@ class c_user extends CI_Controller {
 	// 	}
 	// 	$this->load->view('utama/footer');
 	// }	
-
-	function keluar()
+public function keluar()
 	{
 		$this->session->sess_destroy();
-		redirect('c_user/home');
+		redirect('Home');
 	}
 
 }
