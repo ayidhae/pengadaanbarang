@@ -33,11 +33,13 @@ class c_progress extends CI_Controller {
 
 	
 	 function input(){
-	  $data = array(
-			 	'username' => $this->m_progress->ambilDataNamaCustomer(),
-			 	'nama_perusahaan' => $this->m_progress->ambilDataNamaVendor()
+	  // $data = array(
+			//  	'username' => $this->m_progress->ambilDataNamaCustomer(),
+			//  	'nama_perusahaan' => $this->m_progress->ambilDataNamaVendor()
 				
-			 );
+			//  );
+
+			$data['mdraft']	= $this->db->query('select * from pesanan order by pesanan_id ASC');
 	 	
          $this->load->view('template/header');
 		$this->load->view('logistik/input_progress',$data);
@@ -45,6 +47,7 @@ class c_progress extends CI_Controller {
     }  
 	function inputProgress(){
 		 $id_progress = $this->m_progress->getIdProgress();
+		 $pesanan_id = $this->input->post('pesanan_id');
          $customer = $this->input->post('nama_customer');
          $vendor = $this->input->post('nama_vendor');
         $progress      = $this->input->post('progress');
@@ -52,6 +55,7 @@ class c_progress extends CI_Controller {
         
         $data = array(
          'id_progress' => $id_progress,
+         'pesanan_id' => $pesanan_id,
        
         	'tanggal' => date('Y-m-d'),
         'nama_customer' => $customer,

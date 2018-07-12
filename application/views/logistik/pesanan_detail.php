@@ -127,6 +127,7 @@
           <input type="text" class="form-control" id="pesanan_id" name="pesanan_id" value="<?php echo $pesanan_id;?>" readonly>
         </div>
         </div>
+        <input type="hidden" name="status2" id="status2" value="progress" />
         <div class="form-group">
         <label class="control-label col-sm-2" for="nama_barang">NAMA BARANG</label>
         <div class="col-sm-10"> 
@@ -191,6 +192,7 @@
             }
           }
           ?> 
+      
       
                 </tbody>
               </table>

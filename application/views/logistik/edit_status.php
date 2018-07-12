@@ -84,7 +84,7 @@
     $pesanan_id = $row['pesanan_id'];
     $nama_customer    = $row['nama_customer'];
     $tgl_input   = $row['tgl_input'];
-    $status = $row['status'];
+    $status2 = $row['status2'];
     $catatan = $row['catatan'];
     }
     ?>
@@ -112,7 +112,7 @@
                   <input type="text" class="form-control" id="nama_customer" name="nama_customer" value="<?php echo $nama_customer;?>" placeholder="Input Judul" hidden>
             
                   <input type="text" class="form-control" id="tgl_input" name="tgl_input" value="<?php echo $tgl_input;?>" placeholder="Input Judul" hidden>
-             
+         <!--     
               <div class="form-group ">
                 <label class="control-label col-sm-2" for="status">Status </label>
                 <div class="col-sm-10">
@@ -124,8 +124,8 @@
                   </select>
                 </div>
               </div>
-            </div>
-
+            </div> -->
+  <input type="hidden" name="status3" id="status3" value="finish" />
             <div class="form-group">
               <label class="control-label col-sm-2" for="catatan">Catatan</label>
               <div class="col-sm-10">
