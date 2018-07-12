@@ -42,7 +42,8 @@ class c_pesanan extends CI_Controller {
 					'nama_pengadaan' => $this->input->post('nama_pengadaan'),
 					'nama_customer' => $this->input->post('nama_customer'),
 					'nama_vendor' => $this->input->post('nama_vendor'),
-					'tgl_input' => date('Y-m-d h:i:s')
+					'tgl_input' => date('Y-m-d h:i:s'),
+					'status' =>  $this->input->post('status')
 				);
 		$this->m_pesanan->simpan('pesanan',$data);
 	redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');

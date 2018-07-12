@@ -179,8 +179,8 @@
                       </div>
                   </div> -->
         
-      <input type="hidden" name="status" id="status" value="waiting" />
-      <input type="hidden" name="status2" id="status2" value="progress" />
+      <input type="hidden" name="status" id="status" value="progress" />
+   
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>

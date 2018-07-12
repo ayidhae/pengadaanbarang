@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2018 at 10:50 AM
+-- Generation Time: Jul 12, 2018 at 08:20 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -43,7 +43,9 @@ CREATE TABLE `barang` (
 INSERT INTO `barang` (`idbarang`, `namabarang`, `gambar`, `jenis`, `username`) VALUES
 ('BARANG-0001', 'buku', 'spph.jpg', 'peralatan kantor', 'info'),
 ('BARANG-0002', 'meja', 'warna.jpg', 'Meubelair / furniture', 'info'),
-('BARANG-0003', 'jjz', 'warna1.jpg', 'Meubelair / furniture', 'as');
+('BARANG-0003', 'jjz', 'warna1.jpg', 'Meubelair / furniture', 'as'),
+('BARANG-0004', 'jjq', 'warna5.jpg', 'peralatan kantor', 'aq'),
+('BARANG-0005', 'server', 'warna6.jpg', 'peralatan kantor', 'as');
 
 -- --------------------------------------------------------
 
@@ -71,9 +73,14 @@ INSERT INTO `customer` (`hak_akses`, `npwp`, `nama_perusahaan`, `alamat_perusaha
 ('customer', 'spph.jpg', 'ayam', 'ayam', '12345', 'ayidhae@yahoo.com', 'ayam', 'bffa783a022fe2d98692014dda6d7a4c', 'aktif'),
 ('customer', 'tipe_tpa3.PNG', 'yg entt', 'busan  444k3n 4000', '123456', 'ayidhae@yahoo.com', 'black', '81dc9bdb52d04dc20036dbd8313ed055', 'aktif'),
 ('customer', 'warna15.jpg', 'yg ent', 'Jl. Radio Palasari No. 1 Dayeuh Kolot, Kab. Bandun', '111', 'exo@aaa.com', 'exo', '64fea43893b845d96ac6cb974b3a5d23', 'aktif'),
+('customer', 'warna9.jpg', 'jyp', 'bu', '12345', 'ayidhae@yahoo.com', 'jy', '4e7268e57a109668e83f60927154d812', 'aktif'),
 ('customer', 'warna4.jpg', 'luna', 'sm', '12345', 'ayidhae@yahoo.com', 'luna', 'ba8a48b0e34226a2992d871c65600a7c', 'aktif'),
 ('customer', 'tipe_tpa1.PNG', 'jyp ent', 'soekarno hattaA', '1234551', 'mediawave@gamil.com', 'mw', '38fed7107cee058098ca06304c1beb90', 'aktif'),
-('customer', 'tipe_tpa2.PNG', 'PT pertamina indonesia', 'jln soekarno hatta', '12345', 'elvirabelieber@gmail.com', 'pertamina', '202cb962ac59075b964b07152d234b70', 'aktif');
+('customer', 'tipe_tpa2.PNG', 'PT pertamina indonesia', 'jln soekarno hatta', '12345', 'elvirabelieber@gmail.com', 'pertamina', '202cb962ac59075b964b07152d234b70', 'aktif'),
+('customer', 'warna10.jpg', 'pocaro', 'sm', '12345', 'ayidhae@yahoo.com', 'poca', 'c36e954f5bbe5fd85d355398febe28eb', 'aktif'),
+('customer', 'DA082DOUAAAfKMo.jpg', 'vira', 'buah batu', '12345', 'ayidhae@yahoo.com', 'virr', '590f35821fbed7b2ab58a9dbaf36c42d', 'aktif'),
+('customer', 'warna8.jpg', 'sm', 'sm', '12345', 'ayidhae@yahoo.com', 'we', 'b6d767d2f8ed5d21a44b0e5886680cb9', 'aktif'),
+('customer', 'Capture.PNG', 'sm', 'sm', '12345', 'ayidhae@yahoo.com', 'wer', '22c276a05aa7c90566ae2175bcc2a9b0', 'aktif');
 
 -- --------------------------------------------------------
 
@@ -88,7 +95,7 @@ CREATE TABLE `pesanan` (
   `nama_vendor` varchar(20) DEFAULT NULL,
   `tgl_input` datetime NOT NULL,
   `tgl_selesai` date DEFAULT NULL,
-  `status` varchar(30) DEFAULT NULL,
+  `status` varchar(100) DEFAULT NULL,
   `catatan` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -97,14 +104,7 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`pesanan_id`, `nama_pengadaan`, `nama_customer`, `nama_vendor`, `tgl_input`, `tgl_selesai`, `status`, `catatan`) VALUES
-('PESAN001', NULL, 'ayam', 'as', '2018-06-30 11:24:24', '2018-07-02', 'Progress', '     ssddddddddddddddddddddd\r\nddddddddddd'),
-('PESAN002', 'e', 'ayam', 'info', '2018-06-30 12:52:34', '2018-07-02', 'Waiting', ''),
-('PESAN003', 'r', 'mw', 'as', '2018-07-02 03:59:59', '2018-07-02', 'Waiting', ' ss'),
-('PESAN004', 'server', 'pertamina', 'info', '2018-07-03 07:50:21', NULL, NULL, NULL),
-('PESAN005', 'komputer', 'ayam', 'as', '2018-07-04 05:11:43', NULL, NULL, NULL),
-('PESAN006', 'komputer', 'ayam', 'as', '2018-07-04 05:56:24', NULL, NULL, NULL),
-('PESAN007', 'komputer', 'ayam', 'as', '2018-07-04 05:58:35', NULL, NULL, NULL),
-('PESAN008', 'komputer', 'ayam', 'as', '2018-07-04 06:00:26', NULL, NULL, NULL);
+('PESAN001', 'a', 'exo', 'info', '2018-07-12 08:17:27', '2018-07-12', 'finish', ' silahkan isi ulasan');
 
 -- --------------------------------------------------------
 
@@ -119,17 +119,9 @@ CREATE TABLE `pesanan_detail` (
   `satuan` varchar(25) NOT NULL,
   `harga` int(11) DEFAULT NULL,
   `vol` int(11) NOT NULL,
-  `subtotal` int(11) DEFAULT NULL
+  `subtotal` int(11) DEFAULT NULL,
+  `status2` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pesanan_detail`
---
-
-INSERT INTO `pesanan_detail` (`detail_id`, `pesanan_id`, `nama_barang`, `satuan`, `harga`, `vol`, `subtotal`) VALUES
-(13, 'PESAN001', 'exo', 'unit', 2000, 1, 2000),
-(14, 'PESAN002', 'exodus', 'unit', 1000, 2, 2000),
-(15, 'PESAN004', 'server', 'unit', NULL, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -143,18 +135,9 @@ CREATE TABLE `progress_pengadaan` (
   `nama_vendor` varchar(30) DEFAULT NULL,
   `progress` varchar(100) NOT NULL,
   `kendala` varchar(500) NOT NULL,
-  `id_progress` varchar(30) NOT NULL
+  `id_progress` varchar(30) NOT NULL,
+  `pesanan_id` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `progress_pengadaan`
---
-
-INSERT INTO `progress_pengadaan` (`tanggal`, `nama_customer`, `nama_vendor`, `progress`, `kendala`, `id_progress`) VALUES
-('2018-06-27', 'ayam', 'as', 'sudah dikirim spph', 'aa', 'PROGRESS-0002'),
-('2018-07-02', 'mw', 'as', 'sudah dikirim spph', 's', 'PROGRESS-0003'),
-('2018-07-04', 'ayam', 'as', 's', 's', 'PROGRESS-0004'),
-('2018-07-04', 'luna', 'info', 'new', 'habis', 'PROGRESS-0005');
 
 -- --------------------------------------------------------
 
@@ -184,8 +167,13 @@ CREATE TABLE `surat_keluar` (
 --
 
 INSERT INTO `surat_keluar` (`id_surat`, `username`, `jenis_surat`, `no_surat`, `tgl_surat`, `pesan`, `tujuan_customer`, `tujuan_direktur`, `tujuan_vendor`, `tujuan_logistik`, `file`, `status_approve`, `penanggung_jawab`, `no_hp`) VALUES
-(1, 'exo', 'SPPH', '1234', '2018-07-05 08:31:42', '', NULL, 'sugirto', NULL, NULL, 'tipe_tpa4.PNG', 'YA', 'kai', '09121312'),
-(2, 'destaya', 'sph', '', '2018-07-05 10:03:51', 'ss', 'mw', NULL, NULL, NULL, 'warna18.jpg', NULL, 'minho', '123');
+(10, 'destaya', 'spph', '90h/k08/9', '2018-07-12 07:32:19', 'E', NULL, NULL, 'info', NULL, 'warna.jpg', NULL, 'taemin', '09121312'),
+(11, 'destaya', 'spph', '90h/k08/9', '2018-07-12 07:42:49', 'ee', NULL, NULL, 'info', NULL, 'warna1.jpg', NULL, 'minho', '09121312'),
+(12, 'destaya', 'spph', '90h/k08/9', '2018-07-12 07:44:11', 'd', NULL, NULL, 'info', NULL, 'warna2.jpg', NULL, 'minho', '09121312'),
+(13, 'destaya', 'sph', 'sss', '2018-07-12 07:45:01', 'ee', 'exo', NULL, NULL, NULL, 'warna3.jpg', NULL, 'minho', '09121312'),
+(14, 'destaya', 'spk', '', '2018-07-12 07:50:11', 'RR', NULL, NULL, 'info', NULL, 'Image_3a93d57.jpg', NULL, 'minho', '09121312'),
+(15, 'destaya', 'spk', '123', '2018-07-12 07:54:31', 'EE', NULL, NULL, 'info', NULL, 'warna4.jpg', NULL, 'minho', '09121312'),
+(16, 'exo', 'SPK', '01/20/2011', '2018-07-12 08:07:36', 'ok', NULL, NULL, NULL, 'destaya', 'tipe_tpa.PNG', NULL, 'taemin', '09121312');
 
 -- --------------------------------------------------------
 
@@ -219,19 +207,11 @@ CREATE TABLE `template` (
   `nama_vendor` varchar(30) DEFAULT NULL,
   `nama_customer` varchar(30) DEFAULT NULL,
   `tgl_bast` date DEFAULT NULL,
-  `nama_pengadaan` varchar(30) DEFAULT NULL
+  `nama_pengadaan` varchar(30) DEFAULT NULL,
+  `status1` varchar(10) DEFAULT NULL,
+  `status2` varchar(10) DEFAULT NULL,
+  `status3` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `template`
---
-
-INSERT INTO `template` (`id`, `pesanan_id`, `no_spph`, `tgl_spph`, `tgl_sph`, `kepada_vendor`, `kepada_customer`, `no_sph`, `lampiran`, `nomor_spk`, `tgl_negoisasi_spk`, `lokasi_pengadaan`, `jangka_waktu`, `nama_pihak_vendor`, `jabatan_pihak_vendor`, `alamat_pihak_vendor`, `hp_pihak_vendor`, `fax_pihak_vendor`, `nama_rekening_vendor`, `no_rekening_vendor`, `bank_rekening_vendor`, `tgl_spk`, `nama_vendor`, `nama_customer`, `tgl_bast`, `nama_pengadaan`) VALUES
-(28, 'PESAN001', '90h/k08/9', '2018-06-30', '2018-06-30', '<p>aa</p>\r\n', '<p>ssss</p>\r\n', 'sss', 3, '123', '2011-01-20', '<p>aaa</p>\r\n', 2, 'sehun', 'pimpinan', '<p>aassa</p>\r\n', '1', '4350943504', 'PT SIGMA INDONESIA', '121323', 'MANDIRI', '2018-06-30', 'sm', 'smaa', '2018-06-30', 'a'),
-(29, 'PESAN002', '90h/k08/9', '2018-06-30', '2018-06-30', '<p>a</p>\r\n', '<p>aa</p>\r\n', 'q', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'e'),
-(30, 'PESAN002', '123', '2018-07-03', NULL, 'ayidhae', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ' e'),
-(31, 'PESAN005', '90h/k08/9', '2018-07-05', NULL, 'nn', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ' komputer'),
-(32, 'PESAN003', 'LOG/but/2018', '2018-07-05', NULL, 'aa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ' r');
 
 -- --------------------------------------------------------
 
@@ -266,16 +246,17 @@ INSERT INTO `ulasan` (`tanggal`, `dari_vendor`, `id_ulasan`, `komentar`, `userna
 CREATE TABLE `user` (
   `username` varchar(20) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `hak_akses` varchar(8) NOT NULL
+  `hak_akses` varchar(8) NOT NULL,
+  `nama` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `hak_akses`) VALUES
-('destaya', '12345', 'logistik'),
-('sugirto', '12345', 'direktur');
+INSERT INTO `user` (`username`, `password`, `hak_akses`, `nama`) VALUES
+('destaya', '12345', 'logistik', ''),
+('sugirto', '12345', 'direktur', '');
 
 -- --------------------------------------------------------
 
@@ -300,8 +281,11 @@ CREATE TABLE `vendor` (
 --
 
 INSERT INTO `vendor` (`hak_akses`, `akte_pendiri`, `nama_perusahaan`, `alamat_perusahaan`, `contact`, `email`, `username`, `password`, `status`) VALUES
+('vendor', 'warna3.jpg', 'alam', 'aqw', '111', 'ayidhae@yahoo.com', 'aq', 'b2b04af9f8f3ab06229e03ac8d3c24ca', 'aktif'),
 ('vendor', 'spph1.jpg', 'alam', 'aqw', '12345', 'exo@aaa.com', 'as', 'b1bd5d407c76e58bb22b340548816c3d', 'aktif'),
-('vendor', 'spph2.jpg', 'PT infomedia', 'buah baru', '1', 'info@gmail.com', 'info', 'caf9b6b99962bf5c2264824231d7a40c', 'aktif');
+('vendor', 'DA082DOUAAAfKMo.jpg', 'alam', 'aqw', '12345', 'ayidhae@yahoo.com', 'au', '8bcc25c96aa5a71f7a76309077753e67', 'aktif'),
+('vendor', 'spph2.jpg', 'PT infomedia', 'buah baru', '1', 'info@gmail.com', 'info', 'caf9b6b99962bf5c2264824231d7a40c', 'aktif'),
+('vendor', 'Capture1.PNG', 'A', 'aqw', '12345', 'ayidhae@yahoo.com', 'w', 'e1671797c52e15f763380b45e841ec32', 'aktif');
 
 --
 -- Indexes for dumped tables
@@ -342,7 +326,8 @@ ALTER TABLE `pesanan_detail`
 ALTER TABLE `progress_pengadaan`
   ADD PRIMARY KEY (`id_progress`),
   ADD KEY `nama_customer` (`nama_customer`),
-  ADD KEY `nama_vendor` (`nama_vendor`);
+  ADD KEY `nama_vendor` (`nama_vendor`),
+  ADD KEY `pesanan_id` (`pesanan_id`);
 
 --
 -- Indexes for table `surat_keluar`
@@ -391,19 +376,19 @@ ALTER TABLE `vendor`
 -- AUTO_INCREMENT for table `pesanan_detail`
 --
 ALTER TABLE `pesanan_detail`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `surat_keluar`
 --
 ALTER TABLE `surat_keluar`
-  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `template`
 --
 ALTER TABLE `template`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
@@ -438,8 +423,9 @@ ALTER TABLE `pesanan_detail`
 -- Constraints for table `progress_pengadaan`
 --
 ALTER TABLE `progress_pengadaan`
-  ADD CONSTRAINT `progress_pengadaan_ibfk_1` FOREIGN KEY (`nama_vendor`) REFERENCES `vendor` (`username`),
-  ADD CONSTRAINT `progress_pengadaan_ibfk_2` FOREIGN KEY (`nama_customer`) REFERENCES `customer` (`username`);
+  ADD CONSTRAINT `progress_pengadaan_ibfk_1` FOREIGN KEY (`nama_vendor`) REFERENCES `vendor` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `progress_pengadaan_ibfk_2` FOREIGN KEY (`nama_customer`) REFERENCES `customer` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `progress_pengadaan_ibfk_3` FOREIGN KEY (`pesanan_id`) REFERENCES `pesanan` (`pesanan_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `surat_keluar`

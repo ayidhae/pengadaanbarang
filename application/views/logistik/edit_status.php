@@ -84,7 +84,7 @@
     $pesanan_id = $row['pesanan_id'];
     $nama_customer    = $row['nama_customer'];
     $tgl_input   = $row['tgl_input'];
-    $status2 = $row['status2'];
+    $status2 = $row['status'];
     $catatan = $row['catatan'];
     }
     ?>
@@ -125,7 +125,7 @@
                 </div>
               </div>
             </div> -->
-  <input type="hidden" name="status3" id="status3" value="finish" />
+  <input type="hidden" name="status" id="status" value="finish" />
             <div class="form-group">
               <label class="control-label col-sm-2" for="catatan">Catatan</label>
               <div class="col-sm-10">
