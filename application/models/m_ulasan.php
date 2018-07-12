@@ -38,4 +38,17 @@ class m_ulasan extends CI_Model {
     }
   }
 
+
+   function ambilDataPesanan($nama_customer){
+    
+    if($nama_customer) {
+      $sql = "SELECT * FROM pesanan WHERE nama_customer = ?";
+      $query = $this->db->query($sql, array($nama_customer));
+      $result = $query->result_array();
+
+      return $result;
+    }
+  
+}
+
 }
