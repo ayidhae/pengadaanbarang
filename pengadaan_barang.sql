@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2018 at 08:20 AM
+-- Generation Time: Jul 13, 2018 at 06:54 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -96,15 +96,9 @@ CREATE TABLE `pesanan` (
   `tgl_input` datetime NOT NULL,
   `tgl_selesai` date DEFAULT NULL,
   `status` varchar(100) DEFAULT NULL,
-  `catatan` varchar(100) DEFAULT NULL
+  `catatan` varchar(100) DEFAULT NULL,
+  `id_surat` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pesanan`
---
-
-INSERT INTO `pesanan` (`pesanan_id`, `nama_pengadaan`, `nama_customer`, `nama_vendor`, `tgl_input`, `tgl_selesai`, `status`, `catatan`) VALUES
-('PESAN001', 'a', 'exo', 'info', '2018-07-12 08:17:27', '2018-07-12', 'finish', ' silahkan isi ulasan');
 
 -- --------------------------------------------------------
 
@@ -162,19 +156,6 @@ CREATE TABLE `surat_keluar` (
   `no_hp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `surat_keluar`
---
-
-INSERT INTO `surat_keluar` (`id_surat`, `username`, `jenis_surat`, `no_surat`, `tgl_surat`, `pesan`, `tujuan_customer`, `tujuan_direktur`, `tujuan_vendor`, `tujuan_logistik`, `file`, `status_approve`, `penanggung_jawab`, `no_hp`) VALUES
-(10, 'destaya', 'spph', '90h/k08/9', '2018-07-12 07:32:19', 'E', NULL, NULL, 'info', NULL, 'warna.jpg', NULL, 'taemin', '09121312'),
-(11, 'destaya', 'spph', '90h/k08/9', '2018-07-12 07:42:49', 'ee', NULL, NULL, 'info', NULL, 'warna1.jpg', NULL, 'minho', '09121312'),
-(12, 'destaya', 'spph', '90h/k08/9', '2018-07-12 07:44:11', 'd', NULL, NULL, 'info', NULL, 'warna2.jpg', NULL, 'minho', '09121312'),
-(13, 'destaya', 'sph', 'sss', '2018-07-12 07:45:01', 'ee', 'exo', NULL, NULL, NULL, 'warna3.jpg', NULL, 'minho', '09121312'),
-(14, 'destaya', 'spk', '', '2018-07-12 07:50:11', 'RR', NULL, NULL, 'info', NULL, 'Image_3a93d57.jpg', NULL, 'minho', '09121312'),
-(15, 'destaya', 'spk', '123', '2018-07-12 07:54:31', 'EE', NULL, NULL, 'info', NULL, 'warna4.jpg', NULL, 'minho', '09121312'),
-(16, 'exo', 'SPK', '01/20/2011', '2018-07-12 08:07:36', 'ok', NULL, NULL, NULL, 'destaya', 'tipe_tpa.PNG', NULL, 'taemin', '09121312');
-
 -- --------------------------------------------------------
 
 --
@@ -213,6 +194,13 @@ CREATE TABLE `template` (
   `status3` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `template`
+--
+
+INSERT INTO `template` (`id`, `pesanan_id`, `no_spph`, `tgl_spph`, `tgl_sph`, `kepada_vendor`, `kepada_customer`, `no_sph`, `lampiran`, `nomor_spk`, `tgl_negoisasi_spk`, `lokasi_pengadaan`, `jangka_waktu`, `nama_pihak_vendor`, `jabatan_pihak_vendor`, `alamat_pihak_vendor`, `hp_pihak_vendor`, `fax_pihak_vendor`, `nama_rekening_vendor`, `no_rekening_vendor`, `bank_rekening_vendor`, `tgl_spk`, `nama_vendor`, `nama_customer`, `tgl_bast`, `nama_pengadaan`, `status1`, `status2`, `status3`) VALUES
+(5, 'PESAN001', '90h/k08/9', '2018-07-12', NULL, 's', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'a', NULL, 'PRINT', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -221,21 +209,19 @@ CREATE TABLE `template` (
 
 CREATE TABLE `ulasan` (
   `tanggal` date NOT NULL,
-  `dari_vendor` varchar(20) DEFAULT NULL,
   `id_ulasan` int(11) NOT NULL,
   `komentar` varchar(200) NOT NULL,
   `username` varchar(20) DEFAULT NULL,
-  `rating` varchar(20) NOT NULL
+  `rating` varchar(20) NOT NULL,
+  `pesanan_id` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ulasan`
 --
 
-INSERT INTO `ulasan` (`tanggal`, `dari_vendor`, `id_ulasan`, `komentar`, `username`, `rating`) VALUES
-('2018-06-12', 'as', 24, 'mm', 'mw', 'Biasa saja'),
-('2018-06-27', 'as', 25, 'nnjj', 'exo', 'Sangat Tidak Baik'),
-('2018-07-01', 'as', 26, 'ss', 'exo', 'Sangat Tidak Baik');
+INSERT INTO `ulasan` (`tanggal`, `id_ulasan`, `komentar`, `username`, `rating`, `pesanan_id`) VALUES
+('2018-07-12', 42, 'e', 'mw', 'Sangat Tidak Baik', 'PESAN001| lab');
 
 -- --------------------------------------------------------
 
@@ -311,7 +297,8 @@ ALTER TABLE `customer`
 ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`pesanan_id`),
   ADD KEY `nama_customer` (`nama_customer`),
-  ADD KEY `nama_vendor` (`nama_vendor`);
+  ADD KEY `nama_vendor` (`nama_vendor`),
+  ADD KEY `id_surat` (`id_surat`);
 
 --
 -- Indexes for table `pesanan_detail`
@@ -354,7 +341,7 @@ ALTER TABLE `template`
 ALTER TABLE `ulasan`
   ADD PRIMARY KEY (`id_ulasan`),
   ADD KEY `username` (`username`),
-  ADD KEY `dari_vendor` (`dari_vendor`);
+  ADD KEY `pesanan_id` (`pesanan_id`);
 
 --
 -- Indexes for table `user`
@@ -376,25 +363,25 @@ ALTER TABLE `vendor`
 -- AUTO_INCREMENT for table `pesanan_detail`
 --
 ALTER TABLE `pesanan_detail`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `surat_keluar`
 --
 ALTER TABLE `surat_keluar`
-  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `template`
 --
 ALTER TABLE `template`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
 --
 ALTER TABLE `ulasan`
-  MODIFY `id_ulasan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_ulasan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Constraints for dumped tables
@@ -411,7 +398,8 @@ ALTER TABLE `barang`
 --
 ALTER TABLE `pesanan`
   ADD CONSTRAINT `pesanan_ibfk_1` FOREIGN KEY (`nama_vendor`) REFERENCES `vendor` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pesanan_ibfk_2` FOREIGN KEY (`nama_customer`) REFERENCES `customer` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `pesanan_ibfk_2` FOREIGN KEY (`nama_customer`) REFERENCES `customer` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pesanan_ibfk_3` FOREIGN KEY (`id_surat`) REFERENCES `surat_keluar` (`id_surat`);
 
 --
 -- Constraints for table `pesanan_detail`
@@ -446,8 +434,7 @@ ALTER TABLE `template`
 -- Constraints for table `ulasan`
 --
 ALTER TABLE `ulasan`
-  ADD CONSTRAINT `ulasan_ibfk_1` FOREIGN KEY (`username`) REFERENCES `customer` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ulasan_ibfk_2` FOREIGN KEY (`dari_vendor`) REFERENCES `vendor` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `ulasan_ibfk_1` FOREIGN KEY (`username`) REFERENCES `customer` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
