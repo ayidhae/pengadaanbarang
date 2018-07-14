@@ -28,6 +28,21 @@ class m_suratKeluar extends CI_Model {
         $this->db->where('id_surat', $id);
         $query = $this->db->get('surat_keluar');
 
+  
+  function ambilDataUsernameDirektur(){
+    $this->db->order_by('hak_akses','asc');
+    $query = $this->db->get('user');
+    if($query->num_rows()>0)
+    {
+      return $query->result();
+    }
+    else
+    {
+      return false;
+    }
+  }
+>>>>>>> ba18ec8ebe2ab4b5ba3f642fbbf89e73b1cc5fdd
+
         return $query->row();
       }
 
