@@ -56,17 +56,7 @@
           </li>
 
 
-         <!--  <li class="nav-item nav-dropdown"> 
-          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i> Kelola dokumen</a>          
-            <ul class="nav-dropdown-items">
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-share"></i> Send Dokumen</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_suratMasuk/surat_masukDirektur');?>"><i class="fa fa-download"></i> Receive Dokumen</a>
-              </li> 
-            </ul>
-          </li>   -->
+        
            <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress_direktur');?>"><i class="fa fa-cart-arrow-down"></i> melihat progress pengadaan </a>
             
@@ -128,23 +118,23 @@
                   </div>
 
                     <div class="form-group ">
-                      <label for="tipe" class="col-md-3 control-label"> Approve </label>
-                      <div class="col-md-7 required">
-                        <select class="form-control select2" style="min-width:250px;" required name="status_approve" id=""  value="<?php echo $approve[0]->status_approve ?>" readonly required>
-                             <option>YA</option>
-                        
+                      <label for="tipe" class="control-label"> Approve </label>
+                      <!-- <div class="col-md-9 required"> -->
+                        <input class="form-control select2" style="min-width:250px;" required name="status_approve" id=""  value="YA" readonly required>
                             
-                        </select>
-                      </div>
                   </div>
              
-
-              <div class="form-group "> 
+ 
+              <div> 
                    <button type="submit" name="btnSimpan" class="btn btn-success"><i class="fa fa-check icon-white"></i> Simpan</button>
+
                      <a class="btn btn-danger" href="<?php echo base_url('c_suratMasuk/surat_masukDirektur/'. $approve[0]->id_surat )?>"><i class="fa fa-close"></i> Batal</a>  
+                     </div>
+                     </div>
+                     </form>
                     </div>
                     </div>
-                    </form>
+                 
                     </div>
                   </div>
                 </form>

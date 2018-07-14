@@ -48,6 +48,11 @@ function getApprove(){
   return $query=$this->db->query("SELECT * FROM surat_keluar where status_approve='YA'")->result();
 }
 
+function getTidakApprove(){
+ // return $this->db->get_where($table,$where);
+  return $query=$this->db->query("SELECT * FROM surat_keluar where status_approve='TIDAK'")->result();
+}
+
 function edit_data($where,$table){   
   return $this->db->get_where($table,$where);
 }

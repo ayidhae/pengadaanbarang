@@ -21,7 +21,9 @@ class c_templateSPPH extends CI_Controller {
 
 	public function inputTemplateSPPH(){
 	
-		$data['mdraft']	= $this->db->query('select * from pesanan p join template t on p.pesanan_id=t.pesanan_id where t.pesanan_id is null order by p.pesanan_id ASC');
+		// $data['mdraft']	= $this->db->query('select * from pesanan p join template t on p.pesanan_id=t.pesanan_id where t.pesanan_id is null order by p.pesanan_id ASC');
+
+		$data['mdraft']	= $this->db->query('select * from pesanan  order by pesanan_id ASC');
 		// echo json_encode($data['mdraft']);
 		
 		$this->load->view('template/header');

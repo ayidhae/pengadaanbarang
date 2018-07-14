@@ -112,7 +112,6 @@
                   <th>nomor surat </th>
                     <th>tanggal</th>
                     <th> surat </th>
-                   
                     <th> status approve </th>
                    <th> aksi </th>
 

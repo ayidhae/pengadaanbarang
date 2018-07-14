@@ -6,11 +6,11 @@ class m_suratKeluar extends CI_Model {
 
 
       function viewSuratKeluar($where,$table){
-        // return $this->db->get_where($table,$where);
-        return $this->db->query("SELECT * FROM surat_keluar ORDER BY tgl_surat DESC");
+         return $this->db->get_where($table,$where);
+        // return $this->db->query("SELECT * FROM surat_keluar ORDER BY tgl_surat DESC");
       }
 
-      
+    
       function ambilDataUsernameDirektur(){
         $this->db->where('hak_akses', 'direktur');
         $this->db->order_by('username','asc');
