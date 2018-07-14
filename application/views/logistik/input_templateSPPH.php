@@ -123,18 +123,22 @@
         <div class="col-sm-10">
           <select class="form-control" class="form-control" id="pesanan_id" onchange="setDropdown()" name="pesanan_id" required>
           <?php
-          foreach ($mdraft->result() as $row) {
-            echo'<option value="'.$row->pesanan_id.'">'.$row->pesanan_id.' | '.$row->nama_pengadaan.'</option>';
+          if ($mdraft->num_rows()>0){
+            foreach ($mdraft->result() as $row) {
+              echo'<option value="'.$row->pesanan_id.'">'.$row->pesanan_id.' | '.$row->nama_pengadaan.'</option>';
+            }  
+          } else{
+            echo '<option value="-"> - </option>';
           }
           ?>
           </select>
         </div>
         </div>
         <div class="form-group">
-        <label class="control-label col-sm-2" for="no_spph">NO SURAT SPPH </label>
-        <div class="col-sm-10"> 
-          <input type="text" class="form-control" id="no_spph" name="no_spph" placeholder="Input nomor surat" required>
-        </div>
+        <!-- <label class="control-label col-sm-2" for="no_spph">NO SURAT SPPH </label> -->
+        <!-- <div class="col-sm-10">  -->
+          <input type="text" class="form-control" id="no_spph" name="no_spph" placeholder="Input nomor surat" hidden>
+        <!-- </div> -->
         </div>
     
            <div class="form-group">

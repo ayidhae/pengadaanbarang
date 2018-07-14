@@ -36,6 +36,12 @@ class model_template extends CI_Model {
 		$this->db->where($seleksi,$isi[$seleksi]);
 		$this->db->update($tabel,$isi);
 	}
+
+	function update_nomor_spph($where,$data,$table){
+    $this->db->where($where);
+    $this->db->update($table,$data);
+  }
+  
 	function hapus($id,$seleksi,$tabel)
 	{
 		$this->db->where($seleksi,$id);
@@ -127,7 +133,20 @@ class model_template extends CI_Model {
 		return $query;
 	}
 	
-	
+	function get_id_template()
+	{ 	
+		$query 	= $this->db->query("SELECT MAX(RIGHT(id,3))as lastcode FROM template ");
+		if($query->num_rows()>0){
+			foreach($query->result() as $k){
+				$tmp = ((int)$k->lastcode)+1;
+				$lastcode = sprintf("%03s", $tmp);
+				$lastcode = $lastcode;
+			}
+		}else{
+			$lastcode ="001";
+		}
+		return $lastcode;
+	}
 	
 
 	
