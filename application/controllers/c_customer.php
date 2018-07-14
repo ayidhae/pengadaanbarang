@@ -53,7 +53,7 @@ class c_customer extends CI_Controller {
             'username'=>$username
 		);
 		$this->m_customer->delete_user($where,'customer');
-		redirect('c_logistik/kelola_user');
+		redirect('c_user/kelola_user');
 	}
   	
   		public function add(){		

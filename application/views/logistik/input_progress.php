@@ -92,9 +92,10 @@
         <div class="card card-accent-success">
           <div class="card-header">
             <h3>  Progress Pengadaan </h3>
+            <a href="<?php echo base_url('c_progress/viewProgress')?>" class="btn btn-primary pull-right"><i class="fa fa-arrow-left"> </i> kembali </a>
           </div>
           <div class="pull-right">
-            <a href="<?php echo base_url('c_progress/viewProgress')?>" class="btn btn-primary pull-right"><i class="fa fa-arrow-left"> </i> kembali </a>
+            
           </div>
           <body>
             <!-- Navigation -->

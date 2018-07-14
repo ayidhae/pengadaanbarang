@@ -56,14 +56,11 @@ class c_suratMasuk extends CI_Controller {
         redirect('c_suratMasuk/surat_masukDirektur');
         }
 
-	public function surat_masukLogistik($status_approve="YA" ){ //dihalaman logitik
+	public function surat_masukLogistik(){ //dihalaman logitik
 		$data ['surat_masuk'] = $this->m_suratMasuk->kotak_masuk_logistik($this->session->userdata('username'));
-
-		 $where = array('status_approve' => $status_approve);
-
-	   $data ['surat_approve'] = $this->m_suratMasuk->getApprove($where,'surat_keluar')->result();
-
-
+	   	$data['surat_approve'] = $this->m_suratMasuk->getApprove();
+	   	// echo json_encode($data['surat_approve']);
+	   	// 
 		$this->load->view('template/header');
 		$this->load->view('logistik/view_suratmasuk',$data);
 		$this->load->view('template/footer'); 

@@ -126,32 +126,28 @@
     <div class="card-body">
       <form class="form-horizontal" method="post" action="<?php echo site_url('c_pesanan/InputTambahPesanan');?>">
         <div class="form-group">
+          <input type="text" name="id_surat" value="<?php echo $id_surat;?>" hidden>
           <label class="control-label col-sm-2" for="pesanan_id">ID PESANAN</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="pesanan_id" name="pesanan_id" value="<?php echo $pesanan_id;?>" readonly>
           </div>
         </div>
         <div class="form-group">
+          <label class="control-label col-sm-2" for="pesanan_id">Nomor Surat</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="no_surat" name="no_surat" value="<?php echo $no_surat;?>" readonly>
+          </div>
+        </div>    
+        <div class="form-group ">
+          <label class="control-label col-sm-2" for="nama_customer">nama customer</label>
+           <div class="col-sm-10"><input type="text" class="form-control" id="nama_customer" name="nama_customer" value="<?php echo $username;?>" readonly>
+           </div>
+        </div>
+        <div class="form-group">
           <label class="control-label col-sm-2" for="nama_pengadaan">Nama Pengadaan</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="nama_pengadaan" name="nama_pengadaan" placeholder="Input perihal" required>
           </div>
-        </div>
-        
-        <div class="form-group ">
-          <label class="control-label col-sm-2" for="nama_customer">nama customer</label>
-           <div class="col-sm-10">
-          <select class="form-control select2" style="min-width:250px;" required name="nama_customer" id="nama_customer">
-            <option></option>
-            <?php
-            if($username){
-            foreach($username as $d){
-            echo "<option value='$d->username'>$d->username</option>";
-            }
-            }
-            ?>
-
-          </select>
         </div>
         <div class="form-group ">
           <label class="control-label col-sm-2" for="nama_vendor">nama vendor</label>

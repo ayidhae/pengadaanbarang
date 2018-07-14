@@ -33,6 +33,14 @@ class c_user extends CI_Controller {
 		$this->load->view('template/footer');	
 	}
 
+	public function viewProfile(){
+		$where = array('username' => $this->session->userdata('username'));
+		$data['profil'] = $this->m_user->getUser($where,'user')->result();	
+		$this->load->view('template/header');
+		$this->load->view('logistik/kelola_profil',$data);
+		$this->load->view('template/footer');		
+	}
+
 	// public function home(){
 	// 	$this->load->view('utama/header');
 	// 	$this->load->view('utama/home');

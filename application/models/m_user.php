@@ -6,6 +6,10 @@ class m_user extends CI_Model {
 	function __construct() {
         parent::__construct();
     }
+
+    function getUser($where,$table){
+		return $this->db->get_where($table,$where);
+	}
 	
 	function cek($username, $password){
 		$this->db->where('username', $username);

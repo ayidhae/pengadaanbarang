@@ -3,9 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class c_pesanan extends CI_Controller {
 
+
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_pesanan');
+		$this->load->model('m_suratKeluar');
 	}
 
 
@@ -18,15 +20,18 @@ class c_pesanan extends CI_Controller {
 		
 	}
 
-	public function tambahPesanan(){
+	public function tambahPesanan($id,$username){
 		
 		// $data['pesanan_id']= $this->m_pesanan->get_pesanan_id();
-		 $data = array(
-			 	'username' => $this->m_pesanan->ambilDataNamaCustomer(),
+		$rowSurat = $this->m_suratKeluar->get_nosurat($id);
+		$no_surat = $rowSurat->no_surat;
+		$data = array(
+			 	'username' => $username,
 			 	'nama_perusahaan' => $this->m_pesanan->ambilDataNamaVendor(),
 			 	'pesanan_id' => $this->m_pesanan->get_pesanan_id(),
-				
-			 );
+			 	'no_surat' => $no_surat,
+				'id_surat' => $id
+		);
 	 	
 		$this->load->view('template/header');
 		$this->load->view('logistik/input_pesanan',$data);
@@ -37,7 +42,7 @@ class c_pesanan extends CI_Controller {
 	public function InputTambahPesanan(){
 	
 		$data = array(
-				
+					'id_surat' => $this->input->post('id_surat'),
 					'pesanan_id' => $this->input->post('pesanan_id'),
 					'nama_pengadaan' => $this->input->post('nama_pengadaan'),
 					'nama_customer' => $this->input->post('nama_customer'),
@@ -45,7 +50,17 @@ class c_pesanan extends CI_Controller {
 					'tgl_input' => date('Y-m-d h:i:s'),
 					'status' =>  $this->input->post('status')
 				);
+
 		$this->m_pesanan->simpan('pesanan',$data);
+		$id = $this->input->post('id_surat');
+		$status=array(
+			'status_dipesanlogistik'=> 1
+			);
+		$where=array(
+			'id_surat'=>$id
+			);
+		$this->m_suratKeluar->updateStatus($where,$status,'surat_keluar');
+
 	redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
 		// redirect('c_pesanan/viewPesanan');		
 	}

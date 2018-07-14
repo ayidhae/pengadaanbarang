@@ -116,7 +116,6 @@
     <h3 class="panel-title pull-left">
     Daftar Pesanan
     </h3>
-    <a href="<?php echo site_url('c_pesanan/tambahPesanan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i> TAMBAH PESANAN </a>
   </div>
   <ul class="nav navbar-right panel_toolbox">
   </ul>
@@ -128,6 +127,7 @@
         <tr>
           <th class="text-center">NO</th>
           <th>PESANAN ID</th>
+          <th>NOMOR ACUAN</th>
           <th>NAMA PENGADAAN</th>
           <th>NAMA CUSTOMER</th>
           <th>NAMA VENDOR</th>
@@ -145,6 +145,7 @@
         <tr>
           <td width="5%" class="text-center">'.$no++.'</td>
           <td>'.$psn->pesanan_id.'</td>
+          <td>'.$psn->no_surat.'</td>
           <td>'.$psn->nama_pengadaan.'</td>
           <td>'.$psn->nama_customer.'</td>
             <td>'.$psn->nama_vendor.'</td>

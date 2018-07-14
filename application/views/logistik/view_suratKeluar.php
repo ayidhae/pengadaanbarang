@@ -125,6 +125,7 @@
     <table id="dataSuratKeluar" class="table ">
       <thead>
         <tr>
+          <th>No</th>
           <th> tujuan </th>
           <th> jenis surat </th>
           <th> penanggung jawab </th>
@@ -139,18 +140,19 @@
       </thead>
       <tbody>
         <?php
-        
+         $i = 1;
         foreach($surat_keluar as $ul):
         
         ?>
         
         <tr>
+          <td><?php echo $i;?></td>
           <td><?php echo $ul->tujuan_customer ;?> <?php echo $ul->tujuan_vendor ;?> </td>
           <td><?php echo $ul->jenis_surat ;?></td>
           <td><?php echo $ul->penanggung_jawab ;?></td>
           <td><?php echo $ul->no_hp ;?></td>
-          <td><?php echo $ul->no_surat ;?></td>
-          <td><?php echo $ul->tgl_surat ;?></td>
+          <td><?php echo $ul->no_surat ; $i++;?></td>
+           <td><?php echo date('d-m-Y H:i:s',strtotime($ul->tgl_surat))?></td>        
           <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$ul->file."' target='_blank'>".$ul->file."</a>"?></td>
           <!--  DIBAWAH UNTUK MODAL   -->
           <td

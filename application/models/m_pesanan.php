@@ -25,8 +25,7 @@ class m_pesanan extends CI_Model {
 	// function detail($where,$table){
 	// 	return $this->db->get_where($table,$where);
 	// }
-	
-	
+
 
 	function hapus($id,$seleksi,$tabel)
 	{
@@ -36,7 +35,7 @@ class m_pesanan extends CI_Model {
 	/*general function end*/
 	function get_allPesanan()
 	{
-		$query=$this->db->query("select * from pesanan order by pesanan_id asc");
+		$query=$this->db->query("select * from pesanan p JOIN surat_keluar s on p.id_surat=s.id_surat order by pesanan_id asc");
 		return $query;
 	}
 	
@@ -57,70 +56,63 @@ class m_pesanan extends CI_Model {
 	}
 
 
- function ambilDataNamaCustomer(){
-     $this->db->order_by('nama_perusahaan','asc');
-     $query = $this->db->get('customer');
-     if($query->num_rows()>0)
-  {
-       return $query->result();
-     }
-     else
-     {
-       return false;
-     }
-   }
-  
+	function ambilDataNamaCustomer(){
+		$this->db->order_by('nama_perusahaan','asc');
+		$query = $this->db->get('customer');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		}
+		else
+		{
+			return false;
+		}
+	}
+
    // function ambilDataStatus(){
    //   $this->db->order_by('detail_id','asc');
    //   $query = $this->db->get('pesanan_detail');
-    
+
    // }
 
-   function ambilDataStatus() {
+	function ambilDataStatus() {
 
-     $this->db->select('status2')->from('pesanan_detail');
+		$this->db->select('status2')->from('pesanan_detail');
 
-     $query = $this->db->get();
+		$query = $this->db->get();
 
-     return $query->result();
+		return $query->result();
 
-}
+	}
 
-       function ambilDataNamaVendor(){
-     $this->db->order_by('nama_perusahaan','asc');
-     $query = $this->db->get('vendor');
-     if($query->num_rows()>0)
-     {
-       return $query->result();
-     }
-     else
-     {
-       return false;
-     }
-   }
+	function ambilDataNamaVendor(){
+		$this->db->order_by('nama_perusahaan','asc');
+		$query = $this->db->get('vendor');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		}
+		else
+		{
+			return false;
+		}
+	}
 
-   
-    function viewStatus($nama_customer){
-    if($nama_customer) {
-      $sql = "SELECT * FROM pesanan WHERE nama_customer = ?";
-      $query = $this->db->query($sql, array($nama_customer));
-      $result = $query->result_array();
 
-      return $result;
-    }
-  }
+	function viewStatus($nama_customer){
+		if($nama_customer) {
+			$sql = "SELECT * FROM pesanan WHERE nama_customer = ?";
+			$query = $this->db->query($sql, array($nama_customer));
+			$result = $query->result_array();
 
-  
-
-  function viewStatuslog(){
-  return $this->db->get('status_pesanan');
-    }
-  
+			return $result;
+		}
+	}
 
 
 
-    
-
-
+	function viewStatuslog(){
+		return $this->db->get('status_pesanan');
+	}
 
 }
