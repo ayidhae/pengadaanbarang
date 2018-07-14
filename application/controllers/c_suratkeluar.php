@@ -12,7 +12,7 @@ class c_suratKeluar extends CI_Controller {
 		$this->load->model('m_vendor');
 		$this->load->model('m_pesanan');
 		$this->load->model('model_template');
-	
+
 	}
 		 //call model
 	public function home(){
@@ -39,9 +39,9 @@ class c_suratKeluar extends CI_Controller {
 				
 			);
 
-		$this->load->view('template/header');
-		$this->load->view('customer/input_suratKeluarDirekt', $data);
-		$this->load->view('template/footer');
+		 $this->load->view('template/header');
+		 $this->load->view('customer/input_suratKeluarDirekt', $data);
+		 $this->load->view('template/footer');
 	}
 
 
