@@ -129,10 +129,10 @@
                   <div class="form-group">
                     <!-- departemen -->
                     <div class="form-group ">
-                      <label for="tipe" class="col-md-3 control-label">tujuan</label>
+                     <!--  <label for="tipe" class="col-md-3 control-label">tujuan</label> -->
                       <div class="col-md-7 required">
-                        <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan">
-                          <option></option>
+                        <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan" hidden>
+                          
                           <?php
                           if($username){
                           foreach($username as $d){
@@ -144,7 +144,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="tipe" class="col-md-3 control-label">Penanggung Jawab </label>
+                      <label for="tipe" class="col-md-8 control-label">Penanggung Jawab </label>
                       <div class="col-md-7 required">
                         <input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" required ></textarea>
                       </div>
@@ -171,15 +171,7 @@
                         <input type="text" name="no_surat" class="form-control"  rows="7" cols="80" ></textarea>
                       </div>
                     </div>
-                    <!-- tgl-->
-                    <!--   <div class="form-group ">
-                      <label for="tgl" class="col-md-3 control-label">Tanggal</label>
-                      <div class="col-md-7 col-sm-12 required">
-                        <div class="input-group date">
-                          <input type="date" name="tgl_surat" class="form-control pull-right" id="datepickerNow" data-date-format="yyyy/mm/dd" required>
-                        </div>
-                      </div>
-                    </div> -->
+                  
                     <div class="form-group">
                       <label for="tipe" class="col-md-3 control-label">upload SPPH</label>
                       <div class="col-md-7 required">

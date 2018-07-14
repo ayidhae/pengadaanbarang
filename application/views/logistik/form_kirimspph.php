@@ -1,14 +1,14 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
   <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
-    <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
-    <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <style type="text/css">
-    body { font-family: sans-serif; }
+      body { font-family: sans-serif; }
     </style>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
@@ -43,78 +43,78 @@
           <li class="nav-item">
             <a class="nav-link" href=" <?php echo base_url('/c_user/homeLogistik');?> "><i class="fa fa-home"></i> Home</a>
           </li>
-           <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewPesanan');?>"><i class="fa fa-shopping-cart"></i> Pesanan </a>
-              </li>
-             <li class="nav-item nav-dropdown">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewPesanan');?>"><i class="fa fa-shopping-cart"></i> Pesanan </a>
+          </li>
+          <li class="nav-item nav-dropdown">
             <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-pencil"></i>Kelola Surat</a>
             <ul class="nav-dropdown-items">
              <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_templateSPPH/viewTemplateSPPH');?>"><i class="fa fa-file-text-o"></i>SPPH</a>
-          </li>
-               <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_templateSPH/viewTemplateSPH');?>"><i class="fa fa-file-text-o"></i>SPH</a>
-          </li>
-          </li>
-               <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_templateSPK/viewTemplateSPK');?>"><i class="fa fa-file-text-o"></i>SPK</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_templateBAST/viewTemplateBAST');?>"><i class="fa fa-file-text-o"></i>BAST</a>
-          </li>
-              </ul>            
-           <li class="nav-item nav-dropdown"> 
-          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>          
-            <ul class="nav-dropdown-items">   
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_suratKeluar/viewSuratKeluarLogistik');?>"><i class="fa fa-share"></i> Surat Keluar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href=" <?php echo base_url('/c_suratMasuk/surat_masukLogistik/');?>" > <i class="fa fa-inbox"></i> Surat Masuk</a>
-              </li>
-          
-            </ul>
-          </li>   
-          </li>
-
-          <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-pencil"></i>Kelola</a>
-            <ul class="nav-dropdown-items">
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_users/kelola_user');?>"><i class="fa fa-user"></i> Kelola user</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress');?>"><i class="fa fa-tasks"></i> Kelola Progress Pengadaan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_statusPesanan/input');?>"><i class="fa fa-shopping-cart"></i> Kelola Status Pesanan</a>
-              </li>
-            </ul>
+              <a class="nav-link" href="<?php echo base_url('/c_templateSPPH/viewTemplateSPPH');?>"><i class="fa fa-file-text-o"></i>SPPH</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('/c_templateSPH/viewTemplateSPH');?>"><i class="fa fa-file-text-o"></i>SPH</a>
+            </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_ulasan/viewUlasanlog');?>"><i class="fa fa-comment"></i>View Ulasan</a>
+            <a class="nav-link" href="<?php echo base_url('/c_templateSPK/viewTemplateSPK');?>"><i class="fa fa-file-text-o"></i>SPK</a>
           </li>
-          <li class="divider"></li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_templateBAST/viewTemplateBAST');?>"><i class="fa fa-file-text-o"></i>BAST</a>
+          </li>
+        </ul>            
+        <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>          
+          <ul class="nav-dropdown-items">   
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('/c_suratKeluar/viewSuratKeluarLogistik');?>"><i class="fa fa-share"></i> Surat Keluar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=" <?php echo base_url('/c_suratMasuk/surat_masukLogistik/');?>" > <i class="fa fa-inbox"></i> Surat Masuk</a>
+            </li>
+
+          </ul>
+        </li>   
+      </li>
+
+      <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-pencil"></i>Kelola</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_users/kelola_user');?>"><i class="fa fa-user"></i> Kelola user</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress');?>"><i class="fa fa-tasks"></i> Kelola Progress Pengadaan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_statusPesanan/input');?>"><i class="fa fa-shopping-cart"></i> Kelola Status Pesanan</a>
+          </li>
         </ul>
-      </nav>
-      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-    </div>
-  <!-- Main content -->
-  <main class="main">
-    <!-- Breadcrumb -->
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">Home</li>
-      <li class="breadcrumb-item"><a href="#">Logistik</a></li>
-      <li class="breadcrumb-item active">Dashboard</li>
-      <!-- Breadcrumb Menu-->
-    </ol>
-    <?php foreach ($pesanan as $detail): ?>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('/c_ulasan/viewUlasanlog');?>"><i class="fa fa-comment"></i>View Ulasan</a>
+      </li>
+      <li class="divider"></li>
+    </ul>
+  </nav>
+  <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>
+<!-- Main content -->
+<main class="main">
+  <!-- Breadcrumb -->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#">Logistik</a></li>
+    <li class="breadcrumb-item active">Dashboard</li>
+    <!-- Breadcrumb Menu-->
+  </ol>
+  <?php foreach ($pesanan as $detail): ?>
     <div class="container-fluid">
       <div class="card card-accent-success">
         <div class="card-header">
-           <h3 class="panel-title pull-left">Form Kirim SPPH</h3>
-      <a href="<?php echo site_url('c_templateSPPH/viewTemplateSPPH');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
-        </div>
+         <h3 class="panel-title pull-left">Form Kirim SPPH</h3>
+         <a href="<?php echo site_url('c_templateSPPH/viewTemplateSPPH');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
+       </div>
 
         <!--   <div class="pull-right">
           <a href="<?php echo base_url('c_ulasan/viewUlasan')?>" class="btn btn-link pull-right"><i class="fa fa-history"> </i> History Ulasan saya </a>
@@ -125,7 +125,7 @@
           <div id="page-wrapper">
             <div class="row">
               <div class="col-lg-12">
-                
+
               </div>
               <!-- /.col-lg-12 -->
             </div>
@@ -134,7 +134,7 @@
               <div class="col-lg-12">
                 <div class="panel panel-default">
                   <div class="panel-heading">
-                    
+
                   </div>
                   <!--  <div class="panel-body"> -->
                   <div class="card-body">
@@ -169,46 +169,43 @@
                               </select>
                             </div>
                           </div> -->
+                        <div class="col">
+                        <div class="form-group">
+                            <label for="tipe" class="control-label">Penanggung Jawab</label>
+                             <option></option>
+                             <?php
+                             if($nama_pnj){
+                              foreach($nama_pnj as $res){
+                                echo '<input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" value="'.$res->nama.'" >';
+                              }
+                            }
+                            ?>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                        <label for="tipe" class="control-label">No Hp</label>
+                            <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" ></text>
+                        </div>
+                      </div>
+                        <div class="col">
                           <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label">Penanggung Jawab</label>
-                            <div class="col-md-7 required">
-                              <input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" ></text>
-                            </div>
-                          </div>
-
-                          <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label">No Hp</label>
-                            <div class="col-md-7 required">
-                              <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" ></text>
-                            </div>
-                          </div>
-                          <!-- tgl-->
-                          <!-- <div class="form-group ">
-                            <label for="tgl" class="col-md-3 control-label">Tanggal</label>
-                            <div class="col-md-7 col-sm-12 required">
-                              <div class="input-group date">
-                                <input type="date" name="tgl_surat" class="form-control pull-right" id="datepickerNow" data-date-format="dd/mm/yyyy" required>
-                              </div>
-                            </div>
-                          </div> -->
-                          <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label">Upload SPPH</label>
-                            <div class="col-md-7 required">
+                            <label for="tipe" class="control-label">Upload SPPH</label>
                               <input type="file" class="form-control" placeholder="choose file" name="file"  value="" required>
                             </div>
                           </div>
                           
+                          <div class="col">
                           <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label">pesan</label>
-                            <div class="col-md-7 required">
+                            <label for="tipe" class="control-label">pesan</label>
                               <textarea name="pesan" class="form-control"  rows="7" cols="80" ></textarea>
                             </div>
-                          </div>
                           <button type="submit" name="simpan" value="submit" class="btn btn-primary">Kirim</button>
+                          </div>
                         </form>
-                        <?php endforeach; ?> 
-                      </div>
+                      <?php endforeach; ?> 
                     </div>
                   </div>
-                </main>
-              </div>
+                </div>
+              </main>
+            </div>

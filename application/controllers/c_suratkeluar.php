@@ -12,6 +12,7 @@ class c_suratKeluar extends CI_Controller {
 		$this->load->model('m_vendor');
 		$this->load->model('m_pesanan');
 		$this->load->model('model_template');
+		$this->load->model('m_user');
 
 	}
 		 //call model
@@ -273,6 +274,9 @@ class c_suratKeluar extends CI_Controller {
 
 	//form kirim spph
 	function form_kirimspph($id){
+		$where = array('username' => $this->session->userdata('username'));
+		$data['nama_pnj'] = $this->m_user->ambilNama($where);	
+		// echo json_encode($data['nama_pnj']);
 		$id = base64_decode($id);
 		// $where = array('id' => $id);
 

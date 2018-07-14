@@ -118,8 +118,8 @@ class m_pesanan extends CI_Model {
 
 
 
-	function viewStatuslog(){
-		return $this->db->get('status_pesanan');
-	}
+	// function viewStatuslog(){
+	// 	return $this->db->get('status_pesanan');
+	// }
 
 }

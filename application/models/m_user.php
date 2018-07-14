@@ -16,4 +16,18 @@ class m_user extends CI_Model {
 		$this->db->where('password', $password);
 		return $this->db->get('user');
 	}
+
+	function ambilNama($param){
+		$this->db->select('nama');
+        $this->db->where($param);
+        $query = $this->db->get('user');
+        if($query->num_rows()>0)
+        {
+          return $query->result();
+        }
+        else
+        {
+          return false;
+        }
+      }
 }

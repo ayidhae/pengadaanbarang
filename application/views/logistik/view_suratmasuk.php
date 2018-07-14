@@ -145,7 +145,6 @@
               ?>
 
               <tr>
-
                <td><?php echo $st->jenis_surat ;?></td>
                <td><?php echo $st->penanggung_jawab ;?></td>
                <td><?php echo $st->no_hp ;?></td>

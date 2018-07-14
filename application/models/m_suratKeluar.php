@@ -6,12 +6,13 @@ class m_suratKeluar extends CI_Model {
 
 
       function viewSuratKeluar($where,$table){
-        // return $this->db->get_where($table,$where);
-        return $this->db->query("SELECT * FROM surat_keluar ORDER BY tgl_surat DESC");
+         return $this->db->get_where($table,$where);
+        // return $this->db->query("SELECT * FROM surat_keluar ORDER BY tgl_surat DESC");
       }
 
-      
+    
       function ambilDataUsernameDirektur(){
+        $this->db->where('hak_akses', 'direktur');
         $this->db->order_by('username','asc');
         $query = $this->db->get('user');
         if($query->num_rows()>0)
@@ -41,7 +42,6 @@ class m_suratKeluar extends CI_Model {
       return false;
     }
   }
->>>>>>> ba18ec8ebe2ab4b5ba3f642fbbf89e73b1cc5fdd
 
         return $query->row();
       }

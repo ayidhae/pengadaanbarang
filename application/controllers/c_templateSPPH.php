@@ -18,9 +18,13 @@ class c_templateSPPH extends CI_Controller {
 	}
 	
 
+
 	public function inputTemplateSPPH(){
 	
-		$data['mdraft']	= $this->db->query('select * from pesanan order by pesanan_id ASC');
+		// $data['mdraft']	= $this->db->query('select * from pesanan p join template t on p.pesanan_id=t.pesanan_id where t.pesanan_id is null order by p.pesanan_id ASC');
+
+		$data['mdraft']	= $this->db->query('select * from pesanan  order by pesanan_id ASC');
+		// echo json_encode($data['mdraft']);
 		
 		$this->load->view('template/header');
 		$this->load->view('logistik/input_templateSPPH',$data);
@@ -29,9 +33,14 @@ class c_templateSPPH extends CI_Controller {
 	
 	function input()
 	{
+		$id= $this->model_template->get_id_template();
+		echo $id;
+		date_default_timezone_set("Asia/Jakarta");
+		$nomorSPPH = 'BUT/LOG/SPPH/'.date("Y").'/'.date("m").'/'.str_pad($id,3, "0", STR_PAD_LEFT);
+
 		$data = array(
 			'pesanan_id' 	=> $this->input->post('pesanan_id'),
-			'no_spph' 	    => $this->input->post('no_spph'),
+			'no_spph' 	    => $nomorSPPH,
 			'tgl_spph' => date('Y-m-d'),
 			'nama_pengadaan'		=> $this->input->post('nama_pengadaan'),
 		'kepada_vendor' 	=> $this->input->post('kepada_vendor')
@@ -65,17 +74,21 @@ class c_templateSPPH extends CI_Controller {
 	}
 	
 	 // function create_spph($id){
-		// // kodingan buat nomor spph pake regex pattern
-		// // $dump_spph = 'abc123';
-		// // $this->model_template->update('template',$in,'id');
-
-		// // update tabel template
-		// // panggil fungsi export_pdf();
+	 // 	$id = base64_decode($id);
+		// date_default_timezone_set("Asia/Jakarta");
+		// $nomorSPPH = 'BUT/LOG/SPPH/'.date("Y").'/'.date("m").'/'.str_pad($id,3, "0", STR_PAD_LEFT);
+		// $where = array('id' => $id);
+		// $data = array('no_spph' =>$nomorSPPH);
+		// echo $nomorSPPH;
+		// $this->model_template->update_nomor_spph($where,$data,'template');
+		// redirect('c_templateSPPH/export_pdf/'.$id);	
 	 // }
 
 	function export_pdf($id='')
 	{
-		$id 	= base64_decode($id);
+		// date_default_timezone_set("Asia/Jakarta");
+		// $rtno = 'BUT/LOG/'.$jenis_surat.date("yyyy").str_pad($data->id_pasien,6, "0", STR_PAD_LEFT);
+		// $id 	= base64_decode($id);
 		$content= $this->model_template->get_content_spph($id);
 		$i=array();
 		$x=array();

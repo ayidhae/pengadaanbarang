@@ -70,7 +70,6 @@ class c_progress extends CI_Controller {
 
 
 
-	
 
        public function edit($id_progress){
 		$where = array('id_progress' => $id_progress);
@@ -119,13 +118,6 @@ class c_progress extends CI_Controller {
 		 
 	}	
 	
-
-
-
-
-
-       
-
 	
  public function keluar()
 	{
