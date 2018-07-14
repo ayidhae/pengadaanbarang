@@ -21,6 +21,7 @@ class c_ulasan extends CI_Controller {
 	public function viewUlasan(){
 		$where = array('username' => $this->session->userdata('username'));
 		$data ['ulasan'] = $this->m_ulasan->viewUlasan($where,'ulasan')->result();
+
 		$this->load->view('template/header');
 		$this->load->view('customer/view_ulasan',$data);
 		$this->load->view('template/footer'); 
@@ -44,22 +45,28 @@ class c_ulasan extends CI_Controller {
 
 
 	function input(){
-			$data = array(
-				'username' => $this->m_ulasan->ambilDataNamaVendor(),
-				
-			);
-         $this->load->view('template/header');
-		$this->load->view('customer/input_ulasan',$data);
-		$this->load->view('template/footer');
+			// $data = array(
+			// 	// 'username' => $this->m_ulasan->ambilDataNamaVendor(),
+			// 	'pesanan_id' => $this->m_ulasan->ambilDataPesanan($this->session->userdata('username')),
+			// );
+			
+		
+
+	 	$data["pesanan_id"]= $this->m_ulasan->ambilDataPesanan($this->session->userdata('username'));
+	 	
+          $this->load->view('template/header');
+		 $this->load->view('customer/input_ulasan',$data);
+		  $this->load->view('template/footer');
     }  
 
 	function inputUlasan(){
-		  $username  = $this->input->post('dari_vendor');
+		$pesanan_id = $this->input->post('pesanan_id');
+		  // $dari_vendor  = $this->input->post('dari_vendor');
 		   $rating  = $this->input->post('rating');
          $komentar  = $this->input->post('komentar');
         $data = array(
-        
-        'dari_vendor' => $username,
+        'pesanan_id' => $pesanan_id,
+        // 'dari_vendor' => $dari_vendor,
         'rating' => $rating,
         'komentar' => $komentar,
         'tanggal' => date('Y-m-d'),

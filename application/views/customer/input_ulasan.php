@@ -57,7 +57,7 @@
           <li class="nav-item">
             <a class="nav-link" href=" <?php echo base_url('/c_suratKeluar/inputSuratDirektur');?>"><i class="fa fa-paper-plane"></i> direktur </a>
           </li>
-       <!--    <li class="nav-item">
+          <!--    <li class="nav-item">
             <a class="nav-link" href=" <?php echo base_url('/c_suratKeluar/inputSuratLogistik');?>"><i class="fa fa-paper-plane"></i>logistik</a>
           </li> -->
         </ul>
@@ -86,15 +86,12 @@
 </div>
 <!-- Main content -->
 <main class="main">
-
 <!-- Breadcrumb -->
 <ol class="breadcrumb">
 <li class="breadcrumb-item"><a href=" <?php echo base_url('/c_customer/home');?> "> Home</a></li>
 <li class="breadcrumb-item"><a href="#"> Halaman Customer</a></li>
-
 <!-- Breadcrumb Menu-->
 </ol>
-
 <!-- /.conainer-fluid -->
 <div class="container-fluid">
 <div class="card card-accent-success">
@@ -129,20 +126,25 @@
                   <?php echo form_open('c_ulasan/inputUlasan'); ?>
                   
                   <div class="form-group ">
-                    <label>dari vendor</label>
+                    <label>no pesanan dan nama vendor</label>
                     <div>
-                      <select class="form-control select2" style="min-width:499px;" required name="dari_vendor" id="dari_vendor">
+                      <select class="form-control select2" style="min-width:499px;"  onchange="setDropdown()" required name="pesanan_id" id="pesanan_id">
                         <option></option>
                         <?php
-                        if($username){
-                        foreach($username as $d){
-                        echo "<option value='$d->username'>$d->username</option>";
+                        if($pesanan_id){
+                        foreach($pesanan_id as $d){
+                        echo '<option id=' . $d['pesanan_id'] . '>' . $d['pesanan_id'] . '| '.$d['nama_pengadaan'].'</option>';
                         }
                         }
                         ?>
+                        
                       </select>
                     </div>
                   </div>
+                <!--   <div class="form-group">
+                    <label >dari vendor</label>
+                    <input type="text" class="form-control" id="dari_vendor" name="dari_vendor" >
+                  </div> -->
                   <div class="form-group ">
                     <label >Rating </label>
                     <div >
@@ -174,3 +176,11 @@
 </div>
 </main>
 </div>
+<script type="text/javascript">
+function setDropdown(){
+var abc = $('#pesanan_id option:selected').text();
+var text = abc.substring(10, abc.length);
+$('#dari_vendor').val(text);
+console.log(abc);
+}
+</script>

@@ -99,6 +99,13 @@ class m_pesanan extends CI_Model {
 	}
 
 
+  
+
+  function viewStatuslog(){
+  return $this->db->get('status_pesanan');
+    }
+  
+
 	function viewStatus($nama_customer){
 		if($nama_customer) {
 			$sql = "SELECT * FROM pesanan WHERE nama_customer = ?";

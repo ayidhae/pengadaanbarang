@@ -126,8 +126,9 @@
                 <table id="dataUlasan" class="table ">
                 <thead>
                   <tr>
+                  <th>no pesanan|nama vendor</th>
                   <th> komentar dari </th>
-                  <th>barang dari vendor </th>
+                 <!--  <th>barang dari vendor </th> -->
                   <th> rating </th>
                     <th>Komentar</th>
                     <th>aksi</th>
@@ -145,8 +146,9 @@
                   ?>
                   
                   <tr>
+                  <td><?php echo $ul->pesanan_id ;?></td>
                   <td><?php echo $ul->username ;?></td>
-                   <td><?php echo $ul->dari_vendor ;?></td>
+                  <!--  <td><?php echo $ul->dari_vendor ;?></td> -->
                       <td><?php echo $ul->rating ;?></td>
                     <td><?php echo $ul->komentar ;?></td>
                     <td>
