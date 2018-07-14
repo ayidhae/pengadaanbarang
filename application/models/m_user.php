@@ -30,4 +30,26 @@ class m_user extends CI_Model {
           return false;
         }
       }
+
+    function updateProfile($where,$data,$table){
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
+
+    function getCurrentPass($username){
+        $query = $this->db->where(['username'=>$username])
+              ->get('user');
+        if($query->num_rows() > 0) {
+          return $query->row();
+        }
+    }
+
+    function update_password($new_password,$uname){
+        $data = array (
+            'password' => md5($new_password)
+        );
+
+        return $this->db->where('username',$uname)
+        ->update('user',$data);
+  }
 }
