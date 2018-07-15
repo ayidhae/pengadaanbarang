@@ -24,12 +24,12 @@ class c_pesanan extends CI_Controller {
 		
 		// $data['pesanan_id']= $this->m_pesanan->get_pesanan_id();
 		$rowSurat = $this->m_suratKeluar->get_nosurat($id);
-		$no_surat = $rowSurat->no_surat;
+		// $no_surat = $rowSurat->no_surat;
 		$data = array(
 			 	'username' => $username,
 			 	'nama_perusahaan' => $this->m_pesanan->ambilDataNamaVendor(),
 			 	'pesanan_id' => $this->m_pesanan->get_pesanan_id(),
-			 	'no_surat' => $no_surat,
+			 	// 'no_surat' => $no_surat,
 				'id_surat' => $id
 		);
 	 	

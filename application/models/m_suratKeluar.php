@@ -25,28 +25,8 @@ class m_suratKeluar extends CI_Model {
         }
       }
 
-      function get_nosurat($id){
-        $this->db->where('id_surat', $id);
-        $query = $this->db->get('surat_keluar');
-
-  
-  function ambilDataUsernameDirektur(){
-    $this->db->order_by('hak_akses','asc');
-    $query = $this->db->get('user');
-    if($query->num_rows()>0)
-    {
-      return $query->result();
-    }
-    else
-    {
-      return false;
-    }
-  }
-
-        return $query->row();
-      }
-
-      function ambilDataUsernameLogistik(){
+ function ambilDataUsernameLogistik(){
+         $this->db->where('hak_akses', 'logistik');
         $this->db->order_by('username','asc');
         $query = $this->db->get('user');
         if($query->num_rows()>0)
@@ -58,6 +38,30 @@ class m_suratKeluar extends CI_Model {
           return false;
         }
       }
+
+
+      function get_nosurat($id){
+        $this->db->where('id_surat', $id);
+        $query = $this->db->get('surat_keluar');
+}
+  
+  // function ambilDataUsernameDirektur(){
+  //   $this->db->order_by('hak_akses','asc');
+  //   $query = $this->db->get('user');
+  //   if($query->num_rows()>0)
+  //   {
+  //     return $query->result();
+  //   }
+  //   else
+  //   {
+  //     return false;
+  //   }
+  // }
+
+  //       return $query->row();
+  //     }
+
+     
 
       function ambilDataUsernameCustomer(){
         $this->db->order_by('username','asc');
@@ -125,4 +129,5 @@ class m_suratKeluar extends CI_Model {
   }
   
 }
+
 

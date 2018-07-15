@@ -50,5 +50,15 @@ class m_ulasan extends CI_Model {
     }
   
 }
+function get_data_rating(){
+        $query = $this->db->query("SELECT nama_vendor,SUM(rating) AS rating FROM ulasan GROUP BY nama_vendor");
+         
+        if($query->num_rows() > 0){
+            foreach($query->result() as $data){
+                $hasil[] = $data;
+            }
+            return $hasil;
+        }
+    }
 
 }

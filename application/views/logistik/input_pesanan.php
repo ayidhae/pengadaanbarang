@@ -132,12 +132,12 @@
             <input type="text" class="form-control" id="pesanan_id" name="pesanan_id" value="<?php echo $pesanan_id;?>" readonly>
           </div>
         </div>
-        <div class="form-group">
+       <!--  <div class="form-group">
           <label class="control-label col-sm-2" for="pesanan_id">Nomor Surat</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="no_surat" name="no_surat" value="<?php echo $no_surat;?>" readonly>
           </div>
-        </div>    
+        </div>     -->
         <div class="form-group ">
           <label class="control-label col-sm-2" for="nama_customer">nama customer</label>
            <div class="col-sm-10"><input type="text" class="form-control" id="nama_customer" name="nama_customer" value="<?php echo $username;?>" readonly>

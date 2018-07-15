@@ -15,7 +15,11 @@ class c_ulasan extends CI_Controller {
 		$this->load->view('template/footer'); 
 	}
 
-
+// function viewUlasanlog(){
+// 		$x['data']=$this->m_ulasan->get_data_stok();
+// 	print_r($x);
+// 		 $this->load->view('logistik/v_grafik',$x);
+// 	}
 	
 
 	public function viewUlasan(){
@@ -30,6 +34,7 @@ class c_ulasan extends CI_Controller {
 	public function viewUlasanlog(){
 		
 		 $data ['ulasan'] = $this->m_ulasan->viewUlasanlog()->result();
+		 $data['data']=$this->m_ulasan->get_data_rating();
 		$this->load->view('template/header');
 		$this->load->view('logistik/view_ulasanlog',$data);
 		$this->load->view('template/footer'); 
@@ -61,12 +66,12 @@ class c_ulasan extends CI_Controller {
 
 	function inputUlasan(){
 		$pesanan_id = $this->input->post('pesanan_id');
-		  // $dari_vendor  = $this->input->post('dari_vendor');
+		  $nama_vendor  = $this->input->post('nama_vendor');
 		   $rating  = $this->input->post('rating');
          $komentar  = $this->input->post('komentar');
         $data = array(
         'pesanan_id' => $pesanan_id,
-        // 'dari_vendor' => $dari_vendor,
+         'nama_vendor' => $nama_vendor,
         'rating' => $rating,
         'komentar' => $komentar,
         'tanggal' => date('Y-m-d'),

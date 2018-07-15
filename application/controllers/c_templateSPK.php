@@ -51,11 +51,25 @@ class c_templateSPK extends CI_Controller {
 	
 		redirect('c_templateSPK/viewTemplateSPK');	
 	}
+
+		 function get_no_spk($id){
+      
+		 $id 	= base64_decode($id);
+		 date_default_timezone_set("Asia/Jakarta");
+		$nomorSPK = 'BUT/LOG/SPK/'.date("Y").'/'.date("m").'/'.str_pad($id,3, "0", STR_PAD_LEFT);
+		 $where = array('id' => $id);
+		 $data = array('nomor_spk' =>$nomorSPK);
+		 echo $nomorSPH;
+		 
+		  $this->model_template->update_nomor_spk($where,$data,'template');
+		  redirect('c_templateSPH/export_pdf/'.$id);	
+	     }
+
 	
 
 	function export_pdf($id='')
 	{
-		$id= base64_decode($id);
+		// $id= base64_decode($id);
 		$i=array();
 		$x=array();
 		$no=1;

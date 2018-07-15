@@ -138,23 +138,7 @@ foreach($mdraft->result_array() as $row){
          </ul>
          <div class="card-body">
       <form class="form-horizontal" method="post" action="<?php echo site_url('c_templateSPH/edit');?>">
-        <!-- <div class="form-group">
-        <label class="control-label col-sm-2" for="pesanan_id">PESANAN ID</label>
-        <div class="col-sm-10">
-          <select class="form-control" class="form-control" id="pesanan_id" name="pesanan_id" value="<?php echo $pesanan_id;?>" required>
-          <?php
-          foreach ($mdraft->result() as $row) {
-            if($pesanan_id==$row->pesanan_id){
-              echo'<option value="'.$row->pesanan_id.'" selected>'.$row->pesanan_id.' | '.$row->perihal_sph.'</option>';
-            }else{
-              echo'<option value="'.$row->pesanan_id.'">'.$row->pesanan_id.' | '.$row->perihal_sph.'</option>';
-            }
-            
-          }
-          ?>
-          </select>
-        </div>
-        </div> -->
+   
   
        
        
@@ -163,9 +147,9 @@ foreach($mdraft->result_array() as $row){
        
 
         <div class="form-group">
-        <label class="control-label col-sm-2" for="no_sph">NO SURAT SPH</label>
+    <!--     <label class="control-label col-sm-2" for="no_sph">NO SURAT SPH</label> -->
         <div class="col-sm-10"> 
-          <input type="text" class="form-control" id="no_sph" name="no_sph" value="<?php echo $no_sph;?>" placeholder="Input nomor surat" required>
+          <input type="text" class="form-control" id="no_sph" name="no_sph" value="<?php echo $no_sph;?>" placeholder="Input nomor surat" hidden>
           <input type="hidden" id="id" name="id" value="<?php echo $id;?>" readonly>
         </div>
         </div>

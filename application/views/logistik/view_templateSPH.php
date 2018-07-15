@@ -159,7 +159,7 @@
                 <td class="text-center">
                          '.$act.'
                
-                  <a href="'.site_url('c_templateSPH/export_pdf/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></a>
+                  <a href="'.site_url('c_templateSPH/get_no_sph/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></a>
 
                    <a href="'.site_url('c_suratKeluar/form_kirimSPH/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-success btn-sm" title="Kirim SPH"><i class="fa fa-share-square-o"></i></a>
                 </td>
@@ -174,26 +174,8 @@
           </div>
       </div>
 </main>
-<!-- <script src="<?php echo base_url('asset/js/jquery-1.11.1.min.js'); ?>"></script>
-<script>
-$(document).ready(function () {
-   $('#confirm-delete').on('show.bs.modal', function(e) {
-    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-  });
-});
-</script>
-<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-body">
-                Apakah anda ingin menghapus data ini ?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
-            </div> -->
+
         </div>
     </div>
 </div>
 </div>
-<!--    <a href="#" data-href="'.site_url('template_sph/hapus/'.trim(base64_encode($row->id),'=').'').'" data-toggle="modal" data-target="#confirm-delete" class="btn btn-danger btn-sm" title="hapus"><i class="fa fa-trash-o"></i></a> -->

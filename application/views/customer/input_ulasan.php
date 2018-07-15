@@ -124,16 +124,16 @@
                 <div class="col-lg-6">
                   
                   <?php echo form_open('c_ulasan/inputUlasan'); ?>
-                  
+                  <p> *ket rating : 1 (Sangat Tidak Baik), 2 (Tidak Baik), 3 (Biasa saja), 4 (Baik), 5 (Sangat Baik)</p>
                   <div class="form-group ">
-                    <label>no pesanan dan nama vendor</label>
+                    <label>no pesanan</label>
                     <div>
                       <select class="form-control select2" style="min-width:499px;"  onchange="setDropdown()" required name="pesanan_id" id="pesanan_id">
                         <option></option>
                         <?php
                         if($pesanan_id){
                         foreach($pesanan_id as $d){
-                        echo '<option id=' . $d['pesanan_id'] . '>' . $d['pesanan_id'] . '| '.$d['nama_pengadaan'].'</option>';
+                        echo '<option id=' . $d['pesanan_id'] . '>' . $d['pesanan_id'] . '| '.$d['nama_vendor'].'</option>';
                         }
                         }
                         ?>
@@ -141,20 +141,21 @@
                       </select>
                     </div>
                   </div>
-                <!--   <div class="form-group">
+                   
+                  <div class="form-group">
                     <label >dari vendor</label>
-                    <input type="text" class="form-control" id="dari_vendor" name="dari_vendor" >
-                  </div> -->
+                    <input type="text" class="form-control" id="nama_vendor" name="nama_vendor" >
+                  </div>
                   <div class="form-group ">
                     <label >Rating </label>
                     <div >
                       <select class="form-control select2" style="min-width:499px;" required name="rating" id="" equired>
                         <option></option>
-                        <option>Sangat Tidak Baik</option>
-                        <option>Tidak Baik</option>
-                        <option>Biasa saja</option>
-                        <option>Baik</option>
-                        <option>Sangat Baik</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
                       </select>
                     </div>
                   </div>
@@ -180,7 +181,7 @@
 function setDropdown(){
 var abc = $('#pesanan_id option:selected').text();
 var text = abc.substring(10, abc.length);
-$('#dari_vendor').val(text);
+$('#nama_vendor').val(text);
 console.log(abc);
 }
 </script>

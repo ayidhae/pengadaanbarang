@@ -162,7 +162,7 @@
                 <td class="text-center">
                    '.$act.'
                
-                  <a href="'.site_url('c_templateSPK/export_pdf/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></a>
+                  <a href="'.site_url('c_templateSPK/get_no_spk/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></a>
 
                   <a href="'.site_url('c_suratKeluar/form_kirimspk/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-success btn-sm" title="Kirim SPK"><i class="fa fa-share-square-o"></i></a>
                 </td>

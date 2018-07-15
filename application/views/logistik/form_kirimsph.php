@@ -145,27 +145,29 @@
                         <input type="text" name="tujuan_customer" value="<?php echo $detail->nama_customer;?>" hidden>
                         
                           <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label">Penanggung Jawab</label>
-                            <div class="col-md-7 required">
-                              <input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" ></text>
+                         <!--    <label for="tipe" class="col-md-8 control-label">Penanggung Jawab</label>
+ -->                            <div class="col-md-7 required">
+                            <option></option>
+                             <?php
+                             if($nama_pnj){
+                              foreach($nama_pnj as $res){
+                                echo '<input type="hidden" name="penanggung_jawab" class="form-control"  rows="7" cols="80" value="'.$res->nama.'" >';
+                              }
+                            }
+                            ?>
+                              
                             </div>
                           </div>
 
+                      
+
                           <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label">No Hp</label>
+                            <label for="tipe" class="col-md-3 control-label">No HP</label>
                             <div class="col-md-7 required">
                               <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" ></text>
                             </div>
                           </div>
-                          <!-- tgl-->
-                          <!-- <div class="form-group ">
-                            <label for="tgl" class="col-md-3 control-label">Tanggal</label>
-                            <div class="col-md-7 col-sm-12 required">
-                              <div class="input-group date">
-                                <input type="date" name="tgl_surat" class="form-control pull-right" id="datepickerNow" data-date-format="dd/mm/yyyy" required>
-                              </div>
-                            </div>
-                          </div> -->
+                        
                           <div class="form-group">
                             <label for="tipe" class="col-md-3 control-label">Upload SPH</label>
                             <div class="col-md-7 required">

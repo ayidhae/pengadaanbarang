@@ -45,11 +45,24 @@ class c_templateSPH extends CI_Controller {
 				redirect('c_templateSPH/viewTemplateSPH');
 	}
 		
+		 function get_no_sph($id){
+      
+		 $id 	= base64_decode($id);
+		 date_default_timezone_set("Asia/Jakarta");
+		$nomorSPH = 'BUT/LOG/SPH/'.date("Y").'/'.date("m").'/'.str_pad($id,3, "0", STR_PAD_LEFT);
+		 $where = array('id' => $id);
+		 $data = array('no_sph' =>$nomorSPH);
+		 echo $nomorSPH;
+		 
+		  $this->model_template->update_nomor_sph($where,$data,'template');
+		  redirect('c_templateSPH/export_pdf/'.$id);	
+	     }
+
 
 
 	function export_pdf($id='')
 	{
-		$id 	= base64_decode($id);
+		// $id 	= base64_decode($id);
 		$header	= $this->model_template->get_heder_sph($id); //halaman pertama
 		$content= $this->model_template->get_content_sph($id); //halaman kedua
 		$total_harga=0;

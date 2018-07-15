@@ -129,10 +129,10 @@
                   <div class="form-group">
                     <!-- departemen -->
                     <div class="form-group ">
-                      <label for="tipe" class="col-md-3 control-label">tujuan</label>
+                      <!-- <label for="tipe" class="col-md-3 control-label">tujuan</label> -->
                       <div class="col-md-7 required">
-                        <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan">
-                          <option></option>
+                        <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan" hidden>
+                         
                           <?php
                           if($username){
                           foreach($username as $d){
@@ -144,7 +144,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="tipe" class="col-md-3 control-label"><br>Penanggung Jawab </label>
+                      <label for="tipe" class="col-md-9  control-label"><br>Penanggung Jawab </label>
                       <div class="col-md-7 required">
                         <input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" required></textarea>
                       </div>
