@@ -67,7 +67,7 @@ class c_user extends CI_Controller {
 		}
 	}
 	//untuk direktur
-	public function update_password(){
+	public function update_password_direktur(){
 		$this->form_validation->set_rules('curr_password', 'current password','required|alpha_numeric');
 		$this->form_validation->set_rules('new_password', 'new password','required|alpha_numeric');
 		$this->form_validation->set_rules('conf_password', 'confirm password','required|alpha_numeric');
