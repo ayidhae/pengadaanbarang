@@ -59,7 +59,6 @@ class c_templateSPH extends CI_Controller {
 	     }
 
 
-
 	function export_pdf($id='')
 	{
 		// $id 	= base64_decode($id);

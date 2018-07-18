@@ -177,6 +177,7 @@
                       <label for="tipe" class="col-md-3 control-label">upload SPK</label>
                       <div class="col-md-7 required">
                         <input type="file" class="form-control" placeholder="choose file" name="file"  value="" >
+                        <em>max:2mb format:gif|jpg|png|pdf| </em>
                       </div>
                     </div>
                     

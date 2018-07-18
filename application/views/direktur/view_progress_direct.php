@@ -14,7 +14,7 @@
 
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
-        <a class="nav-link" href="<?php echo base_url('/c_direktur/home');?>">Dashboard</a>
+        <a class="nav-link" href="<?php echo base_url('/c_user/homeDirektur');?>">Dashboard</a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
@@ -29,9 +29,8 @@
             <strong>Settings</strong>
             
           </div>
-          <a class="dropdown-item" href="<?php echo base_url('c_direktur/viewProfile'); ?>"><i class="fa fa-user"></i> Profile</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a>
-          <a class="dropdown-item" href="<?php echo base_url('c_direktur/keluar'); ?>"><i class="fa fa-lock"></i> Logout</a>
+            <a class="dropdown-item" href="<?php echo base_url('c_user/viewProfil'); ?>"><i class="fa fa-user"></i> Profile</a>
+          <a class="dropdown-item" href="<?php echo base_url('c_user/keluar'); ?>"><i class="fa fa-lock"></i> Logout</a>
         </div>
       </li>
     </ul>
@@ -43,7 +42,7 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_direktur/home');?>"><i class="icon-speedometer"></i>Direktur Dashboard </a>
+            <a class="nav-link" href="<?php echo base_url('/c_user/homeDirektur');?>"><i class="icon-speedometer"></i>Direktur Dashboard </a>
           </li>
 
           <li class="nav-title">
@@ -51,7 +50,7 @@
           </li>
 
           <li class="nav-item">  
-          <a class="nav-link" href=" <?php echo base_url('/c_direktur/home');?> "><i class="fa fa-home"></i> Home</a>
+          <a class="nav-link" href=" <?php echo base_url('/c_user/homeDirektur');?> "><i class="fa fa-home"></i> Home</a>
           </li>
            <li class="nav-item">  
          <a class="nav-link" href="<?php echo base_url('/c_suratMasuk/surat_masukDirektur');?>"><i class="fa fa-download"></i> approve surat</a>
@@ -250,7 +249,7 @@
 
 
  <!--Start of Tawk.to Script-->
-            <script type="text/javascript">
+        <!--     <script type="text/javascript">
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
             var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -260,7 +259,7 @@
             s1.setAttribute('crossorigin','*');
             s0.parentNode.insertBefore(s1,s0);
             })();
-            </script>
+            </script> -->
             <!--End of Tawk.to Script-->
 </body>
 

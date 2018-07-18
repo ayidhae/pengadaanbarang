@@ -33,12 +33,13 @@ class c_user extends CI_Controller {
 		$this->load->view('template/footer');	
 	}
 
+
 	//untuk direktur
 	public function viewProfil(){
 		$where = array('username' => $this->session->userdata('username'));
 		$data['profil'] = $this->m_user->getUser($where,'user')->result();	
 		$this->load->view('template/header');
-		$this->load->view('direktur/kelola_profil',$data);
+		$this->load->view('direktur/profileDirektur',$data);
 		$this->load->view('template/footer');		
 	}
 

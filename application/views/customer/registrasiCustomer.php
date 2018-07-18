@@ -88,7 +88,7 @@
               <span class="input-group-text"><i class="fa fa-file-image-o"></i></span>
             </div>
             <input type="file" class="form-control" placeholder="choose file" name="npwp"  value="" required>
-             <em class="help-text"> *NPWP</em>
+             <em class="help-text"> *NPWP max:2mb format:gif|jpg|png</em>
           </div>
           <button type="submit" class="btn btn-block btn-success">Register</button>
           <a class="btn btn-block btn-danger" href="<?php echo base_url('Home')?>">Cancel</a>
