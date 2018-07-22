@@ -88,7 +88,7 @@ class c_templateSPPH extends CI_Controller {
 	{
 		// date_default_timezone_set("Asia/Jakarta");
 		// $rtno = 'BUT/LOG/'.$jenis_surat.date("yyyy").str_pad($data->id_pasien,6, "0", STR_PAD_LEFT);
-		// $id 	= base64_decode($id);
+		 $id 	= base64_decode($id);
 		$content= $this->model_template->get_content_spph($id);
 		$i=array();
 		$x=array();

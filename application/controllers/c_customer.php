@@ -19,7 +19,7 @@ class c_customer extends CI_Controller {
 
 
 
-
+// kelola user
 	public function detail_user($username){
 		$where = array('username' => $username);
 		$data['customer'] = $this->m_customer->detail($where,'customer')->result();
@@ -28,6 +28,7 @@ class c_customer extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+//kelola user
 	public function edit_user($username){
 		$where = array('username' => $username);
 		$data['user'] = $this->m_customer->detail($where,'customer')->result();
@@ -35,6 +36,7 @@ class c_customer extends CI_Controller {
 		$this->load->view('logistik/edit_customer',$data);
 		$this->load->view('template/footer');
 	}
+	//kelola user
 
 	public function update_user($username){
 		$status=$this->input->post('status');
@@ -47,7 +49,7 @@ class c_customer extends CI_Controller {
 		$this->m_customer->updateProfile($where,$data,'customer');
 		redirect('c_logistik/kelola_user');
 	}
-
+//kelola user
 	function delete_user($username){
 		$where=array(
             'username'=>$username
@@ -153,11 +155,11 @@ class c_customer extends CI_Controller {
 		}
 	}
 
-	public function form_update(){
-		$this->load->view('template/header');
-		$this->load->view('customer/kelola_profile');
-		$this->load->view('template/footer');
-	}
+	// public function form_update(){
+	// 	$this->load->view('template/header');
+	// 	$this->load->view('customer/kelola_profile');
+	// 	$this->load->view('template/footer');
+	// }
 
 	public function updatePassword(){
 		$this->form_validation->set_rules('curr_password', 'current password','required|alpha_numeric');
@@ -182,27 +184,21 @@ class c_customer extends CI_Controller {
 							?>
 	                    		 <script type=text/javascript>alert("Gagal update password!");</script>
 	        				<?php
-	        				$this->load->view('template/header');
-							$this->load->view('customer/kelola_profile');
-							$this->load->view('template/footer');
+	        			$this->load->view('template/header');
+							$this->viewProfile();	
 						}
 					}else{
 						?>
 	                     <script type=text/javascript>alert("password baru dan confirm password tidak cocok!");</script>
 	        			<?php
 	        			$this->load->view('template/header');
-						 $this->load->view('customer/kelola_profile');
-						$this->load->view('template/footer');				
+							$this->viewProfile();					
 					}
 				}else{
 					?>
                      <script type=text/javascript>alert("password lama yang anda masukan salah!");</script>
         			<?php
-        			$this->load->view('template/header');
-            	 $this->load->view('customer/kelola_profile');
-	
-					 $this->load->view('template/footer');
-					redirect('c_customer/viewProfile');
+        		$this->viewProfile();	
 				}				
 		}else{
 			  $this->load->view('customer/kelola_profile');

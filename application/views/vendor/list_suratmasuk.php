@@ -99,6 +99,7 @@
                     <th>tanggal</th>
                     <th> surat </th>
                     <th>pesan</th>
+                    <th>aksi</th>
                   <!--  <th> aksi </th> -->
 
                     
@@ -119,7 +120,9 @@
                     
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
                        <td><?php echo $sm['pesan'];?></td>
-                         
+                      <td>
+                        <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a></td></center>
+                      </td>
             
              
             
