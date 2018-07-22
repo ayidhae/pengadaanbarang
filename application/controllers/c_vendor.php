@@ -136,7 +136,7 @@ class c_vendor extends CI_Controller {
 
 
 	public function registrasiVendor(){
-		$this->form_validation->set_rules('nama_perusahaan', 'Nama Perusahaan','required|alpha');
+		$this->form_validation->set_rules('nama_perusahaan', 'Nama Perusahaan','required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('alamat_perusahaan', 'Alamat Perusahaan','required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('email', 'Email','required|valid_email');
 		$this->form_validation->set_rules('contact', 'Contact','required|numeric');

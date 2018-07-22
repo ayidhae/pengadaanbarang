@@ -68,19 +68,6 @@
               <input id="confirm_password" name="confirm_password" type="password" class="form-control" placeholder="Repeat password" onkeyup='check();' required>
               <span id='message'> </span>
             </div>
-            <!-- <script> 
-            var check = function() {
-                if (document.getElementById('password').value ==
-                  document.getElementById('confirm_password').value && document.getElementById('password').value != '') {
-                  document.getElementById('message').style.color = 'green';
-                  document.getElementById('message').innerHTML = 'matching';
-                } else {
-                  document.getElementById('message').style.color = 'red';
-                  document.getElementById('message').innerHTML = 'not matching';
-                }
-              } 
-            </script> -->
-          
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text">@</span>

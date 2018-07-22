@@ -12,7 +12,6 @@ class c_pesanan extends CI_Controller {
 
 
 	public function viewPesanan(){
-	
 		$data['pesanan'] = $this->m_pesanan->get_allPesanan();
 		$this->load->view('template/header');
 		$this->load->view('logistik/view_pesanan',$data);
@@ -20,19 +19,16 @@ class c_pesanan extends CI_Controller {
 		
 	}
 
-	public function tambahPesanan($id,$username){
-		
+	public function tambahPesanan($id,$username){	
 		// $data['pesanan_id']= $this->m_pesanan->get_pesanan_id();
-		$rowSurat = $this->m_suratKeluar->get_nosurat($id);
 		// $no_surat = $rowSurat->no_surat;
+		$rowSurat = $this->m_suratKeluar->get_nosurat($id);
 		$data = array(
 			 	'username' => $username,
 			 	'nama_perusahaan' => $this->m_pesanan->ambilDataNamaVendor(),
-			 	'pesanan_id' => $this->m_pesanan->get_pesanan_id(),
-			 	// 'no_surat' => $no_surat,
+			 	'pesanan_id' => $this->m_pesanan->get_pesanan_id(),			 	
 				'id_surat' => $id
-		);
-	 	
+				);
 		$this->load->view('template/header');
 		$this->load->view('logistik/input_pesanan',$data);
 		$this->load->view('template/footer'); 
@@ -40,7 +36,8 @@ class c_pesanan extends CI_Controller {
 	}
 
 	public function InputTambahPesanan(){
-	
+	$this->form_validation->set_rules('nama_pengadaan', 'Nama Pengadaan','required|alpha_numeric_spaces');
+	if($this->form_validation->run() == TRUE) {
 		$data = array(
 					'id_surat' => $this->input->post('id_surat'),
 					'pesanan_id' => $this->input->post('pesanan_id'),
@@ -60,18 +57,17 @@ class c_pesanan extends CI_Controller {
 			'id_surat'=>$id
 			);
 		$this->m_suratKeluar->updateStatus($where,$status,'surat_keluar');
-
-	redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
-		// redirect('c_pesanan/viewPesanan');		
+		redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
+	}else{	
+		redirect(base_url('/c_pesanan/tambahPesanan/'.$data['id_surat'].'/'.$data['username']));
+	}	
 	}
 	
 
 
 	 function editPesanan($id)
 	 {
-		$id = base64_decode($id);
-		
-
+		$id = base64_decode($id);	
 	 	$data["editpesanan"]= $this->m_pesanan->edit("pesanan","pesanan_id='".$id."'");								
 
 	 	$this->load->view('template/header');
@@ -79,12 +75,19 @@ class c_pesanan extends CI_Controller {
 	 	$this->load->view('template/footer'); 
 	 }
 	
-	 function edit()
-	 {
-	 	$data['pesanan_id'] = $this->input->post('pesanan_id');
-	 	$data["nama_pengadaan"] 	= $this->input->post('nama_pengadaan');
-	 	$this->m_pesanan->update('pesanan',$data,'pesanan_id');
-	 	redirect('c_pesanan/viewPesanan');	
+	 function edit(){
+	 	$this->form_validation->set_rules('nama_pengadaan', 'Nama pengadaan','required|alpha_numeric_spaces');
+	 	if ($this->form_validation->run() == TRUE){
+	 		$data['pesanan_id'] = $this->input->post('pesanan_id');
+	 		$data["nama_pengadaan"] 	= $this->input->post('nama_pengadaan');
+	 		$this->m_pesanan->update('pesanan',$data,'pesanan_id');
+	 		$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Pesanan berhasil diubah</div>');
+	 		redirect('c_pesanan/viewPesanan');		
+	 	}else{
+	 		$this->session->set_flashdata('msg','<div class="alert alert-danger text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data pesanan gagal diubah</div>');
+	 		redirect('c_pesanan/viewPesanan');
+	 	}
+	 	
 	 }
 
 

@@ -124,6 +124,7 @@
     <ul class="nav navbar-right panel_toolbox">
     </ul>
     <div class="card-body">
+       <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
       <form class="form-horizontal" method="post" action="<?php echo site_url('c_pesanan/InputTambahPesanan');?>">
         <div class="form-group">
           <input type="text" name="id_surat" value="<?php echo $id_surat;?>" hidden>

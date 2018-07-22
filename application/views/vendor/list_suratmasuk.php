@@ -93,12 +93,13 @@
                 <table id="dataSuratMasuk" class="table ">
                 <thead>
                    <tr>
-              <th> dari </th>
-              <th> jenis surat </th>
-                  <th>nomor surat </th>
-                    <th>tanggal</th>
-                    <th> surat </th>
-                    <th>pesan</th>
+              <th> Dari </th>
+              <th> Jenis surat </th>
+                  <th>Nomor surat </th>
+                    <th>Tanggal</th>
+                    <th> Surat </th>
+                    <th>Pesan</th>
+                    <th>Aksi</th>
                   <!--  <th> aksi </th> -->
 
                     
@@ -117,8 +118,21 @@
                    <td><?php echo $sm['no_surat'] ;?></td>
                     <td><?php echo $sm['tgl_surat'];?></td>
                     
-                      <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
-                       <td><?php echo $sm['pesan'];?></td>
+                    <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
+                    <td><?php echo $sm['pesan'];?></td>
+                    
+                      <!-- <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a> -->
+                    <td> 
+                      <?php 
+                      if($sm['jenis_surat'] == 'SPPH'){
+                            echo ("Data pesanan telah dibuat!");
+                      } else{
+                            echo "<a  class='btn btn-primary' href='".base_url('/c_suratkeluar/formsph/')."'> Balas </a>";
+                      }?>                   
+                    </td>
+                   
+                  </center>
+
                          
             
              

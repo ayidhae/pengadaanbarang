@@ -152,14 +152,14 @@
                 <td width="5%" class="text-center">'.$no++.'</td>
                 <td>'.$row->no_sph.'</td>
                 <td>'.$row->pesanan_id.'</td>
-                <td>'.$row->tgl_sph.'</td>
+                <td>'.date('d-m-Y',strtotime($row->tgl_sph)).'</td>
                 <td>'.$row->kepada_customer.'</td>
                 <td>'.$row->nama_pengadaan.'</td>
                 <td>'.$row->lampiran.'</td>
                 <td class="text-center">
                          '.$act.'
                
-                  <a href="'.site_url('c_templateSPH/get_no_sph/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></a>
+                  <a href="'.site_url('c_templateSPH/export_pdf/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></a>
 
                    <a href="'.site_url('c_suratKeluar/form_kirimSPH/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-success btn-sm" title="Kirim SPH"><i class="fa fa-share-square-o"></i></a>
                 </td>

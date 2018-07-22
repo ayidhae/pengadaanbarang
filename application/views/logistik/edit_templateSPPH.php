@@ -129,6 +129,9 @@ foreach($mdata->result_array() as $row){
          </ul>
          <div class="card-body">
       <form class="form-horizontal" method="post" action="<?php echo site_url('c_templateSPPH/update');?>">
+        <input type="text" class="form-control" id="no_spph" name="no_spph" value="<?php echo $no_spph;?>" placeholder="Input nomor surat" hidden>
+          <input type="hidden" id="id" name="id" value="<?php echo $id;?>" readonly>
+
         <div class="form-group">
         <label class="control-label col-sm-2" for="draft_id">PESANAN ID</label>
         <div class="col-sm-10">
@@ -145,14 +148,8 @@ foreach($mdata->result_array() as $row){
           ?>
           </select>
         </div>
-        </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="nomor_spph">NO SURAT SPPH</label>
-        <div class="col-sm-10"> 
-          <input type="text" class="form-control" id="no_spph" name="no_spph" value="<?php echo $no_spph;?>" placeholder="Input nomor surat" required>
-          <input type="hidden" id="id" name="id" value="<?php echo $id;?>" readonly>
-        </div>
-        </div>
+        </div>    
+
         <div class="form-group">
         <label class="control-label col-sm-2" for="nama_pengadaan">PERIHAL SURAT</label>
         <div class="col-sm-10"> 

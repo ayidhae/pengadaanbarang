@@ -117,10 +117,16 @@
         <h3 class="panel-title pull-left">
          Kelola SPPH
         </h3>
+        <?php
+        if ($this->session->flashdata('msg')){
+          echo $this->session->flashdata('msg');
+        }
+      ?>
         <a href="<?php echo site_url('c_templateSPPH/inputTemplateSPPH');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
        </div>
       <ul class="nav navbar-right panel_toolbox">
         </ul>
+
       
           <div class="card-body">
         <?php
@@ -159,7 +165,7 @@
                 <td width="5%" class="text-center">'.$no++.'</td>
                 <td>'.$row->no_spph.'</td>
                 <td>'.$row->pesanan_id.'</td>
-                <td>'.$row->tgl_spph.'</td>
+                <td>'.date('d-m-Y',strtotime($row->tgl_spph)).'</td>
                 <td>'.$row->kepada_vendor.'</td>
                 <td>'.$row->nama_pengadaan.'</td>
                 <td class="text-center">

@@ -218,53 +218,54 @@ class c_suratKeluar extends CI_Controller {
   }
 
 
- //  function formsph()
-	// 	{
-	// 		$data = array(
-	// 			'username' => $this->m_suratKeluar->ambilDataUsernameLogistik(),								
-	// 		);
+  function formsph()
+		{
+			$data = array(
+				'username' => $this->m_suratKeluar->ambilDataUsernameLogistik(),								
+			);
+			 // echo json_encode($data['username']);
 
-	// 	$this->load->view('template/header');
-	// 	$this->load->view('vendor/formsuratsph', $data);
-	// 	$this->load->view('template/footer');
-	// }
+		$this->load->view('template/header');
+		$this->load->view('vendor/formsuratsph', $data);
+		$this->load->view('template/footer');
+	}
 
 	
-	// function addsph(){
- //    $username = $this->input->post('tujuan');
- //    $penanggung_jawab  = $this->input->post('penanggung_jawab');
- //    $no_hp =  $this->input->post('no_hp');
- //    $jenis_surat = $this->input->post('jenis_surat');
- //    $no_surat = $this->input->post('no_surat');
- //    $tgl_surat =$this->input->post('tgl_surat');
- //    $pesan = $this->input->post('pesan');
- //    $config['upload_path'] 		= 'asset/upload/surat_keluar';
-	// 	$config['allowed_types'] 	= 'gif|jpg|png|pdf|doc|docx';
-	// 	$config['max_size']			= '2000';
-	// 	$config['max_width']  		= '3000';
-	// 	$config['max_height'] 		= '3000';
+	function addsph(){
+    $username = $this->input->post('tujuan');
+    $penanggung_jawab  = $this->input->post('penanggung_jawab');
+    $no_hp =  $this->input->post('no_hp');
+    $jenis_surat = $this->input->post('jenis_surat');
+    $no_surat = $this->input->post('no_surat');
+    $tgl_surat =$this->input->post('tgl_surat');
+    $pesan = $this->input->post('pesan');
+    $config['upload_path'] 		= 'asset/upload/surat_keluar';
+		$config['allowed_types'] 	= 'gif|jpg|png|pdf|doc|docx';
+		$config['max_size']			= '2000';
+		$config['max_width']  		= '3000';
+		$config['max_height'] 		= '3000';
 
-	// 	$this->load->library('upload', $config);
-	// 	$this->upload->do_upload('file');
-	//       $upload	 	= $this->upload->data();
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('file');
+	      $upload	 	= $this->upload->data();
 				
- //    $data = array(
+    $data = array(
     
- //      'tujuan_logistik' => $username,
- //       'penanggung_jawab' => $penanggung_jawab,
- //        'no_hp' => $no_hp,
- //      'jenis_surat' => $jenis_surat,
- //      'no_surat' => $no_surat,
- //      'tgl_surat' => date('Y-m-d h:i:s'),
- //       'file' => $upload['file_name'],
- //      'pesan' => $pesan,
- //      'username' => $this->session->userdata('username')
+      'tujuan_logistik' => $username,
+       'penanggung_jawab' => $penanggung_jawab,
+        'no_hp' => $no_hp,
+      'jenis_surat' => $jenis_surat,
+      'no_surat' => $no_surat,
+      'tgl_surat' => date('Y-m-d h:i:s'),
+       'file' => $upload['file_name'],
+      'pesan' => $pesan,
+      'username' => $this->session->userdata('username')
       
- //      );
+      );
 
- //     $this->m_suratKeluar->insertData($data, 'surat_keluar');
- //   	redirect(base_url('c_suratKeluar/viewSuratKeluarVendor'));
- //  }
+     $this->m_suratKeluar->insertData($data, 'surat_keluar');
+   	redirect(base_url('c_suratKeluar/viewSuratKeluarVendor'));
+  }
 
   	public function viewSuratKeluarVendor(){
 		$where = array('username' => $this->session->userdata('username'));
@@ -325,6 +326,7 @@ class c_suratKeluar extends CI_Controller {
       		'username' => $this->session->userdata('username')
 	    	);
 	    $this->m_suratKeluar->insertData($data, 'surat_keluar');
+	    $this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Surat Berhasil Dikirim</div>');
 	    redirect(base_url('c_suratKeluar/viewSuratKeluarLogistik'));
 	}
 

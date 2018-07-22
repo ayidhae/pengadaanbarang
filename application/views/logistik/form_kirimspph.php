@@ -115,7 +115,6 @@
          <h3 class="panel-title pull-left">Form Kirim SPPH</h3>
          <a href="<?php echo site_url('c_templateSPPH/viewTemplateSPPH');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
        </div>
-
         <!--   <div class="pull-right">
           <a href="<?php echo base_url('c_ulasan/viewUlasan')?>" class="btn btn-link pull-right"><i class="fa fa-history"> </i> History Ulasan saya </a>
         </div> -->
@@ -143,52 +142,23 @@
                         <?php echo form_open_multipart(base_url('c_suratKeluar/kirim_suratVendor')) ;?>
                         <input type="text" name="no_surat" value="<?php echo $detail->no_spph;?>" hidden>
                         <input type="text" name="jenis_surat" value="spph" hidden>
-                        <input type="text" name="tujuan_vendor" value="<?php echo $detail->nama_vendor;?>" hidden>
-                        <!-- <div class="form-group">
-                          <div class="form-group ">
-                            <label for="tipe" class="col-md-3 control-label">tujuan</label>
-                            <div class="col-md-7 required">
-                              <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan">
-                                <option></option>
-                                <?php
-                                if($username){
-                                foreach($username as $d){
-                                echo "<option value='$d->username'>$d->username</option>";
-                                }
-                                }
-                                ?>
-                              </select>
-                            </div> -->
-                          <!-- </div>
-                          <div class="form-group ">
-                            <label for="tipe" class="col-md-3 control-label">Jenis Surat </label>
-                            <div class="col-md-7 required">
-                              <select class="form-control select2" style="min-width:250px;" required name="jenis_surat" id="">
-                                <option>----pilih jenis surat----</option>
-                                <option>SPH</option>
-                              </select>
-                            </div>
-                          </div> -->
-                          
-                        <div class="col">
-                        <div class="form-group">
-                            <label for="tipe" class="control-label">Penanggung Jawab</label>
-                             <option></option>
-                             <?php
+                        <input type="text" name="tujuan_vendor" value="<?php echo $detail->nama_vendor;?>" hidden> 
+                        <?php
                              if($nama_pnj){
                               foreach($nama_pnj as $res){
-                                echo '<input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" value="'.$res->nama.'" >';
+                                echo '<input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" value="'.$res->nama.'" hidden>';
+                                echo '<input type="text" name="no_hp" class="form-control"  rows="7" cols="80" value="'.$res->no_hp.'" hidden>';
                               }
                             }
                             ?>
-                        </div>
-                      </div>
-                      <div class="col">
+                            
+
+                      <!-- <div class="col">
                         <div class="form-group">
                         <label for="tipe" class="control-label">No Hp</label>
                             <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" ></text>
                         </div>
-                      </div>
+                      </div> -->
                         <div class="col">
                           <div class="form-group">
                             <label for="tipe" class="control-label">Upload SPPH</label>

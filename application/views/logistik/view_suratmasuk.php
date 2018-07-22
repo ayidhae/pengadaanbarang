@@ -212,9 +212,7 @@
         </thead>
         <tbody>
           <?php              
-
           foreach($surat_masuk as $st):
-
             ?>
 
             <tr>

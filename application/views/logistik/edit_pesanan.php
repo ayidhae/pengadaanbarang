@@ -125,6 +125,7 @@ foreach($editpesanan->result_array() as $row){
          <ul class="nav navbar-right panel_toolbox">
          </ul>
          <div class="card-body">
+          <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
       <form class="form-horizontal" method="post" action="<?php echo site_url('c_pesanan/edit');?>">
         <div class="form-group">
         <label class="control-label col-sm-2" for="pesanan_id">PESANAN ID</label>

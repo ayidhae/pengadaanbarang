@@ -113,9 +113,9 @@
                     <?php echo form_open_multipart(base_url('c_suratKeluar/addsph')) ;?>           
                   <div class="form-group">
                        <div class="form-group ">
-                      <label for="tipe" class="col-md-3 control-label">tujuan</label>
+                      <!-- <label for="tipe" class="col-md-3 control-label">tujuan</label> -->
                       <div class="col-md-7 required">
-                        <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan">
+                        <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan" >
                           <option></option>
                            <?php
                            if($username){
