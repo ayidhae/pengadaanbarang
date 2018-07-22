@@ -116,6 +116,11 @@
     <h3 class="panel-title pull-left">
     Daftar Pesanan
     </h3>
+     <?php
+        if ($this->session->flashdata('msg')){
+          echo $this->session->flashdata('msg');
+        }
+      ?>
   </div>
   <ul class="nav navbar-right panel_toolbox">
   </ul>
@@ -149,7 +154,7 @@
           <td>'.$psn->nama_pengadaan.'</td>
           <td>'.$psn->nama_customer.'</td>
             <td>'.$psn->nama_vendor.'</td>
-          <td>'.$psn->tgl_input.'</td>
+          <td>'.date('d-m-Y H:i:s',strtotime($psn->tgl_input)).'</td>
           <td class="text-center">
             <a href="'.site_url('c_pesanan/editPesanan/'.trim(base64_encode($psn->pesanan_id),'=').'').'" class="btn btn-warning btn-sm" title="edit"><i class="fa fa-pencil"></i>  </a>
             <a href="'.site_url('c_pesanan/detail/'.trim(base64_encode($psn->pesanan_id),'=').'').'" class="btn btn-primary btn-sm" title="detail"><i class="fa fa-list"></i>  </a>

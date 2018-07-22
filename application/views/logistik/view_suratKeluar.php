@@ -119,6 +119,11 @@
 <div class="card card-accent-success">
   <div class="card-header">
     <h5>  Surat keluar </h5>
+    <?php
+        if ($this->session->flashdata('msg')){
+          echo $this->session->flashdata('msg');
+        }
+      ?>
   </div>
   
   <div class="card-body">

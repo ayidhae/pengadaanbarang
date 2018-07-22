@@ -146,7 +146,7 @@
                 <td>'.$row->pesanan_id.'</td>
                 <td>'.$row->nama_customer.'</td>
                 <td>'.$row->nama_vendor.'</td>
-                <td>'.$row->tgl_bast.'</td>
+                <td>'.date('d-m-Y',strtotime($row->tgl_bast)).'</td>
                 <td class="text-center">
                   <a href="'.site_url('c_templateBAST/editTemplateBAST/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-warning btn-sm" title="edit"><i class="fa fa-pencil"></i></a>
                   <a href="'.site_url('c_templateBAST/export_pdfCUST/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF customer"><i class="fa fa-file-pdf-o"></i></a>

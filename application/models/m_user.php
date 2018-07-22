@@ -18,7 +18,7 @@ class m_user extends CI_Model {
 	}
 
 	function ambilNama($param){
-		$this->db->select('nama');
+		$this->db->select('nama,no_hp');
         $this->db->where($param);
         $query = $this->db->get('user');
         if($query->num_rows()>0)
