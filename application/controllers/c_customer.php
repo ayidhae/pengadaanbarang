@@ -7,7 +7,7 @@ class c_customer extends CI_Controller {
 		$this->load->model('m_customer');
 		$this->load->model('m_barang');
 
-		
+	
 	}
 		 //call model
 	public function home(){
@@ -76,7 +76,7 @@ class c_customer extends CI_Controller {
 		}else{
 
 					$config['upload_path']   = 'asset/img/npwp/'; 
-					$config['allowed_types'] = 'gif|jpg|png'; 
+					$config['allowed_types'] = 'gif|jpg|png|'; 
 					$config['max_size']      = 10000; 
 					$config['max_width']     = 2048; 
 					$config['max_height']    = 1536;
