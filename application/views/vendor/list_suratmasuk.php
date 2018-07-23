@@ -43,12 +43,6 @@
          <li class="nav-title">
             Menu
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_vendor/home');?>"><i class="fa fa-home"></i> Home </a>   
-              <a class="nav-link" href="<?php echo base_url('/c_suratkeluar/formsph');?>"><i class="fa fa-share-square-o"></i> Kirim Surat</a>                   
-          </li>
-
           <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i> Kelola dokumen</a>          
             <ul class="nav-dropdown-items">
@@ -93,26 +87,13 @@
                 <table id="dataSuratMasuk" class="table ">
                 <thead>
                    <tr>
-<<<<<<< HEAD
               <th> dari </th>
               <th> jenis surat </th>
                   <th>nomor surat </th>
                     <th>tanggal</th>
                     <th> surat </th>
                     <th>pesan</th>
-                    <th>aksi</th>
-=======
-              <th> Dari </th>
-              <th> Jenis surat </th>
-                  <th>Nomor surat </th>
-                    <th>Tanggal</th>
-                    <th> Surat </th>
-                    <th>Pesan</th>
-                    <th>Aksi</th>
->>>>>>> 9586a4201116cd8e257d1323d3fa51ce9c2dcbbd
-                  <!--  <th> aksi </th> -->
-
-                    
+                    <th>aksi</th>                                 
                   </tr>
                 </thead>
                 <tbody>
@@ -126,36 +107,21 @@
                   <td><?php echo $sm['username'] ;?></td>
                      <td><?php echo $sm['jenis_surat'] ;?></td>
                    <td><?php echo $sm['no_surat'] ;?></td>
-                    <td><?php echo $sm['tgl_surat'];?></td>
-                    
-<<<<<<< HEAD
+                    <td><?php echo $sm['tgl_surat'];?></td>                  
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
-                       <td><?php echo $sm['pesan'];?></td>
-                      <td>
-                        <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a></td></center>
-                      </td>
-=======
-                    <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
-                    <td><?php echo $sm['pesan'];?></td>
-                    
+                       <td><?php echo $sm['pesan'];?></td>                                  
                       <!-- <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a> -->
                     <td> 
                       <?php 
-                      if($sm['jenis_surat'] == 'SPPH'){
-                            echo ("Data pesanan telah dibuat!");
+                      if($sm['jenis_surat'] == 'spk'){
+                            echo ("--");
                       } else{
                             echo "<a  class='btn btn-primary' href='".base_url('/c_suratkeluar/formsph/')."'> Balas </a>";
                       }?>                   
                     </td>
                    
                   </center>
-
-                         
->>>>>>> 9586a4201116cd8e257d1323d3fa51ce9c2dcbbd
-            
-             
-            
-                  </tr>
+                    </tr>
                   <?php
                   endforeach;
                   ?>

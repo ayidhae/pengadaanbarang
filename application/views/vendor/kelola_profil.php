@@ -41,12 +41,6 @@
           <li class="nav-title">
             Menu
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_vendor/home');?>"><i class="fa fa-home"></i> Home </a>   
-              <a class="nav-link" href="<?php echo base_url('/c_suratkeluar/formsph');?>"><i class="fa fa-share-square-o"></i> Kirim Surat</a>                   
-          </li>
-
           <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i> Kelola dokumen</a>          
             <ul class="nav-dropdown-items">

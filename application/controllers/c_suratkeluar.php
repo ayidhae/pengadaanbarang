@@ -21,7 +21,7 @@ class c_suratKeluar extends CI_Controller {
 		$this->load->view('customer/dashboard'); // dashboard vendornya
 		$this->load->view('template/footer'); 
 	}
-
+//halaman customer
 	 public function viewSuratKeluarCustomer(){
 		$where = array('username' => $this->session->userdata('username'));
 		$data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar')->result();
@@ -31,7 +31,7 @@ class c_suratKeluar extends CI_Controller {
 		
 	}
 
-
+//customer
 	function inputSuratDirektur()
 		{
 			$data = array(
@@ -58,7 +58,7 @@ class c_suratKeluar extends CI_Controller {
     $tgl_surat =$this->input->post('tgl_surat');
     
     $config['upload_path'] 		= 'asset/upload/surat_keluar';
-		$config['allowed_types'] 	= 'gif|jpg|png|pdf';
+		$config['allowed_types'] 	= 'gif|jpg|png|pdf|xlsx';
 		$config['max_size']			= '2000';
 		$config['max_width']  		= '3000';
 		$config['max_height'] 		= '3000';
@@ -85,6 +85,7 @@ class c_suratKeluar extends CI_Controller {
   }
 
 
+//customer
 	function inputSuratLogistik()
 		{
 			$data = array(
@@ -111,7 +112,7 @@ class c_suratKeluar extends CI_Controller {
     $tgl_surat =$this->input->post('tgl_surat');
     $pesan = $this->input->post('pesan');
     $config['upload_path'] 		= 'asset/upload/surat_keluar';
-		$config['allowed_types'] 	= 'gif|jpg|png|pdf|doc|docx';
+		$config['allowed_types'] 	= 'gif|jpg|png|pdf|';
 		$config['max_size']			= '2000';
 		$config['max_width']  		= '3000';
 		$config['max_height'] 		= '3000';
@@ -218,13 +219,14 @@ class c_suratKeluar extends CI_Controller {
   }
 
 
+
+//vendor
   function formsph()
 		{
 			$data = array(
 				'username' => $this->m_suratKeluar->ambilDataUsernameLogistik(),								
 			);
 			 // echo json_encode($data['username']);
-
 		$this->load->view('template/header');
 		$this->load->view('vendor/formsuratsph', $data);
 		$this->load->view('template/footer');

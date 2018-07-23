@@ -40,12 +40,6 @@
           <li class="nav-title">
             Menu
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_vendor/home');?>"><i class="fa fa-home"></i> Home </a>   
-              <a class="nav-link" href="<?php echo base_url('/c_suratkeluar/formsph');?>"><i class="fa fa-share-square-o"></i> Kirim Surat</a>                   
-          </li>
-
           <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i> Kelola dokumen</a>          
             <ul class="nav-dropdown-items">
@@ -113,7 +107,7 @@
                     <?php echo form_open_multipart(base_url('c_suratKeluar/addsph')) ;?>           
                   <div class="form-group">
                        <div class="form-group ">
-                      <!-- <label for="tipe" class="col-md-3 control-label">tujuan</label> -->
+                      <label for="tipe" class="col-md-3 control-label">tujuan</label>
                       <div class="col-md-7 required">
                         <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan" >
                           <option></option>
@@ -128,7 +122,7 @@
                       </div>
                   </div>
                     <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label"><br>Penanggung Jawab </label>
+                            <label for="tipe" class="col-md-8 control-label"><br>Penanggung Jawab </label>
                              <div class="col-md-7 required">
                              <input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" required></textarea>
                               </div>

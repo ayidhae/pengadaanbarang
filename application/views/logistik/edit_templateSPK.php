@@ -103,7 +103,6 @@
  <?php
 foreach($mdata->result_array() as $row){
   $id         =$row['id'];
-  $nomor_spk    =$row['nomor_spk'];
   $pesanan_id     =$row['pesanan_id'];
   $nama_pengadaan  =$row["nama_pengadaan"];
   $tgl_negoisasi_spk    =$row["tgl_negoisasi_spk"];
@@ -147,14 +146,8 @@ foreach($mdraft->result_array() as $row){
          <ul class="nav navbar-right panel_toolbox">
          </ul>
          <div class="card-body">
-      <form class="form-horizontal" method="post" action="<?php echo site_url('c_templateSPK/edit');?>">
-        <div class="form-group">
-        <label class="control-label col-sm-10" for="nomor_spk">NO SURAT</label>
-        <div class="col-sm-10"> 
-          <input type="text" class="form-control" id="nomor_spk" name="nomor_spk" value="<?php echo $nomor_spk;?>" placeholder="Input no surat" required>
-          <input type="hidden" id="id" name="id" value="<?php echo $id;?>" readonly>
-        </div>
-        </div>
+      <form class="form-horizontal" method="post" action="<?php echo site_url('c_templateSPK/edit');?>">    
+          <input type="hidden" id="id" name="id" value="<?php echo $id;?>" readonly>  
         <input type="hidden" class="form-control" id="pesanan_id" name="pesanan_id" value="<?php echo $pesanan_id;?>" placeholder="Input nomor surat" readonly>
         
         <input type="hidden" class="form-control" id="nama_pengadaan" name="nama_pengadaan" value="<?php echo $nama_pengadaan;?>" placeholder="Input nomor surat" readonly>

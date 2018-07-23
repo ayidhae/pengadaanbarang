@@ -138,7 +138,13 @@
                             <div>
                               <input class="form-control" type="text" name="username" value="<?php echo $user->username ;?>"">
                             </div>
-                          </div>                      
+                          </div>             
+
+                          <div class="form-group">No Hp</label>
+                            <div>
+                              <input class="form-control" type="text" name="no_hp" value="<?php echo $user->no_hp ;?>"">
+                            </div>
+                          </div>          
 
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
