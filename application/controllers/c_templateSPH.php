@@ -99,7 +99,7 @@ class c_templateSPH extends CI_Controller {
 		//dibawah untuk template surat sph lampiran 2
 		$in2['content_data']=$x;
 		$in2['no_sph']	= $in['no_sph'];
-	   $in2['tgl_sph']	= $in['tgl_sph'];
+	   	$in2['tgl_sph']	= $in['tgl_sph'];
 	    $in2['perihal']		= $in['perihal'];
 		$in2['total']		= $in['total'];
 		$in2['ppn']			= number_format($ppn);

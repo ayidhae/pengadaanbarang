@@ -159,15 +159,8 @@ foreach($mdata->result_array() as $row){
         <div class="form-group">
         <label class="control-label col-sm-2" for="kepada_vendor">KEPADA</label>
         <div class="col-sm-10"> 
-          <textarea class="form-control" rows="4" id="kepada_vendor" name="kepada_vendor" placeholder="Input Kepada" required><?php echo $kepada_vendor;?></textarea>
+          <textarea class="form-control" rows="4" id="kepada_vendor" name="kepada_vendor" placeholder="Input Kepada" required ><?php echo $kepada_vendor;?></textarea>
         </div>
-        </div>
-     <!--    <div class="form-group">
-        <label class="control-label col-sm-2" for="tgl_surat">TANGGAL SURAT</label>
-        <div class="col-sm-10"> 
-          <input type="date" class="form-control" id="tgl_surat" name="tgl_surat" value="<?php echo $tgl_surat;?>" placeholder="Input tanggal surat" required>
-        </div>
-        </div> -->
         <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Ubah</button>
