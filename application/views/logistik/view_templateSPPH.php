@@ -114,14 +114,15 @@
       <div class="container-fluid">
         <div class="card card-accent-success">
       <div class="card-header">
-        <h3 class="panel-title pull-left">
-         Kelola SPPH
-        </h3>
         <?php
         if ($this->session->flashdata('msg')){
           echo $this->session->flashdata('msg');
         }
       ?>
+        <h3 class="panel-title pull-left">
+         Kelola SPPH
+        </h3>
+        
         <a href="<?php echo site_url('c_templateSPPH/inputTemplateSPPH');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-plus"></i> Tambah</a>
        </div>
       <ul class="nav navbar-right panel_toolbox">

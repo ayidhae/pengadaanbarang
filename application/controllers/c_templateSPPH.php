@@ -6,6 +6,7 @@ class c_templateSPPH extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('model_template');
+		$this->load->model('m_pesanan');
 	}
 
 	public function viewTemplateSPPH(){
@@ -23,7 +24,8 @@ class c_templateSPPH extends CI_Controller {
 	
 		// $data['mdraft']	= $this->db->query('select * from pesanan p join template t on p.pesanan_id=t.pesanan_id where t.pesanan_id is null order by p.pesanan_id ASC');
 
-		$data['mdraft']	= $this->db->query('select * from pesanan  order by pesanan_id ASC');
+		// $data['mdraft']	= $this->db->query('select * from pesanan  order by pesanan_id ASC');
+		$data['mdraft']	= $this->m_pesanan->get_allPesanan();
 		// echo json_encode($data['mdraft']);
 		
 		$this->load->view('template/header');
@@ -56,7 +58,8 @@ class c_templateSPPH extends CI_Controller {
 	function edit($id)
 	{
 		$id = base64_decode($id);
-		$data['mdraft']= $this->db->query('select * from pesanan order by pesanan_id ASC');
+		// $data['mdraft']= $this->db->query('select * from pesanan order by pesanan_id ASC');
+		$data['mdraft']	= $this->m_pesanan->get_allPesanan();
 		$data["mdata"]= $this->model_template->edit("template","id='".$id."'");								
 		$this->load->view('template/header');
 		$this->load->view('logistik/edit_templateSPPH',$data);

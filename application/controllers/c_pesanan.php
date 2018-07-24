@@ -37,30 +37,32 @@ class c_pesanan extends CI_Controller {
 
 	public function InputTambahPesanan(){
 	$this->form_validation->set_rules('nama_pengadaan', 'Nama Pengadaan','required|alpha_numeric_spaces');
-	if($this->form_validation->run() == TRUE) {
-		$data = array(
-					'id_surat' => $this->input->post('id_surat'),
-					'pesanan_id' => $this->input->post('pesanan_id'),
-					'nama_pengadaan' => $this->input->post('nama_pengadaan'),
-					'nama_customer' => $this->input->post('nama_customer'),
-					'nama_vendor' => $this->input->post('nama_vendor'),
-					'tgl_input' => date('Y-m-d h:i:s'),
-					'status' =>  $this->input->post('status')
-				);
+		if($this->form_validation->run() == TRUE) {
+			$data = array(
+						'id_surat' => $this->input->post('id_surat'),
+						'pesanan_id' => $this->input->post('pesanan_id'),
+						'nama_pengadaan' => $this->input->post('nama_pengadaan'),
+						'nama_customer' => $this->input->post('nama_customer'),
+						'nama_vendor' => $this->input->post('nama_vendor'),
+						'tgl_input' => date('Y-m-d h:i:s'),
+						'status' =>  $this->input->post('status')
+					);
 
-		$this->m_pesanan->simpan('pesanan',$data);
-		$id = $this->input->post('id_surat');
-		$status=array(
-			'status_dipesanlogistik'=> 1
-			);
-		$where=array(
-			'id_surat'=>$id
-			);
-		$this->m_suratKeluar->updateStatus($where,$status,'surat_keluar');
-		redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
-	}else{	
-		redirect(base_url('/c_pesanan/tambahPesanan/'.$data['id_surat'].'/'.$data['username']));
-	}	
+			$this->m_pesanan->simpan('pesanan',$data);
+			$id = $this->input->post('id_surat');
+			$status=array(
+				'status_dipesanlogistik'=> 1
+				);
+			$where=array(
+				'id_surat'=>$id
+				);
+			$this->m_suratKeluar->updateStatus($where,$status,'surat_keluar');
+			redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
+		}else{	
+			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Pesanan Gagal Ditambah</div>');
+			redirect('c_suratMasuk/surat_masukLogistik');	
+			// redirect(base_url('/c_pesanan/tambahPesanan/'.$data['id_surat'].'/'.$data['username']));
+		}	
 	}
 	
 

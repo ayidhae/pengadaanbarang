@@ -119,6 +119,11 @@
       <div class="card-header">
         <h3>  Approve SPPH Dari Direktur </h3>
       </div>
+      <?php
+        if ($this->session->flashdata('msg')){
+          echo $this->session->flashdata('msg');
+        }
+      ?>
       <div class="card-body">
 
         <div>
@@ -126,7 +131,7 @@
           <table id="dataCustomer" class="table ">
             <thead>
               <tr>
-
+                <th>Asal </th>
                 <th> jenis_surat </th>
                 <th> penanggung jawab </th>
                 <th> contact </th>
@@ -145,6 +150,7 @@
               ?>
 
               <tr>
+               <td><?php echo $st->username ;?></td> 
                <td><?php echo $st->jenis_surat ;?></td>
                <td><?php echo $st->penanggung_jawab ;?></td>
                <td><?php echo $st->no_hp ;?></td>
@@ -226,9 +232,6 @@
               <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$st['file']."' target='_blank'>".$st['file']."</a>"?></td> 
                <td><?php echo $st['pesan'];?></td>
                <!--   <a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i></a></td></center> -->
-
-
-
 
              </tr>
              <?php

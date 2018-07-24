@@ -45,7 +45,7 @@ class c_templateSPH extends CI_Controller {
 				redirect('c_templateSPH/viewTemplateSPH');
 	}
 		
-		 function get_no_sph($id){
+	function get_no_sph($id){
       
 		 $id 	= base64_decode($id);
 		 date_default_timezone_set("Asia/Jakarta");
@@ -56,7 +56,7 @@ class c_templateSPH extends CI_Controller {
 		 
 		  $this->model_template->update_nomor_sph($where,$data,'template');
 		  redirect('c_templateSPH/export_pdf/'.$id);	
-	     }
+	}
 
 
 	function export_pdf($id='')
