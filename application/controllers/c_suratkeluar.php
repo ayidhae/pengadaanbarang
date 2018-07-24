@@ -5,7 +5,7 @@ class c_suratKeluar extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_suratKeluar');
-				$this->load->model('m_suratMasuk');
+		$this->load->model('m_suratMasuk');
 		$this->load->model('m_direktur');
 		$this->load->model('m_logistik');
 		$this->load->model('m_customer');
