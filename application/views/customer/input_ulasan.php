@@ -124,7 +124,7 @@
                 <div class="col-lg-6">
                   
                   <?php echo form_open('c_ulasan/inputUlasan'); ?>
-                  <p> *ket rating : 1 (Sangat Tidak Baik), 2 (Tidak Baik), 3 (Biasa saja), 4 (Baik), 5 (Sangat Baik)</p>
+                 
                   <div class="form-group ">
                     <label>no pesanan</label>
                     <div>
@@ -147,7 +147,7 @@
                     <input type="text" class="form-control" id="nama_vendor" name="nama_vendor" >
                   </div>
                   <div class="form-group ">
-                    <label >Rating </label>
+                    <label >Rating </label>  <em> *ket rating : 1 (Sangat Tidak Baik), 2 (Tidak Baik), 3 (Biasa saja), 4 (Baik), 5 (Sangat Baik)</em>
                     <div >
                       <select class="form-control select2" style="min-width:499px;" required name="rating" id="" equired>
                         <option></option>
@@ -157,6 +157,7 @@
                         <option>4</option>
                         <option>5</option>
                       </select>
+
                     </div>
                   </div>
                   <div class="form-group">

@@ -41,7 +41,7 @@
 <p>{kepada_customer}</p>
 <br/><br/><br/>
 <p>Dengan hormat,</p>
-<p>Menunjuk permintaan Saudara perihal Permintaan {perihal}, kami sampaikan penawaran harga untuk pengadaan dimaksud dengan nilai sebesar <strong>Rp {total_harga},-({terbilang} Rupiah)</strong>sudah termasuk PPn 10%, denganperincian terlampir.</p>
+<p>Menunjuk permintaan Saudara perihal Permintaan {nama_pengadaan}, kami sampaikan penawaran harga untuk pengadaan dimaksud dengan nilai sebesar <strong>Rp {total_harga},-({terbilang} Rupiah)</strong>sudah termasuk PPn 10%, denganperincian terlampir.</p>
 <p>Demikian disampaikan, atas perhatian dan kerja samanya diucapkan terima kasih.</p>
 <br/><br/>
 <p>

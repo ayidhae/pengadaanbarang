@@ -62,7 +62,7 @@ class c_templateSPK extends CI_Controller {
 		 echo $nomorSPH;
 		 
 		  $this->model_template->update_nomor_spk($where,$data,'template');
-		  redirect('c_templateSPH/export_pdf/'.$id);	
+		  redirect('c_templateSPK/export_pdf/'.$id);	
 	     }
 
 	

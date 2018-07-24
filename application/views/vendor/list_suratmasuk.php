@@ -93,7 +93,7 @@
                 <table id="dataSuratMasuk" class="table ">
                 <thead>
                    <tr>
-<<<<<<< HEAD
+
               <th> dari </th>
               <th> jenis surat </th>
                   <th>nomor surat </th>
@@ -101,15 +101,14 @@
                     <th> surat </th>
                     <th>pesan</th>
                     <th>aksi</th>
-=======
-              <th> Dari </th>
+                <th> Dari </th>
               <th> Jenis surat </th>
                   <th>Nomor surat </th>
                     <th>Tanggal</th>
                     <th> Surat </th>
                     <th>Pesan</th>
                     <th>Aksi</th>
->>>>>>> 9586a4201116cd8e257d1323d3fa51ce9c2dcbbd
+
                   <!--  <th> aksi </th> -->
 
                     
@@ -128,13 +127,12 @@
                    <td><?php echo $sm['no_surat'] ;?></td>
                     <td><?php echo $sm['tgl_surat'];?></td>
                     
-<<<<<<< HEAD
+
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
                        <td><?php echo $sm['pesan'];?></td>
                       <td>
                         <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a></td></center>
                       </td>
-=======
                     <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
                     <td><?php echo $sm['pesan'];?></td>
                     
@@ -150,8 +148,7 @@
                    
                   </center>
 
-                         
->>>>>>> 9586a4201116cd8e257d1323d3fa51ce9c2dcbbd
+              
             
              
             

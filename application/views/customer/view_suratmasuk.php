@@ -107,6 +107,7 @@
                   <tr>
                       <th>No</th>
                     <th> dari </th>
+                    <th> no hp </th>
                     <th> jenis surat </th>
                     <th>nomor surat </th>
                     <th>tanggal</th>
@@ -126,6 +127,7 @@
                   <tr>
                     <td><?php echo $i; ?></td>
                     <td><?php echo $st['username'] ;?></td>
+                    <td><?php echo $st['no_hp'] ;?></td>
                     <td><?php echo $st['jenis_surat'] ;?></td>
                     <td><?php echo $st['no_surat'] ;?></td>
                     <td><?php echo $st['tgl_surat'];?></td>
