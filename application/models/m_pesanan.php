@@ -35,7 +35,8 @@ class m_pesanan extends CI_Model {
 	/*general function end*/
 	function get_allPesanan()
 	{
-		$query=$this->db->query("select * from pesanan p JOIN surat_keluar s on p.id_surat=s.id_surat order by pesanan_id asc");
+		// $query=$this->db->query("select * from pesanan p JOIN surat_keluar s on p.id_surat=s.id_surat order by pesanan_id asc");
+		$query=$this->db->query("select * from pesanan p JOIN surat_keluar s on p.id_surat=s.id_surat order by tgl_input DESC");
 		return $query;
 	}
 	

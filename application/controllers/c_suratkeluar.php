@@ -309,6 +309,7 @@ class c_suratKeluar extends CI_Controller {
 	}
 	//belum selesai:
 	public function kirim_suratVendor()	{
+		date_default_timezone_set("Asia/Jakarta");
 		$config['upload_path'] 		= 'asset/upload/surat_keluar';
 		$config['allowed_types'] 	= 'gif|jpg|png|pdf';
 		$config['max_size']			= '2000';
