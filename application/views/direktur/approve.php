@@ -71,15 +71,13 @@
     <!-- Main content -->
     <main class="main">
 
-      <!-- Breadcrumb -->
+        <!-- Breadcrumb -->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Customer</a></li>
-        <li class="breadcrumb-item active">Dashboard</li>
-
+        <li class="breadcrumb-item"><a href=" <?php echo base_url('/c_user/homeDirektur');?> "> Home</a></li>
+        <li class="breadcrumb-item"><a href="#"> Halaman Direktur</a></li>
+        
         <!-- Breadcrumb Menu-->
       </ol>
-
       <!-- /.conainer-fluid -->
       <div class="container-fluid">
         <div class="card card-accent-success">

@@ -29,9 +29,9 @@
             <strong>Settings</strong>
             
           </div>
-          <a class="dropdown-item" href="<?php echo base_url('c_direktur/viewProfile'); ?>"><i class="fa fa-user"></i> Profile</a>
+          <a class="dropdown-item" href="<?php echo base_url('c_user/viewProfile'); ?>"><i class="fa fa-user"></i> Profile</a>
          <!--  <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a> -->
-          <a class="dropdown-item" href="<?php echo base_url('c_direktur/keluar'); ?>"><i class="fa fa-lock"></i> Logout</a>
+          <a class="dropdown-item" href="<?php echo base_url('c_user/keluar'); ?>"><i class="fa fa-lock"></i> Logout</a>
         </div>
       </li>
     </ul>
@@ -83,12 +83,11 @@
     <!-- Main content -->
     <main class="main">
 
-      <!-- Breadcrumb -->
+         <!-- Breadcrumb -->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Customer</a></li>
-        <li class="breadcrumb-item active">Dashboard</li>
-
+        <li class="breadcrumb-item"><a href=" <?php echo base_url('/c_user/homeDirektur');?> "> Home</a></li>
+        <li class="breadcrumb-item"><a href="#"> Halaman Direktur</a></li>
+        
         <!-- Breadcrumb Menu-->
       </ol>
 

@@ -64,17 +64,17 @@ class c_templateSPPH extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	
-	function update()
-	{
-		$in['id'] 			= $this->input->post('id');
-		$in['pesanan_id'] 	= $this->input->post('pesanan_id');
-		$in["no_spph"] 	= $this->input->post('no_spph');
-		$in["nama_pengadaan"]		= $this->input->post('nama_pengadaan');
-		$in["kepada_vendor"]		= $this->input->post('kepada_vendor');
-		$this->model_template->update('template',$in,'id');
+	// function update()
+	// {
+	// 	$in['id'] 			= $this->input->post('id');
+	// 	$in['pesanan_id'] 	= $this->input->post('pesanan_id');
+	// 	$in["no_spph"] 	= $this->input->post('no_spph');
+	// 	$in["nama_pengadaan"]		= $this->input->post('nama_pengadaan');
+	// 	$in["kepada_vendor"]		= $this->input->post('kepada_vendor');
+	// 	$this->model_template->update('template',$in,'id');
 
-		$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Template Berhasil Diubah</div>');
-		redirect('c_templateSPPH/viewTemplateSPPH');	
+	// 	$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Template Berhasil Diubah</div>');
+	// 	redirect('c_templateSPPH/viewTemplateSPPH');	
 
 	function update(){
 		$this->form_validation->set_rules('kepada_vendor', 'kepada Vendor','required');
@@ -137,5 +137,4 @@ class c_templateSPPH extends CI_Controller {
 		$this->m_pdf->pdf->WriteHTML($html_page);
 		$this->m_pdf->pdf->Output($pdfFilePath, "D");
 	}
-}
 }
