@@ -67,12 +67,9 @@
 
     <!-- Main content -->
     <main class="main">
-
-      <!-- Breadcrumb -->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Vendor</a></li>
-        <li class="breadcrumb-item active">Surat Keluar</li>
+        <li class="breadcrumb-item">Vendor</li>      
         <!-- Breadcrumb Menu-->
       </ol>
       <div class="container-fluid">
@@ -87,6 +84,16 @@
                 <table id="dataSuratMasuk" class="table ">
                 <thead>
                    <tr>
+<<<<<<< HEAD
+                    <th>No</th>
+                    <th>Dari</th>
+                    <th>Jenis Surat </th>
+                    <th>Nomor Surat </th>
+                    <th>Tanggal</th>
+                    <th>Surat </th>
+                    <th>Pesan</th>
+                    <th>Aksi</th>                                 
+=======
 <<<<<<< HEAD
 
 =======
@@ -113,16 +120,18 @@
 =======
                     <th>aksi</th>                                 
 >>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
+>>>>>>> 3857f2e1547072404d79b67a7e5b8c0d759ec3a3
                   </tr>
                 </thead>
                 <tbody>
                   <?php              
-                  
+                  $i = 1; 
                   foreach($surat_masuk as $sm):
                 
                   ?>
                   
                   <tr>
+                  <td><?php echo $i; ?></td>
                   <td><?php echo $sm['username'] ;?></td>
                      <td><?php echo $sm['jenis_surat'] ;?></td>
                    <td><?php echo $sm['no_surat'] ;?></td>
@@ -141,8 +150,12 @@
 =======
                     <td><?php echo $sm['tgl_surat'];?></td>                  
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
+<<<<<<< HEAD
+                       <td><?php echo $sm['pesan'];$i++;?></td>                                  
+=======
                        <td><?php echo $sm['pesan'];?></td>                                  
 >>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
+>>>>>>> 3857f2e1547072404d79b67a7e5b8c0d759ec3a3
                       <!-- <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a> -->
                     <td> 
                       <?php 

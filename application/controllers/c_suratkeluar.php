@@ -298,6 +298,8 @@ class c_suratKeluar extends CI_Controller {
 
 	//form kirim spk
 	function form_kirimspk($id){
+		$where = array('username' => $this->session->userdata('username'));
+		$data['nama_pnj'] = $this->m_user->ambilNama($where);	
 		$id = base64_decode($id);
 		// $where = array('id' => $id);
 		  $this->model_template->manualQuery("update template set status3='PRINT' where id='".$id."'");	
@@ -309,11 +311,10 @@ class c_suratKeluar extends CI_Controller {
 	//belum selesai:
 	public function kirim_suratVendor()	{
 		$config['upload_path'] 		= 'asset/upload/surat_keluar';
-		$config['allowed_types'] 	= 'gif|jpg|png|pdf|doc|docx';
+		$config['allowed_types'] 	= 'gif|jpg|png|pdf';
 		$config['max_size']			= '2000';
 		$config['max_width']  		= '3000';
 		$config['max_height'] 		= '3000';
-    
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('file');
 	    $upload	 	= $this->upload->data();

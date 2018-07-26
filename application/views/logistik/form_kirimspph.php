@@ -162,6 +162,9 @@
                           <div class="form-group">
                             <label for="tipe" class="control-label">Upload SPPH</label>
                               <input type="file" class="form-control" placeholder="choose file" name="file"  value="" required>
+                              <em>max:2mb  </em>
+                              <br>
+                              <em>format:gif|jpg|png|pdf|</em>
                             </div>
                           </div>
                           

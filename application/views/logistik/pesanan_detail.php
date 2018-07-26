@@ -112,6 +112,11 @@
    <div class="container-fluid">
       <div class="card card-accent-success">
          <div class="card-header">
+          <?php
+        if ($this->session->flashdata('msg')){
+          echo $this->session->flashdata('msg');
+        }
+      ?>
       <h3 class="panel-title pull-left">
        Insert Detail Data Pesanan
       </h3>

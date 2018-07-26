@@ -68,15 +68,12 @@
     <!-- Main content -->
     <main class="main">
 
-      <!-- Breadcrumb -->
-      <ol class="breadcrumb">
+       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Vendor</a></li>
-        <li class="breadcrumb-item active">Dashboard</li>
+        <li class="breadcrumb-item">Vendor</li>      
         <!-- Breadcrumb Menu-->
       </ol>
-
-             <div class="container-fluid"> 
+      <div class="container-fluid"> 
 
         <H1>Data Barang</H1>
         <body>

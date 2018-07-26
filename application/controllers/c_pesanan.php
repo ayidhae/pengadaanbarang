@@ -102,11 +102,9 @@ class c_pesanan extends CI_Controller {
         redirect('c_pesanan/viewPesanan');
         }
 
-		function detail($id)
-		{
+		function detail($id){		
 			$id = base64_decode($id);
 			$data["pesanan_id"]= $id;
-
 			//diatas mengambil pesanan id dari tabel pesanan					
 			$data["pesanandetail"] = $this->m_pesanan->edit("pesanan_detail","pesanan_id='".$id."'");
 			// $data['pesanan_id']= $this->m_pesanan->get_draft_id();
@@ -117,22 +115,28 @@ class c_pesanan extends CI_Controller {
 
 	
 	 	public function insert_detail(){
-	
-	 	$data = array(
-				
+		$this->form_validation->set_rules('nama_barang', 'Nama Barang','required|alpha_numeric_spaces');		
+		$this->form_validation->set_rules('satuan', 'Satuan','required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('vol', 'Volume','required|numeric');
+			if ($this->form_validation->run() == TRUE){
+				$data = array(				
 	 				'pesanan_id' => $this->input->post('pesanan_id'),
 					'nama_barang' => $this->input->post('nama_barang'),
 	 				'satuan' => $this->input->post('satuan'),
 					// 'harga' => $this->input->post('harga'),
 	 				'vol' => $this->input->post('vol')
-	 				// 'subtotal' => $harga*$jumlah
-				
+	 				// 'subtotal' => $harga*$jumlah				
 	 			);
 	 			$this->m_pesanan->simpan('pesanan_detail',$data);
-	
-		redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
+	 			$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Detail Barang berhasil Disimpan</div>');
+				redirect('c_pesanan/detail/'.trim(base64_encode($data['pesanan_id']),'=').'');
+			}else{
+				$this->session->set_flashdata('msg','<div class="alert alert-danger text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Detail Barang Gagal Disimpan</div>');
+	 			redirect('c_pesanan/viewPesanan');
+			}
+	 	
 				
-	 }
+	 	}
 
 
 	

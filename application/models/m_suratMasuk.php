@@ -35,7 +35,7 @@ function kotak_masuk_logistik($kotak_masuk){
 
 function kotak_masuk_vendor($kotak_masuk){
   if($kotak_masuk) {
-    $sql = "SELECT * FROM surat_keluar WHERE tujuan_vendor = ?";
+    $sql = "SELECT * FROM surat_keluar WHERE tujuan_vendor = ? ORDER BY tgl_surat DESC";
     $query = $this->db->query($sql, array($kotak_masuk));
     $result = $query->result_array();
 
