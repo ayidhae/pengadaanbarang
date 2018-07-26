@@ -63,11 +63,10 @@ class c_templateSPK extends CI_Controller {
 		 
 		  $this->model_template->update_nomor_spk($where,$data,'template');
 		  redirect('c_templateSPK/export_pdf/'.$id);	
-<<<<<<< HEAD
+
 	     }
-=======
+
 	    }
->>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
 
 	
 
@@ -125,4 +124,4 @@ class c_templateSPK extends CI_Controller {
 		$this->m_pdf->pdf->WriteHTML($html_page);
 		$this->m_pdf->pdf->Output($pdfFilePath, "D");
 	}
-}
+

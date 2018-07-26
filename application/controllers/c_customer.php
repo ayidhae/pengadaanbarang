@@ -6,7 +6,6 @@ class c_customer extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_customer');
 		$this->load->model('m_barang');
-
 	
 	}
 		 //call model
@@ -63,6 +62,7 @@ class c_customer extends CI_Controller {
 	}
 
 //diatas untuk kelola user
+	
 	public function registrasicustomer(){
 		$this->form_validation->set_rules('email', 'Email','required|valid_email');
 		$this->form_validation->set_rules('contact', 'Contact','required|numeric');

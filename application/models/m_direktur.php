@@ -19,7 +19,7 @@ function detail($where,$table){
 		 return $this->db->get('direktur');
    	      
 	}
-	function profilDirektur ($username){
+	function profilDirektur($username){
 
 		if($username) {
 			$sql = "SELECT * FROM direktur WHERE username = ?";

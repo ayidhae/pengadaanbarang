@@ -7,7 +7,7 @@ class m_barang extends CI_Model {
         parent::__construct();
     }
 
-	//untuk logistik 
+	//untuk logistik direktur customer
 	function getAllBarang(){
 		$hasil = $this->db->get('barang');
 		if($hasil->num_rows() > 0){

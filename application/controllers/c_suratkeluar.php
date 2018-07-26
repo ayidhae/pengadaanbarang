@@ -5,23 +5,22 @@ class c_suratKeluar extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_suratKeluar');
-		$this->load->model('m_suratMasuk');
-		$this->load->model('m_direktur');
-		$this->load->model('m_logistik');
-		$this->load->model('m_customer');
-		$this->load->model('m_vendor');
-		$this->load->model('m_pesanan');
+		// $this->load->model('m_suratMasuk');
+		
+		// $this->load->model('m_customer');
+		// $this->load->model('m_vendor');
+		// $this->load->model('m_pesanan');
 		$this->load->model('model_template');
 		$this->load->model('m_user');
 
 	}
 		 //call model
-	public function home(){
-		$this->load->view('template/header'); // default template
-		$this->load->view('customer/dashboard'); // dashboard vendornya
-		$this->load->view('template/footer'); 
-	}
-//halaman customer
+	// public function home(){
+	// 	$this->load->view('template/header'); // default template
+	// 	$this->load->view('customer/dashboard'); // dashboard vendornya
+	// 	$this->load->view('template/footer'); 
+	// }
+//halaman customer surat keluar
 	 public function viewSuratKeluarCustomer(){
 		$where = array('username' => $this->session->userdata('username'));
 		$data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar')->result();
@@ -154,6 +153,7 @@ class c_suratKeluar extends CI_Controller {
 			
 		}
 
+
 	//form kirim SPH ke customer
 	function form_kirimSPH($id){
 		$where = array('username' => $this->session->userdata('username'));
@@ -165,6 +165,7 @@ class c_suratKeluar extends CI_Controller {
 		$this->load->view('logistik/form_kirimsph',$data);
 		$this->load->view('template/footer');
 	}
+	
 	// function inputSuratCustomer()
 	// 	{
 	// 		$data = array(

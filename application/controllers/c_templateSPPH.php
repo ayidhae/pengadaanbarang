@@ -64,7 +64,6 @@ class c_templateSPPH extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	
-<<<<<<< HEAD
 	function update()
 	{
 		$in['id'] 			= $this->input->post('id');
@@ -76,7 +75,7 @@ class c_templateSPPH extends CI_Controller {
 
 		$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Template Berhasil Diubah</div>');
 		redirect('c_templateSPPH/viewTemplateSPPH');	
-=======
+
 	function update(){
 		$this->form_validation->set_rules('kepada_vendor', 'kepada Vendor','required');
 		if ($this->form_validation->run() == TRUE){
@@ -92,8 +91,7 @@ class c_templateSPPH extends CI_Controller {
 			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Template Gagal Diubah</div>');
 			redirect('c_templateSPPH/viewTemplateSPPH');
 		}
-			
->>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
+		
 	}
 	
 	 // function create_spph($id){
@@ -139,4 +137,5 @@ class c_templateSPPH extends CI_Controller {
 		$this->m_pdf->pdf->WriteHTML($html_page);
 		$this->m_pdf->pdf->Output($pdfFilePath, "D");
 	}
+}
 }
