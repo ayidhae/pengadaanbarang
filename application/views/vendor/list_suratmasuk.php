@@ -67,12 +67,9 @@
 
     <!-- Main content -->
     <main class="main">
-
-      <!-- Breadcrumb -->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Vendor</a></li>
-        <li class="breadcrumb-item active">Surat Keluar</li>
+        <li class="breadcrumb-item">Vendor</li>      
         <!-- Breadcrumb Menu-->
       </ol>
       <div class="container-fluid">
@@ -87,29 +84,31 @@
                 <table id="dataSuratMasuk" class="table ">
                 <thead>
                    <tr>
-              <th> dari </th>
-              <th> jenis surat </th>
-                  <th>nomor surat </th>
-                    <th>tanggal</th>
-                    <th> surat </th>
-                    <th>pesan</th>
-                    <th>aksi</th>                                 
+                    <th>No</th>
+                    <th>Dari</th>
+                    <th>Jenis Surat </th>
+                    <th>Nomor Surat </th>
+                    <th>Tanggal</th>
+                    <th>Surat </th>
+                    <th>Pesan</th>
+                    <th>Aksi</th>                                 
                   </tr>
                 </thead>
                 <tbody>
                   <?php              
-                  
+                  $i = 1; 
                   foreach($surat_masuk as $sm):
                 
                   ?>
                   
                   <tr>
+                  <td><?php echo $i; ?></td>
                   <td><?php echo $sm['username'] ;?></td>
                      <td><?php echo $sm['jenis_surat'] ;?></td>
                    <td><?php echo $sm['no_surat'] ;?></td>
                     <td><?php echo $sm['tgl_surat'];?></td>                  
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
-                       <td><?php echo $sm['pesan'];?></td>                                  
+                       <td><?php echo $sm['pesan'];$i++;?></td>                                  
                       <!-- <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a> -->
                     <td> 
                       <?php 

@@ -143,8 +143,15 @@
                         <input type="text" name="no_surat" value="<?php echo $detail->nomor_spk;?>" hidden>
                         <input type="text" name="jenis_surat" value="spk" hidden>
                         <input type="text" name="tujuan_vendor" value="<?php echo $detail->nama_vendor;?>" hidden>
-                        
-                          <div class="form-group">
+                        <?php
+                             if($nama_pnj){
+                              foreach($nama_pnj as $res){
+                                echo '<input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" value="'.$res->nama.'" hidden>';
+                                echo '<input type="text" name="no_hp" class="form-control"  rows="7" cols="80" value="'.$res->no_hp.'" hidden>';
+                              }
+                            }
+                            ?>
+                          <!-- <div class="form-group">
                             <label for="tipe" class="col-md-3 control-label">Penanggung Jawab</label>
                             <div class="col-md-7 required">
                               <input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" ></text>
@@ -156,7 +163,7 @@
                             <div class="col-md-7 required">
                               <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" ></text>
                             </div>
-                          </div>
+                          </div> -->
                           <!-- tgl-->
                          <!--  <div class="form-group ">
                             <label for="tgl" class="col-md-3 control-label">Tanggal</label>
@@ -170,6 +177,9 @@
                             <label for="tipe" class="col-md-3 control-label">Upload SPK</label>
                             <div class="col-md-7 required">
                               <input type="file" class="form-control" placeholder="choose file" name="file"  value="" required>
+                              <em>max:2mb  </em>
+                              <br>
+                              <em>format:gif|jpg|png|pdf|</em>
                             </div>
                           </div>
                           

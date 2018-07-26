@@ -64,11 +64,9 @@
     </div>
     <!-- Main content -->
     <main class="main">
-      <!-- Breadcrumb -->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Vendor</a></li>
-        <li class="breadcrumb-item active">Kelola Profil</li>
+        <li class="breadcrumb-item">Vendor</li>      
         <!-- Breadcrumb Menu-->
       </ol>
       <?php foreach($profile as $user): ?>
