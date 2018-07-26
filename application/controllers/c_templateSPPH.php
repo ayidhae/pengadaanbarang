@@ -22,7 +22,7 @@ class c_templateSPPH extends CI_Controller {
 
 	public function inputTemplateSPPH(){
 	
-		// $data['mdraft']	= $this->db->query('select * from pesanan p join template t on p.pesanan_id=t.pesanan_id where t.pesanan_id is null order by p.pesanan_id ASC');
+		// $data['mdraft']	= $this->db->query('select * from pesanan p join template t on p.pesanan_id=t.pesanan_id where t.no_spph is null order by p.pesanan_id ASC');
 
 		// $data['mdraft']	= $this->db->query('select * from pesanan  order by pesanan_id ASC');
 		$data['mdraft']	= $this->m_pesanan->get_allPesanan();
@@ -53,8 +53,6 @@ class c_templateSPPH extends CI_Controller {
 
 	}
   	
-	
-	
 	function edit($id)
 	{
 		$id = base64_decode($id);
@@ -66,6 +64,19 @@ class c_templateSPPH extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	
+<<<<<<< HEAD
+	function update()
+	{
+		$in['id'] 			= $this->input->post('id');
+		$in['pesanan_id'] 	= $this->input->post('pesanan_id');
+		$in["no_spph"] 	= $this->input->post('no_spph');
+		$in["nama_pengadaan"]		= $this->input->post('nama_pengadaan');
+		$in["kepada_vendor"]		= $this->input->post('kepada_vendor');
+		$this->model_template->update('template',$in,'id');
+
+		$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Template Berhasil Diubah</div>');
+		redirect('c_templateSPPH/viewTemplateSPPH');	
+=======
 	function update(){
 		$this->form_validation->set_rules('kepada_vendor', 'kepada Vendor','required');
 		if ($this->form_validation->run() == TRUE){
@@ -82,6 +93,7 @@ class c_templateSPPH extends CI_Controller {
 			redirect('c_templateSPPH/viewTemplateSPPH');
 		}
 			
+>>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
 	}
 	
 	 // function create_spph($id){
@@ -99,8 +111,10 @@ class c_templateSPPH extends CI_Controller {
 	{
 		// date_default_timezone_set("Asia/Jakarta");
 		// $rtno = 'BUT/LOG/'.$jenis_surat.date("yyyy").str_pad($data->id_pasien,6, "0", STR_PAD_LEFT);
-		 $id 	= base64_decode($id);
-		$content= $this->model_template->get_content_spph($id);
+
+		$id 	= base64_decode($id);
+		$content= $this->model_template->get_content_spph($id);		
+
 		$i=array();
 		$x=array();
 		$no=1;

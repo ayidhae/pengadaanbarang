@@ -84,6 +84,7 @@
                 <table id="dataSuratMasuk" class="table ">
                 <thead>
                    <tr>
+<<<<<<< HEAD
                     <th>No</th>
                     <th>Dari</th>
                     <th>Jenis Surat </th>
@@ -92,6 +93,34 @@
                     <th>Surat </th>
                     <th>Pesan</th>
                     <th>Aksi</th>                                 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
+              <th> dari </th>
+              <th> jenis surat </th>
+                  <th>nomor surat </th>
+                    <th>tanggal</th>
+                    <th> surat </th>
+                    <th>pesan</th>
+<<<<<<< HEAD
+                    <th>aksi</th>
+                <th> Dari </th>
+              <th> Jenis surat </th>
+                  <th>Nomor surat </th>
+                    <th>Tanggal</th>
+                    <th> Surat </th>
+                    <th>Pesan</th>
+                    <th>Aksi</th>
+
+                  <!--  <th> aksi </th> -->
+
+                    
+=======
+                    <th>aksi</th>                                 
+>>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
+>>>>>>> 3857f2e1547072404d79b67a7e5b8c0d759ec3a3
                   </tr>
                 </thead>
                 <tbody>
@@ -106,9 +135,27 @@
                   <td><?php echo $sm['username'] ;?></td>
                      <td><?php echo $sm['jenis_surat'] ;?></td>
                    <td><?php echo $sm['no_surat'] ;?></td>
+<<<<<<< HEAD
+                    <td><?php echo $sm['tgl_surat'];?></td>
+                    
+
+                      <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
+                       <td><?php echo $sm['pesan'];?></td>
+                      <td>
+                        <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a></td></center>
+                      </td>
+                    <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
+                    <td><?php echo $sm['pesan'];?></td>
+                    
+=======
                     <td><?php echo $sm['tgl_surat'];?></td>                  
                       <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td> 
+<<<<<<< HEAD
                        <td><?php echo $sm['pesan'];$i++;?></td>                                  
+=======
+                       <td><?php echo $sm['pesan'];?></td>                                  
+>>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
+>>>>>>> 3857f2e1547072404d79b67a7e5b8c0d759ec3a3
                       <!-- <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a> -->
                     <td> 
                       <?php 
@@ -120,7 +167,16 @@
                     </td>
                    
                   </center>
+<<<<<<< HEAD
+
+              
+            
+             
+            
+                  </tr>
+=======
                     </tr>
+>>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
                   <?php
                   endforeach;
                   ?>

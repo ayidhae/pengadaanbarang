@@ -107,7 +107,7 @@
           <tr>
             <th> no pesanan </th>
             <th> tanggal mulai</th>
-            <th> tanggal update selesai </th>
+            <th> tanggal selesai </th>
             <th>status</th>
             <th> catatan </th>
             

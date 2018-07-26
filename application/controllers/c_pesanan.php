@@ -112,7 +112,7 @@ class c_pesanan extends CI_Controller {
 			$this->load->view('logistik/pesanan_detail',$data);
 			$this->load->view('template/footer'); 		
 		}
-	
+
 	
 	 	public function insert_detail(){
 		$this->form_validation->set_rules('nama_barang', 'Nama Barang','required|alpha_numeric_spaces');		
@@ -174,6 +174,7 @@ class c_pesanan extends CI_Controller {
 	 	$this->m_pesanan->hapus($id_detail,"detail_id","pesanan_detail");
 	 	redirect('c_pesanan/detail/'.trim(base64_encode($id),'=').'');
 	 }
+
 //dibawah untuk status pesanan
 
 
@@ -209,6 +210,7 @@ public function viewStatuslog(){
 	 	redirect('c_pesanan/viewStatuslog');	
 	 }
 
+//untuk customer
 	 	public function viewStatusPesanan(){
 		$data ['status'] = $this->m_pesanan->viewStatus($this->session->userdata('username'));
 		$this->load->view('template/header');

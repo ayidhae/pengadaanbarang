@@ -152,6 +152,7 @@
                              if($nama_pnj){
                               foreach($nama_pnj as $res){
                                 echo '<input type="hidden" name="penanggung_jawab" class="form-control"  rows="7" cols="80" value="'.$res->nama.'" >';
+                                echo '<input type="text" name="no_hp" class="form-control"  rows="7" cols="80" value="'.$res->no_hp.'" hidden>';
                               }
                             }
                             ?>
@@ -161,12 +162,12 @@
 
                       
 
-                          <div class="form-group">
+                        <!--   <div class="form-group">
                             <label for="tipe" class="col-md-3 control-label">No HP</label>
                             <div class="col-md-7 required">
                               <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" ></text>
                             </div>
-                          </div>
+                          </div> -->
                         
                           <div class="form-group">
                             <label for="tipe" class="col-md-3 control-label">Upload SPH</label>

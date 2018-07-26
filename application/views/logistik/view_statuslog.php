@@ -130,7 +130,7 @@
           <th class="text-center">NO</th>
           <th> NO PESANAN </th>
           <th>TANGGAL MULAI </th>
-          <th>TANGGAL UPDATE</th>
+          <th>TANGGAL SELESAI</th>
           <th>NAMA CUSTOMER</th>
           <th>STATUS</th>
           <th>CATATAN </th>

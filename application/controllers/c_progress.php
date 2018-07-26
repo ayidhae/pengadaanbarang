@@ -9,11 +9,11 @@ class c_progress extends CI_Controller {
 
 	}
 		 //call model
-	public function home(){
-		$this->load->view('template/header'); // default template
-		$this->load->view('logistik/dashboard'); // dashboard vendornya
-		$this->load->view('template/footer'); 
-	}
+	// public function home(){
+	// 	$this->load->view('template/header'); // default template
+	// 	$this->load->view('logistik/dashboard'); // dashboard vendornya
+	// 	$this->load->view('template/footer'); 
+	// }
 
 	public function viewProgress(){
 	

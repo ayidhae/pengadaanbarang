@@ -152,7 +152,6 @@
                             }
                             ?>
                             
-
                       <!-- <div class="col">
                         <div class="form-group">
                         <label for="tipe" class="control-label">No Hp</label>

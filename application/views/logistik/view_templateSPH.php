@@ -159,6 +159,7 @@
                 <td class="text-center">
                          '.$act.'
                
+
                   <a href="'.site_url('c_templateSPH/get_no_sph/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-primary btn-sm" title="Generate PDF"><i class="fa fa-file-pdf-o"></i></a>
 
                    <a href="'.site_url('c_suratKeluar/form_kirimSPH/'.trim(base64_encode($row->id),'=').'').'" class="btn btn-success btn-sm" title="Kirim SPH"><i class="fa fa-share-square-o"></i></a>
