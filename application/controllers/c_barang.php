@@ -54,48 +54,31 @@ class c_barang extends CI_Controller {
 				$where=array(
 					'idbarang'=>$idbarang
 					);
+				if(!empty($_FILES['gambar']['name'])){
+					$config['upload_path']   = 'asset/img/barang/'; 
+					$config['allowed_types'] = 'gif|jpg|png'; 					
+					$config['max_width']     = 1024; 
+					$config['max_height']    = 768;
+					$this->load->library('upload',$config); 
+					if (!$this->upload->do_upload('gambar')){
+						$this->upload->display_errors();
+					}else{
+						$gambar = $this->upload->data('file_name');
+					}
+					$data['gambar'] = $gambar;
+				}
+				
 				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data barang berhasil diubah</div>');
 				$this->m_barang->update_barang($where,$data,"barang");	
 				redirect(base_url('c_barang/view_barang'));
-				// $this->view_barang();
+				$this->view_barang();
 			}else{
 				$this->session->set_flashdata('msg','<div class="alert alert-danger text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data barang gagal diubah</div>');
 				$this->load->view('template/header');		
 				$this->load->view('vendor/edit_barang');
 				$this->load->view('template/footer');
 			}
-		redirect(base_url('c_barang/view_barang'));
-	}
-
-	public function update_gambar(){
-		$config['upload_path']   = 'asset/img/barang/'; 
-		$config['allowed_types'] = 'gif|jpg|png'; 
-		$config['max_size']      = 100; 
-		$config['max_width']     = 1024; 
-		$config['max_height']    = 768;
-		$this->load->library('upload',$config); 
-			if(! $this->upload->do_upload('gambar')){
-				$error = array('error' => $this->upload->display_errors()); 
-		 		?>
-                     <script type=text/javascript>alert("File tidak sesuai format");</script>
-        		<?php
-        	}else{
-        		$upload=$this->upload->data();			
-        		      
-        		$data = array (
-					'gambar' =>  $this->upload->data('file_name')
-				);      
-        		$this->m_barang->updateGambar();
-
-        		redirect(base_url('c_barang/view_barang'));
-
-        	}
-	}
-	//ganti gambar barang(belum kepake)
-	public function ubah_gambar(){
-		$this->load->view('template/header');
-		$this->load->view('vendor/edit_gambar');
-		$this->load->view('template/footer');	
+		// redirect(base_url('c_barang/view_barang'));
 	}
 
 	public function form_add(){

@@ -75,6 +75,11 @@
      <div class="container-fluid">
 <div class="card card-accent-success">
   <div class="card-header">
+    <?php
+                if ($this->session->flashdata('msg')){
+                  echo $this->session->flashdata('msg');
+                }
+              ?>
     <h3>  Surat keluar </h3>
   </div>
   
@@ -107,7 +112,7 @@
           <td><?php echo $ul->penanggung_jawab ;?></td>
           <td><?php echo $ul->no_hp ;?></td>
           <td><?php echo $ul->no_surat ;?></td>
-          <td><?php echo $ul->tgl_surat ;?></td>
+          <td><?php echo date('d-m-Y H:i:s',strtotime($ul->tgl_surat))?></td>          
           <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$ul->file."' target='_blank'>".$ul->file."</a>"?></td>
           <!--  DIBAWAH UNTUK MODAL   -->
           <td

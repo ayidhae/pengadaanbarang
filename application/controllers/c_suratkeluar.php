@@ -24,7 +24,9 @@ class c_suratKeluar extends CI_Controller {
 //halaman customer
 	 public function viewSuratKeluarCustomer(){
 		$where = array('username' => $this->session->userdata('username'));
-		$data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar')->result();
+		//unge ganti
+		// $data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar')->result();
+		$data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar');
 		$this->load->view('template/header');
 		$this->load->view('customer/view_suratKeluar',$data);
 		$this->load->view('template/footer'); 
@@ -101,8 +103,9 @@ class c_suratKeluar extends CI_Controller {
 	}
 
 	
-	function inputSuratKeluarLogistik(){
-		
+	function inputSuratKeluarLogistik(){	
+	date_default_timezone_set("Asia/Jakarta");
+	$today =  date('Y-m-d h:i:s');
 
     $username = $this->input->post('tujuan');
     $penanggung_jawab  = $this->input->post('penanggung_jawab');
@@ -119,7 +122,7 @@ class c_suratKeluar extends CI_Controller {
 
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('file');
-	      $upload	 	= $this->upload->data();
+	    $upload	= $this->upload->data();
 				
     $data = array(
     
@@ -128,7 +131,7 @@ class c_suratKeluar extends CI_Controller {
         'no_hp' => $no_hp,
       'jenis_surat' => $jenis_surat,
       'no_surat' => $no_surat,
-     'tgl_surat' => date('Y-m-d h:i:s'),
+     'tgl_surat' => $today,
        'file' => $upload['file_name'],
       'pesan' => $pesan,
       'username' => $this->session->userdata('username')
@@ -147,7 +150,8 @@ class c_suratKeluar extends CI_Controller {
 
 	   public function viewSuratKeluarLogistik(){ // ini ada di menu surat keluar logistik
 			$where = array('username' => $this->session->userdata('username'));
-			$data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar')->result();
+			// $data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar')->result();
+			$data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar');
 			$this->load->view('template/header');
 			$this->load->view('logistik/view_suratKeluar',$data);
 			$this->load->view('template/footer'); 
@@ -234,44 +238,58 @@ class c_suratKeluar extends CI_Controller {
 
 	
 	function addsph(){
-    $username = $this->input->post('tujuan');
-    $penanggung_jawab  = $this->input->post('penanggung_jawab');
-    $no_hp =  $this->input->post('no_hp');
-    $jenis_surat = $this->input->post('jenis_surat');
-    $no_surat = $this->input->post('no_surat');
-    $tgl_surat =$this->input->post('tgl_surat');
-    $pesan = $this->input->post('pesan');
-    $config['upload_path'] 		= 'asset/upload/surat_keluar';
-		$config['allowed_types'] 	= 'gif|jpg|png|pdf|doc|docx';
-		$config['max_size']			= '2000';
-		$config['max_width']  		= '3000';
-		$config['max_height'] 		= '3000';
+	$this->form_validation->set_rules('penanggung_jawab', 'Penanggung Jawab','required|alpha_numeric_spaces');
+	$this->form_validation->set_rules('no_hp', 'Contact','required|numeric');
+	$this->form_validation->set_rules('no_surat', 'Nomor Surat','required');
+	if ($this->form_validation->run() == TRUE){
+		date_default_timezone_set("Asia/Jakarta");
+		$today =  date('Y-m-d h:i:s');
+
+		$username = $this->input->post('tujuan');
+	    $penanggung_jawab  = $this->input->post('penanggung_jawab');
+	    $no_hp =  $this->input->post('no_hp');
+	    $jenis_surat = $this->input->post('jenis_surat');
+	    $no_surat = $this->input->post('no_surat');	    
+	    $pesan = $this->input->post('pesan');
+	    $config['upload_path'] 		= 'asset/upload/surat_keluar';
+			$config['allowed_types'] 	= 'gif|jpg|png|pdf';
+			$config['max_size']			= '2000';
+			$config['max_width']  		= '3000';
+			$config['max_height'] 		= '3000';
 
 		$this->load->library('upload', $config);
-		$this->upload->do_upload('file');
-	      $upload	 	= $this->upload->data();
-				
-    $data = array(
-    
-      'tujuan_logistik' => $username,
-       'penanggung_jawab' => $penanggung_jawab,
-        'no_hp' => $no_hp,
-      'jenis_surat' => $jenis_surat,
-      'no_surat' => $no_surat,
-      'tgl_surat' => date('Y-m-d h:i:s'),
-       'file' => $upload['file_name'],
-      'pesan' => $pesan,
-      'username' => $this->session->userdata('username')
-      
-      );
-
-     $this->m_suratKeluar->insertData($data, 'surat_keluar');
-   	redirect(base_url('c_suratKeluar/viewSuratKeluarVendor'));
+		if ( ! $this->upload->do_upload('file')) {
+		        	$error = array('error' => $this->upload->display_errors()); 
+		        	?>
+                     <script type=text/javascript>alert("File tidak sesuai format");</script>
+        			<?php
+        			$this->formsph();
+		}else { 
+	     	$upload	 	= $this->upload->data();
+	    	$data = array(	   
+		      'tujuan_logistik' => $username,
+		      'penanggung_jawab' => $penanggung_jawab,
+		      'no_hp' => $no_hp,
+		      'jenis_surat' => $jenis_surat,
+		      'no_surat' => $no_surat,
+		      'tgl_surat' => $today,
+		      'file' => $upload['file_name'],
+		      'pesan' => $pesan,
+		      'username' => $this->session->userdata('username')
+		    );
+	     	$this->m_suratKeluar->insertData($data, 'surat_keluar');
+	      	$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Surat Berhasil Dikirim</div>');
+	   		redirect(base_url('c_suratKeluar/viewSuratKeluarVendor'));
+		}
+	}else{
+		$this->formsph();
+	}
   }
 
   	public function viewSuratKeluarVendor(){
 		$where = array('username' => $this->session->userdata('username'));
-		$data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar')->result();
+		$data ['surat_keluar'] = $this->m_suratKeluar->viewSuratKeluar($where,'surat_keluar');
+		// echo json_encode($data['surat_keluar']);
 		$this->load->view('template/header');
 		$this->load->view('vendor/list_suratKeluar',$data);
 		$this->load->view('template/footer'); 
@@ -310,6 +328,7 @@ class c_suratKeluar extends CI_Controller {
 	//belum selesai:
 	public function kirim_suratVendor()	{
 		date_default_timezone_set("Asia/Jakarta");
+		$today =  date('Y-m-d h:i:s');
 		$config['upload_path'] 		= 'asset/upload/surat_keluar';
 		$config['allowed_types'] 	= 'gif|jpg|png|pdf';
 		$config['max_size']			= '2000';
@@ -326,7 +345,7 @@ class c_suratKeluar extends CI_Controller {
       		'pesan' => $this->input->post('pesan'),
       		'penanggung_jawab' => $this->input->post('penanggung_jawab'),
       		'no_hp' => $this->input->post('no_hp'),
-      		'tgl_surat' => date('Y-m-d h:i:s'),
+      		'tgl_surat' => $today,
       		'username' => $this->session->userdata('username')
 	    	);
 	    $this->m_suratKeluar->insertData($data, 'surat_keluar');

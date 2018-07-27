@@ -37,6 +37,8 @@ class c_pesanan extends CI_Controller {
 
 	public function InputTambahPesanan(){
 	$this->form_validation->set_rules('nama_pengadaan', 'Nama Pengadaan','required|alpha_numeric_spaces');
+	date_default_timezone_set("Asia/Jakarta");
+	$today =  date('Y-m-d h:i:s');
 		if($this->form_validation->run() == TRUE) {
 			$data = array(
 						'id_surat' => $this->input->post('id_surat'),
@@ -44,7 +46,7 @@ class c_pesanan extends CI_Controller {
 						'nama_pengadaan' => $this->input->post('nama_pengadaan'),
 						'nama_customer' => $this->input->post('nama_customer'),
 						'nama_vendor' => $this->input->post('nama_vendor'),
-						'tgl_input' => date('Y-m-d h:i:s'),
+						'tgl_input' => $today,
 						'status' =>  $this->input->post('status')
 					);
 

@@ -100,8 +100,9 @@
                            <!--  <div class="panel-body"> -->
             <div class="card-body">
               <div class="row">
-                <div class="col-lg-6">                                        
+                <div class="col-lg-6">                                                        
                     <?php echo form_open_multipart(base_url('c_suratKeluar/addsph')) ;?>           
+                    <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
                   <div class="form-group">
                        <div class="form-group ">
                       <label for="tipe" class="col-md-3 control-label">tujuan</label>
@@ -119,17 +120,17 @@
                       </div>
                   </div>
                     <div class="form-group">
-                            <label for="tipe" class="col-md-8 control-label"><br>Penanggung Jawab </label>
-                             <div class="col-md-7 required">
-                             <input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" required></textarea>
-                              </div>
-                              </div>
-                                <div class="form-group">
-                            <label for="tipe" class="col-md-3 control-label">Contact</label>
-                             <div class="col-md-7 required">
-                             <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" required></textarea>
-                              </div>
-                              </div>
+                      <label for="tipe" class="col-md-8 control-label"><br>Penanggung Jawab </label>
+                      <div class="col-md-7 required">
+                        <input type="text" name="penanggung_jawab" class="form-control"  rows="7" cols="80" value="<?= set_value('penanggung_jawab')?>" required></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="tipe" class="col-md-3 control-label">Contact</label>
+                      <div class="col-md-7 required">
+                        <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" value="<?= set_value('no_hp')?>" required></textarea>
+                      </div>
+                    </div>
 
                     <div class="form-group ">
                       <label for="tipe" class="col-md-3 control-label">Jenis Surat </label>
@@ -140,18 +141,18 @@
                                <option>SPH</option>        
                         </select>
                       </div>
-                  </div>
+                    </div>
                   <div class="form-group">
                             <label for="tipe" class="col-md-3 control-label">nomor surat</label>
                              <div class="col-md-7 required">
-                             <input type="text" name="no_surat" class="form-control"  rows="7" cols="80" ></textarea>
+                             <input type="text" name="no_surat" class="form-control"  rows="7" cols="80" value="<?= set_value('no_surat')?>"></textarea>
                               </div>
                               </div>
                   <!-- tgl-->                   
                   <div class="form-group">
                             <label for="tipe" class="col-md-3 control-label">upload</label>
                              <div class="col-md-7 required">
-                             <input type="file" class="form-control" placeholder="choose file" name="file"  value="" >
+                             <input type="file" class="form-control" placeholder="choose file" name="file"  value="" required>
                               </div>
                               </div> 
                 

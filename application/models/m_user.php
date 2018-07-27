@@ -46,7 +46,7 @@ class m_user extends CI_Model {
 
     function update_password($new_password,$uname){
         $data = array (
-            'password' => md5($new_password)
+            'password' =>($new_password)
         );
 
         return $this->db->where('username',$uname)

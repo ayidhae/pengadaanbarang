@@ -106,7 +106,7 @@
                   <td><?php echo $sm['username'] ;?></td>
                      <td><?php echo $sm['jenis_surat'] ;?></td>
                    <td><?php echo $sm['no_surat'] ;?></td>
-                    <td><?php echo $sm['tgl_surat'];?></td>
+                   <td><?php echo date('d-m-Y H:i:s',strtotime($sm['tgl_surat'])) ?></td>                  
                      <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td>                       
                        <td><?php echo $sm['pesan'];$i++;?></td>                                                      
                       <!-- <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a> -->

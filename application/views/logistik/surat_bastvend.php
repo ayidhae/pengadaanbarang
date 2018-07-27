@@ -12,7 +12,7 @@
    </tbody>
 </table>
 
-<p>Pada hari ini {hari} tanggal {tgl_bast} bulan {bulan} tahun {tahun}, telah dilaksanakan Uji dan Serah Terima Pengadaan Komputer dari <em>PT. Bhakti Unggul Teknovasi</em> (Rekanan) kepada {nama_vendor} , adapun hasilnya sebagai berikut :</p>
+<p>Pada hari ini {hari} tanggal {tgl_bast} bulan {bulan} tahun {tahun}, telah dilaksanakan Uji dan Serah Terima Pengadaan {nama_pengadaan} dari <em>PT. Bhakti Unggul Teknovasi</em> (Rekanan) kepada {nama_vendor} , adapun hasilnya sebagai berikut :</p>
 <br/><br/>
 <table width="100%" border="1" cellpadding="3">
 	<thead>

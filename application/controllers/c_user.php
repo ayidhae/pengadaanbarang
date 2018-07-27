@@ -154,7 +154,7 @@ class c_user extends CI_Controller {
 			$conf_password = $this->input->post('conf_password');			
 			$uname = $this->session->userdata('username');
 			$data= $this->m_user->getCurrentpass($uname);					
-				if($data->password == md5($curr_password)) {			
+				if($data->password == ($curr_password)) {			
 					if($new_password == $conf_password ){
 						if($this->m_user->update_password($new_password, $uname)){						
 							?>
