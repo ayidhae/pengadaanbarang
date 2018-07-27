@@ -72,6 +72,7 @@ class c_templateSPPH extends CI_Controller {
 
 	// 	$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Template Berhasil Diubah</div>');
 	// 	redirect('c_templateSPPH/viewTemplateSPPH');	
+
 	// }
 
 	function update(){
@@ -89,7 +90,6 @@ class c_templateSPPH extends CI_Controller {
 			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data Template Gagal Diubah</div>');
 			redirect('c_templateSPPH/viewTemplateSPPH');
 		}
-
 	}
 			
 	

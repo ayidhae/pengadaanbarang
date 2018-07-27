@@ -9,11 +9,11 @@ class c_suratMasuk extends CI_Controller {
 		
 	}
 		 //call model
-	public function home(){
-		$this->load->view('template/header'); // default template
-		$this->load->view('customer/dashboard'); // dashboard vendornya
-		$this->load->view('template/footer'); 
-	}
+	// public function home(){
+	// 	$this->load->view('template/header'); // default template
+	// 	$this->load->view('customer/dashboard'); // dashboard vendornya
+	// 	$this->load->view('template/footer'); 
+	// }
 
 
 	public function surat_masukDirektur(){  //dihalaman direktur
@@ -24,7 +24,7 @@ class c_suratMasuk extends CI_Controller {
 	
 	}
 	
-	 public function approve_direktur ($id_surat){ //dihalaman direktur approve
+	 public function approve_direktur($id_surat){ //dihalaman direktur approve
 	 	$where = array('id_surat' => $id_surat);
 	 	$data['approve'] = $this->m_suratMasuk->edit_data($where,'surat_keluar')->result();
 	 	 	$this->load->view('template/header');

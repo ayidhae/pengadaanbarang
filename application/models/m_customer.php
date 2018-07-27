@@ -14,15 +14,15 @@ class m_customer extends CI_Model{
 	 	return $this->db->get('customer');
 	}
 
-	function view_cus (){
-		return $this->db->get('customer');
-	}
+	// function view_cus (){
+	// 	return $this->db->get('customer');
+	// }
 
 
-	function cekRegistrasi($username){
- 	$this->db->where('username', $username);
-	 	return $this->db->get('customer');
-	 }
+	// function cekRegistrasi($username){
+ // 	$this->db->where('username', $username);
+	//  	return $this->db->get('customer');
+	//  }
 
 	function detail($where,$table){		
 		return $this->db->get_where($table,$where);

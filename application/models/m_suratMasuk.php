@@ -12,6 +12,7 @@ class m_suratMasuk extends CI_Model {
   }
 }
 
+
 function kotak_masuk_customer($kotak_masuk){
   if($kotak_masuk) {
     $sql = "SELECT * FROM surat_keluar WHERE tujuan_customer = ? ORDER BY tgl_surat DESC";
@@ -35,7 +36,7 @@ function kotak_masuk_logistik($kotak_masuk){
 
 function kotak_masuk_vendor($kotak_masuk){
   if($kotak_masuk) {
-    $sql = "SELECT * FROM surat_keluar WHERE tujuan_vendor = ? ORDER BY tgl_surat DESC";
+    $sql = "SELECT * FROM surat_keluar WHERE tujuan_vendor = ?";
     $query = $this->db->query($sql, array($kotak_masuk));
     $result = $query->result_array();
 
