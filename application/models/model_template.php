@@ -127,21 +127,32 @@ class model_template extends CI_Model {
 	}
 	
 	
+	// function get_all_bast()
+	// {
+	// 	$query=$this->db->query("select * from template order by id asc");
+	// 	return $query;
+	// }
+
 	function get_all_bast()
 	{
-		$query=$this->db->query("select * from template order by id asc");
-		return $query;
+		$query=$this->db->query("select v.nama_perusahaan as vendor,c.nama_perusahaan as customer,p.pesanan_id,p.nama_pengadaan from vendor v join pesanan p on p.nama_vendor=v.username join customer c on c.username=p.nama_customer");
+		return $query->result();
 	}
-	
-	
-	
+
 	function get_content_bast($id)
 	{
-		$query=$this->db->query("select * from template v 
-									left join pesanan_detail d on d.pesanan_id=v.pesanan_id
-									where v.id='".$id."' order by d.detail_id asc");
+		$query=$this->db->query("select v.nama_perusahaan as vendor ,c.nama_perusahaan as customer,p.pesanan_id,p.nama_pengadaan,d.detail_id,d.nama_barang,d.satuan,d.harga,d.vol from vendor v JOIN pesanan p on p.nama_vendor=v.username JOIN customer c ON c.username=p.nama_customer JOIN pesanan_detail d ON d.pesanan_id=p.pesanan_id WHERE p.pesanan_id='".$id."' ");
+		// $query=$this->db->query("select * from vendor v JOIN pesanan p on p.nama_vendor=v.username JOIN customer c ON c.username=p.nama_customer JOIN pesanan_detail d ON d.pesanan_id=p.pesanan_id WHERE p.pesanan_id='PESAN001'");
 		return $query;
 	}
+
+	// function get_content_bast($id)
+	// {
+	// 	$query=$this->db->query("select * from template v 
+	// 								left join pesanan_detail d on d.pesanan_id=v.pesanan_id
+	// 								where v.id='".$id."' order by d.detail_id asc");
+	// 	return $query;
+	// }
 	
 	function get_id_template()
 	{ 	

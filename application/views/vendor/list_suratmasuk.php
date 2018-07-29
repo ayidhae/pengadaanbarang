@@ -84,7 +84,10 @@
                 <table id="dataSuratMasuk" class="table ">
                 <thead>
                    <tr>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 165410b9158e644381c7fb00dca80f63d2d42ab0
                     <th>No</th>
                     <th>Dari</th>
                     <th>Jenis Surat </th>
@@ -92,6 +95,9 @@
                     <th>Tanggal</th>
                     <th>Surat </th>
                     <th>Pesan</th>
+<<<<<<< HEAD
+                    <th>Aksi</th>                                                                              
+=======
                     <th>Aksi</th>                                 
 
         
@@ -99,6 +105,7 @@
                   <!--  <th> aksi </th> -->
 
 
+>>>>>>> 165410b9158e644381c7fb00dca80f63d2d42ab0
                   </tr>
                 </thead>
                 <tbody>
@@ -113,6 +120,11 @@
                   <td><?php echo $sm['username'] ;?></td>
                      <td><?php echo $sm['jenis_surat'] ;?></td>
                    <td><?php echo $sm['no_surat'] ;?></td>
+<<<<<<< HEAD
+                   <td><?php echo date('d-m-Y H:i:s',strtotime($sm['tgl_surat'])) ?></td>                  
+                     <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td>                       
+                       <td><?php echo $sm['pesan'];$i++;?></td>                                                      
+=======
 <<<<<<< HEAD
                     <td><?php echo $sm['tgl_surat'];?></td>
                     
@@ -133,6 +145,7 @@
 =======
                        <td><?php echo $sm['pesan'];?></td>                                  
 
+>>>>>>> 165410b9158e644381c7fb00dca80f63d2d42ab0
                       <!-- <a href="<?=base_url()?>c_suratKeluar/formsph/<? ;?>" class="btn btn-success btn-sm" title="balas"><i class="fa fa-share-square-o"></i></a> -->
                     <td> 
                       <?php 
@@ -143,28 +156,16 @@
                       }?>                   
                     </td>
                    
-                  </center>
-<<<<<<< HEAD
-
-              
-            
-             
-            
-                  </tr>
-=======
+                  </center>                          
                     </tr>
->>>>>>> eda516d651e8d8028bc6e52aa757e4a0b0f8ae6f
                   <?php
                   endforeach;
                   ?>
                  
                 </tbody>
-              </table>
-              
-
+              </table>            
 </div>
 </td>
-</tr>
 </table>
 </form>
 </div>

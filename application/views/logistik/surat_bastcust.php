@@ -12,7 +12,7 @@
    </tbody>
 </table>
 
-<p>Pada hari ini {hari} tanggal {tgl_bast} bulan {bulan} tahun {tahun}, telah dilaksanakan Uji dan Serah Terima Pengadaan Komputer dari <em>PT. Bhakti Unggul Teknovasi</em> (Rekanan) kepada {nama_customer} , adapun hasilnya sebagai berikut :</p>
+<p>Pada hari ini {hari} tanggal {tgl_bast} bulan {bulan} tahun {tahun}, telah dilaksanakan Uji dan Serah Terima Pengadaan {nama_pengadaan} dari <em>PT. Bhakti Unggul Teknovasi</em> (Rekanan) kepada {customer} , adapun hasilnya sebagai berikut :</p>
 <br/><br/>
 <table width="100%" border="1" cellpadding="3">
 	<thead>
@@ -74,7 +74,7 @@
 	</tbody>
 </table>
 <br/><br/><br/>
-<p>Demikian Berita Acara ini dibuatuntuk proses lebih lanjut.</p>
+<p>Demikian Berita Acara ini dibuat untuk proses lebih lanjut.</p>
 <br/>
 <table width="100%">
    <tbody>
@@ -85,7 +85,7 @@
 		 </td>
 		 <td align="center" width="30%">&nbsp;</td>
 		 <td align="center" width="40%">
-			<p>{nama_customer}</p><br/><br/><br/><br/><br/>
+			<p>{customer}</p><br/><br/><br/><br/><br/>
 			<p>(<u>___________________________</u>)</p>
 		 </td>
       </tr>

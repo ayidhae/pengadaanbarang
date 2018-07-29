@@ -132,6 +132,15 @@
                                   }  ;?>                                  
                                 </select>
                               </div>
+                            
+                              <div class="form-group pull-left">
+                                <label class="control-label">Gambar</label>
+                                <div>
+                                  <img width="512" class="img-responsive" src="<?php echo base_url('asset/img/barang/'.$detail->gambar)?>" alt="">
+                                  <input type="file" class="form-control" name="gambar">
+                                </div>                              
+                              </div>                              
+                            
                               
                             <div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
@@ -141,17 +150,6 @@
                             </div>
 
                             </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <label class="control-label">Gambar</label>
-                                <div>
-                                  <img style="width:50%" class="img-responsive" src="<?php echo base_url('asset/img/barang/'.$detail->gambar)?>" alt="">
-                                  <!-- <input type="file" class="form-control" placeholder="ganti gambar" name="gambar" value="barang" > -->
-                                </div>
-                                <a class="btn btn-success" href="<?php echo base_url('c_barang/ubah_gambar')?>"><i class="fa fa-close"></i> Ubah Gambar</a>
-                                <!-- <button type="button"  class="btn btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil">Ubah Gambar</i></button> -->
-                              </div>                              
-                            </div>                            
                           </div>
                         </div>
                         <?php endforeach; ?>
