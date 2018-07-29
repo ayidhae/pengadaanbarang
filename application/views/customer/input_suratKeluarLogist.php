@@ -129,9 +129,9 @@
                   <div class="form-group">
                     <!-- departemen -->
                     <div class="form-group ">
-                      <!-- <label for="tipe" class="col-md-3 control-label">tujuan</label> -->
+                      <label for="tipe" class="col-md-3 control-label">tujuan</label>
                       <div class="col-md-7 required">
-                        <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan" hidden>
+                        <select class="form-control select2" style="min-width:250px;" required name="tujuan" id="tujuan" >
                          
                           <?php
                           if($username){
@@ -155,7 +155,7 @@
                         <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" required></textarea>
                       </div>
                     </div>
-                    <div class="form-group ">
+                  <!--   <div class="form-group ">
                       <label for="tipe" class="col-md-3 control-label">Jenis Surat </label>
                       <div class="col-md-7 required">
                         <select class="form-control select2" style="min-width:250px;" required name="jenis_surat" id="" required>
@@ -164,11 +164,16 @@
                           <option>SPK</option>
                         </select>
                       </div>
+                    </div> -->
+                     <div class="form-group">
+                      <div class="col-md-7 required">
+                        <input  class="form-control select2" style="min-width:250px;" required name="jenis_surat" value="SPK" id="" hidden>
+                      </div>
                     </div>
                     <div class="form-group">
                       <label for="tipe" class="col-md-3 control-label">nomor surat</label>
                       <div class="col-md-7 required">
-                        <input type="text" name="no_surat" class="form-control"  rows="7" cols="80" ></textarea>
+                        <input type="text" name="no_surat" class="form-control"  rows="7" cols="80" required></textarea>
                       </div>
                     </div>
                     <!-- tgl-->
@@ -176,7 +181,7 @@
                     <div class="form-group">
                       <label for="tipe" class="col-md-3 control-label">upload SPK</label>
                       <div class="col-md-7 required">
-                        <input type="file" class="form-control" placeholder="choose file" name="file"  value="" >
+                        <input type="file" class="form-control" placeholder="choose file" name="file"  value="" required>
                         <em>max:2mb format:gif|jpg|png|pdf| </em>
                       </div>
                     </div>

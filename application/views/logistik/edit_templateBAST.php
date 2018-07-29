@@ -100,7 +100,7 @@
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
     <!-- Main content -->
- <!-- <?php
+ <?php
 foreach($mdata->result_array() as $row){
   $id     = $row['id'];
   $pesanan_id = $row['pesanan_id'];
@@ -108,7 +108,7 @@ foreach($mdata->result_array() as $row){
    $nama_vendor= $row['nama_vendor'];
   $tgl_bast  = $row['tgl_bast'];
 }
-?> -->
+?> 
 <main class="main">
    <ol class="breadcrumb">
       <li class="breadcrumb-item">Home</li>

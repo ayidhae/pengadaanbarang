@@ -5,15 +5,15 @@ class c_ulasan extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_ulasan');
-		$this->load->model('m_progress');
+		// $this->load->model('m_progress');
 
 		
 	}
-	public function home(){
-		$this->load->view('template/header'); // default template
-		$this->load->view('customer/dashboard'); // dashboard vendornya
-		$this->load->view('template/footer'); 
-	}
+	// public function home(){
+	// 	$this->load->view('template/header'); // default template
+	// 	$this->load->view('customer/dashboard'); // dashboard vendornya
+	// 	$this->load->view('template/footer'); 
+	// }
 
 // function viewUlasanlog(){
 // 		$x['data']=$this->m_ulasan->get_data_stok();
@@ -58,6 +58,7 @@ class c_ulasan extends CI_Controller {
 		
 
 	 	$data["pesanan_id"]= $this->m_ulasan->ambilDataPesanan($this->session->userdata('username'));
+	 	
 	 	
           $this->load->view('template/header');
 		 $this->load->view('customer/input_ulasan',$data);

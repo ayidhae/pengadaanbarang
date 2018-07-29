@@ -128,7 +128,7 @@
                   <div class="form-group ">
                     <label>no pesanan</label>
                     <div>
-                      <select class="form-control select2" style="min-width:499px;"  onchange="setDropdown()" required name="pesanan_id" id="pesanan_id">
+                      <select class="form-control select2" style="min-width:499px;"  onchange="setDropdown()" required name="pesanan_id" id="pesanan_id" required>
                         <option></option>
                         <?php
                         if($pesanan_id){

@@ -160,7 +160,7 @@ class c_suratKeluar extends CI_Controller {
 		$data['nama_pnj'] = $this->m_user->ambilNama($where);
 		$id = base64_decode($id);		
 		$data['pesanan'] = $this->model_template->detail($id)->result();	
-		     $this->model_template->manualQuery("update template set status2='PRINT' where id='".$id."'");		
+		     $this->model_template->manualQuery("update template set status2='DONE' where id='".$id."'");		
 		$this->load->view('template/header');
 		$this->load->view('logistik/form_kirimsph',$data);
 		$this->load->view('template/footer');

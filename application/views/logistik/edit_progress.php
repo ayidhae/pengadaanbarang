@@ -132,9 +132,9 @@
                                         <input name="no_pesanan" type="text" id="id_progress" value="<?php echo $progress[0]->id_progress ?>" class="form-control" readonly> 
                                                </div>   -->
                                              <div class="form-group ">
-                                                <label for="no_surat" class="col-md-3 control-label">tanggal </label>
+                                               <!--  <label for="no_surat" class="col-md-3 control-label">tanggal </label> -->
                                                 <div class="col-md-7 col-sm-12 required">
-                                                  <input type="date"  value="<?php echo $progress[0]->tanggal ?>" class="form-control" name="tanggal"  required>
+                                                  <input type="date"  value="<?php echo $progress[0]->tanggal ?>" class="form-control" name="tanggal"  hidden>
                                                 </div>
                                             </div> 
                                              <div class="form-group">

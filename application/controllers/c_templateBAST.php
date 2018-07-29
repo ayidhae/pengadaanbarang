@@ -18,12 +18,12 @@ class c_templateBAST extends CI_Controller {
 	}
 
 	
-
 	function editTemplateBAST($id)
 	{
 		$id = base64_decode($id);
 		$data['mdraft']= $this->db->query('select * from pesanan order by pesanan_id ASC');
-		$data["mdata"]= $this->model_template->edit("template","id='".$id."'");					
+		$data["mdata"]= $this->model_template->edit("template","id='".$id."'");	
+			
 		$this->load->view('template/header');
 		$this->load->view('logistik/edit_templateBAST',$data);
 		$this->load->view('template/footer');

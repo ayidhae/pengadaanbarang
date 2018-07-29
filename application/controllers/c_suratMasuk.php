@@ -50,11 +50,11 @@ class c_suratMasuk extends CI_Controller {
 
 
 
-	function hapusSuratMasukDirektur($id_surat){
-        $where=array('id_surat' => $id_surat);
-        $this->m_suratMasuk->delete($where,'surat_keluar');
-        redirect('c_suratMasuk/surat_masukDirektur');
-        }
+	// function hapusSuratMasukDirektur($id_surat){
+ //        $where=array('id_surat' => $id_surat);
+ //        $this->m_suratMasuk->delete($where,'surat_keluar');
+ //        redirect('c_suratMasuk/surat_masukDirektur');
+ //        }
 
 	public function surat_masukLogistik(){ //dihalaman logitik
 		$data ['surat_masuk'] = $this->m_suratMasuk->kotak_masuk_logistik($this->session->userdata('username'));

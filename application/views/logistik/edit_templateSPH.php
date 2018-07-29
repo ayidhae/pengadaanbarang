@@ -113,7 +113,7 @@ foreach($mdata->result_array() as $row){
   $no_sph= $row['no_sph'];
   $lampiran = $row['lampiran'];
   $tgl_sph  = $row['tgl_sph'];
-  $perihal  = $row['nama_pengadaan'];
+  $nama_pengadaan  = $row['nama_pengadaan'];
   $kepada_customer   = $row['kepada_customer'];
 }
 ?>
@@ -124,7 +124,6 @@ foreach($mdraft->result_array() as $row){
   
 }
 ?>
-
 
    <div class="container-fluid">
       <div class="card card-accent-success">
@@ -179,7 +178,7 @@ foreach($mdraft->result_array() as $row){
         <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Ubah</button>
-          <button type="reset" class="btn btn-warning"><i class="fa fa-ban"></i> Reset</button>
+
         </div>
         </div>
       </form>
