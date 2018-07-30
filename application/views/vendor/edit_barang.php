@@ -73,7 +73,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-           <h3 class="panel-title pull-left">Data Barang</h3>
+           <h3 class="panel-title pull-left">Edit Barang</h3>
            <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>        
             <a href="<?php echo site_url('c_barang/view_barang');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
           </div>

@@ -13,7 +13,7 @@ class c_templateBAST extends CI_Controller {
 		$data['bast'] 	= $this->model_template->get_all_bast();	
 		// echo json_encode($data['bast']);
 		$this->load->view('template/header');
-		$this->load->view('logistik/contoh',$data);
+		$this->load->view('logistik/view_bast',$data);
 		$this->load->view('template/footer'); 
 
 	}
@@ -31,8 +31,8 @@ class c_templateBAST extends CI_Controller {
 
 	function export_pdfCUST($id='')
 	{
-		date_default_timezone_get('Asia/Jakarta');
-		$tgl=date('d-n-Y H:i:s');			
+		date_default_timezone_set("Asia/Jakarta");
+		$tgl =  date('Y-m-d h:i:s');
 		// $id 	= base64_decode($id);
 		$data	= $this->model_template->get_content_bast($id);		
 		$i=array();
@@ -47,7 +47,7 @@ class c_templateBAST extends CI_Controller {
 			$nama_customer		= $row->customer;
 			$nama_hari			= nama_hari($tgl);
 			$tgl_bast			= terbilang(date('d',strtotime($tgl)));
-			$bulan				= nama_bulan(date('n',strtotime($tgl)));
+			$bulan				= nama_bulan(date('m',strtotime($tgl)));
 			$tahun				= terbilang(tahun($tgl));
 			array_push($x,$i);
 		}
@@ -68,9 +68,9 @@ class c_templateBAST extends CI_Controller {
 	}
 	
 
-	function export_pdfVEND($id=''){		
-		date_default_timezone_get('Asia/Jakarta');
-		$tgl=date('d-m-Y H:i:s');
+	function export_pdfVEND($id=''){	
+		date_default_timezone_set("Asia/Jakarta");
+		$tgl =  date('Y-m-d h:i:s');			
 				
 		// $id 	= base64_decode($id);
 		$data	= $this->model_template->get_content_bast($id);

@@ -12,6 +12,7 @@ class c_templateSPPH extends CI_Controller {
 	public function viewTemplateSPPH(){
 		
 		$data['mdata'] = $this->model_template->get_all_spph();
+		// echo json_encode($data['mdata']);
 		$this->load->view('template/header');
 		$this->load->view('logistik/view_templateSPPH',$data);
 		$this->load->view('template/footer'); 

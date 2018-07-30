@@ -6,6 +6,7 @@ class c_templateSPK extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('model_template');
+		$this->load->model('m_pesanan');
 	}
 
 
@@ -21,7 +22,8 @@ class c_templateSPK extends CI_Controller {
 	function editTemplateSPK($id)
 	{
 		$id = base64_decode($id);
-		$data['mdraft']= $this->db->query('select * from pesanan order by pesanan_id ASC');
+		$data['mdraft']= $this->m_pesanan->get_allPesanan();
+		// $data['mdraft']= $this->db->query('select * from pesanan order by pesanan_id ASC');
 		$data["mdata"]= $this->model_template->edit("template","id='".$id."'");								
 		$this->load->view('template/header');
 		$this->load->view('logistik/edit_templateSPK',$data);
