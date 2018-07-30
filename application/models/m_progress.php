@@ -45,7 +45,7 @@ class m_progress extends CI_Model {
   else {            
     $kode = 1;    
   }
-  $kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
+  $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
   $kodejadi = "PROGRESS-".$kodemax;    
   return $kodejadi;
 }

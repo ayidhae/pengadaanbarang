@@ -130,7 +130,7 @@
               <label class="control-label col-sm-2" for="catatan">Catatan</label>
               <div class="col-sm-10">
                 
-                <textarea name="catatan" class="form-control"  rows="5" cols="50"> <?php echo $catatan ?></textarea>
+                <textarea name="catatan" class="form-control"  rows="5" cols="50"><?php echo $catatan ?> </textarea>
               </div>
             </div>
           

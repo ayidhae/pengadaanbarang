@@ -98,7 +98,7 @@
 <div class="container-fluid">
 <div class="card card-accent-success">
   <div class="card-header">
-    <h5>  kirim surat ke direktur </h5>
+    <h5>  kirim surat spph ke direktur </h5>
   </div>
   <!--   <div class="pull-right">
     <a href="<?php echo base_url('c_ulasan/viewUlasan')?>" class="btn btn-link pull-right"><i class="fa fa-history"> </i> History Ulasan saya </a>
@@ -155,7 +155,7 @@
                         <input type="text" name="no_hp" class="form-control"  rows="7" cols="80" required></textarea>
                       </div>
                     </div>
-                    <div class="form-group ">
+                   <!--  <div class="form-group ">
                       <label for="tipe" class="col-md-3 control-label">Jenis Surat </label>
                       <div class="col-md-7 required">
                         <select class="form-control select2" style="min-width:250px;" required name="jenis_surat" id="">
@@ -163,19 +163,26 @@
                           <option>SPPH</option>
                         </select>
                       </div>
+                    </div> -->
+
+                       <div class="form-group">
+            <!--         <label for="tipe" class="col-md-3 control-label">Jenis Surat </label> -->
+                      <div class="col-md-7 required">
+                        <input class="form-control select2" style="min-width:250px;" required name="jenis_surat" value="SPPH" id="" hidden>
+                      </div>
                     </div>
                     
                     <div class="form-group">
                       <label for="tipe" class="col-md-3 control-label">nomor surat</label>
                       <div class="col-md-7 required">
-                        <input type="text" name="no_surat" class="form-control"  rows="7" cols="80" ></textarea>
+                        <input type="text" name="no_surat" class="form-control"  rows="7" cols="80" required></textarea>
                       </div>
                     </div>
                   
                     <div class="form-group">
                       <label for="tipe" class="col-md-3 control-label">upload SPPH</label>
                       <div class="col-md-7 required">
-                        <input type="file" class="form-control" placeholder="choose file" name="file"  value="" >
+                        <input type="file" class="form-control" placeholder="choose file" name="file"  value="" required>
                         <em>max:2mb format:gif|jpg|png|pdf|xlsx</em>
                       </div>
                     </div>

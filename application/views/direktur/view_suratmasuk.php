@@ -139,7 +139,7 @@
                          <td>
        
              <center>
-            <a href="<?=base_url()?>c_suratMasuk/approve_direktur/<?=$st['id_surat']?>" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> approve </a> <a href="<?=base_url()?>c_suratMasuk/hapusSuratMasukDirektur/<?=$st['id_surat']?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a> </td></center>
+            <a href="<?=base_url()?>c_suratMasuk/approve_direktur/<?=$st['id_surat']?>" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> approve </a> <!-- <a href="<?=base_url()?>c_suratMasuk/hapusSuratMasukDirektur/<?=$st['id_surat']?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>  --></td></center>
 
 
 

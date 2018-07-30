@@ -12,10 +12,9 @@
     </style>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
-        <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>">Dashboard</a>
+        <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>">Dashboard</a>
       </li>
     </ul>
-    
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -36,25 +35,48 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
+            <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
           </li>
           <li class="nav-title">
             Menu
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>"><i class="fa fa-home"></i> Home</a>
+            <a class="nav-link" href=" <?php echo base_url('/c_user/homeLogistik');?> "><i class="fa fa-home"></i> Home</a>
           </li>
-          <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>
+           <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewPesanan');?>"><i class="fa fa-shopping-cart"></i> Pesanan </a>
+              </li>
+             <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-pencil"></i>Kelola Surat</a>
             <ul class="nav-dropdown-items">
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-share"></i> Send Dokumen</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-download"></i> Receive Dokumen</a>
-              </li>
-            </ul>
+             <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_templateSPPH/viewTemplateSPPH');?>"><i class="fa fa-file-text-o"></i>SPPH</a>
           </li>
+               <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_templateSPH/viewTemplateSPH');?>"><i class="fa fa-file-text-o"></i>SPH</a>
+          </li>
+          </li>
+               <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_templateSPK/viewTemplateSPK');?>"><i class="fa fa-file-text-o"></i>SPK</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_templateBAST/viewTemplateBAST');?>"><i class="fa fa-file-text-o"></i>BAST</a>
+          </li>
+              </ul>            
+           <li class="nav-item nav-dropdown"> 
+          <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>          
+            <ul class="nav-dropdown-items">   
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_suratKeluar/viewSuratKeluarLogistik');?>"><i class="fa fa-share"></i> Surat Keluar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=" <?php echo base_url('/c_suratMasuk/surat_masukLogistik/');?>" > <i class="fa fa-inbox"></i> Surat Masuk</a>
+              </li>
+          
+            </ul>
+          </li>   
+          </li>
+
           <li class="nav-item nav-dropdown">
             <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-pencil"></i>Kelola</a>
             <ul class="nav-dropdown-items">
@@ -62,10 +84,10 @@
                 <a class="nav-link" href="<?php echo base_url('/c_user/kelola_user');?>"><i class="fa fa-user"></i> Kelola user</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress');?>"><i class="fa fa-tasks"></i> Kelola progress pengadaan</a>
+                <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress');?>"><i class="fa fa-tasks"></i> Kelola Progress Pengadaan</a>
               </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewStatuslog');?>"><i class="fa fa-shopping-cart"></i> Kelola status pesanan</a>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewStatusLog');?>"><i class="fa fa-shopping-cart"></i> Kelola Status Pesanan</a>
               </li>
             </ul>
           </li>

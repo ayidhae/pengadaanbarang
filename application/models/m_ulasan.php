@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class m_ulasan extends CI_Model {
 
 
-
 	
 	function viewUlasanlog(){
 	return $this->db->get('ulasan');
@@ -25,18 +24,18 @@ class m_ulasan extends CI_Model {
     }
 
 
-    function ambilDataNamaVendor(){
-    $this->db->order_by('username','asc');
-    $query = $this->db->get('vendor');
-    if($query->num_rows()>0)
-    {
-      return $query->result();
-    }
-    else
-    {
-      return false;
-    }
-  }
+  //   function ambilDataNamaVendor(){
+  //   $this->db->order_by('username','asc');
+  //   $query = $this->db->get('vendor');
+  //   if($query->num_rows()>0)
+  //   {
+  //     return $query->result();
+  //   }
+  //   else
+  //   {
+  //     return false;
+  //   }
+  // }
 
 
    function ambilDataPesanan($nama_customer){

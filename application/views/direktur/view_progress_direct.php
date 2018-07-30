@@ -97,7 +97,7 @@
            <div class="pull-right">
 
   
-<button type="button"  class="btn btn-danger" data-toggle="modal" data-target="#myModal"><h5><i class="fa fa-print"> cetak report  </i></h5></button>
+<button type="button"  class="btn btn-danger" data-toggle="modal" data-target="#myModal"><h5><i class="fa fa-print"> cetak laporan  </i></h5></button>
     </div>
     <div class="pull-left">
     </div>
@@ -110,7 +110,7 @@
                     <th>tanggal</th>
                     <th>nama customer</th>
                     <th>nama vendor</th>
-                    <th>status</th>
+                    <th>progress</th>
                     <th>kendala</th>
                  
 
