@@ -85,7 +85,7 @@
 		 </td>
 		 <td align="center" width="30%">&nbsp;</td>
 		 <td align="center" width="40%">
-			<p>{customer}</p><br/><br/><br/><br/><br/>
+			<p>{nama_customer}</p><br/><br/><br/><br/><br/>
 			<p>(<u>___________________________</u>)</p>
 		 </td>
       </tr>

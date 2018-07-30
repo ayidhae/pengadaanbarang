@@ -22,8 +22,7 @@ class c_templateBAST extends CI_Controller {
 	function export_pdfCUST($id='')
 	{
 		date_default_timezone_set("Asia/Jakarta");
-		$tgl =  date('Y-m-d h:i:s');
-		// $id 	= base64_decode($id);
+		$tgl =  date('Y-m-d h:i:s');		
 		$data	= $this->model_template->get_content_bast($id);		
 		$i=array();
 		$x=array();
@@ -41,7 +40,7 @@ class c_templateBAST extends CI_Controller {
 			$tahun				= terbilang(tahun($tgl));			
 			array_push($x,$i);
 		}
-		
+
 		$in['content_data']	= $x;
 		$in['nama_pengadaan']= $nama_pengadaan;
 		$in['nama_customer']= $nama_customer;
@@ -62,6 +61,7 @@ class c_templateBAST extends CI_Controller {
 		date_default_timezone_set("Asia/Jakarta");
 		$tgl =  date('Y-m-d h:i:s');			
 		$data	= $this->model_template->get_content_bast($id);
+		// print_r($data);
 		$i=array();
 		$x=array();
 		$no=1;
@@ -71,7 +71,7 @@ class c_templateBAST extends CI_Controller {
 			$i['satuan']		= $row->satuan;
 			$i['vol']			= number_format($row->vol);
 			$nama_pengadaan		= $row->nama_pengadaan;
-			$nama_customer		= $row->vendor;
+			$nama_vendor		= $row->vendor;
 			$nama_hari			= nama_hari($tgl);
 			$tgl_bast			= terbilang(date('d',strtotime($tgl)));
 			$bulan				= nama_bulan(date('m',strtotime($tgl)));
@@ -89,6 +89,7 @@ class c_templateBAST extends CI_Controller {
 		
 		$html_page 	= $this->parser->parse('logistik/surat_bastvend', $in, TRUE);
 		$pdfFilePath= 'bast_vendor.pdf';
+
 		$this->load->library('m_pdf');
 		$this->m_pdf->pdf->WriteHTML($html_page);
 		$this->m_pdf->pdf->Output($pdfFilePath, "D");
