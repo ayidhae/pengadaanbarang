@@ -111,7 +111,6 @@
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Home</li>
   <li class="breadcrumb-item"><a href="#">Logistik</a></li>
-  <li class="breadcrumb-item active">Tambah Draft Permintaan</li>
 </ol>
 <div class="container-fluid">
   <div class="card card-accent-success">

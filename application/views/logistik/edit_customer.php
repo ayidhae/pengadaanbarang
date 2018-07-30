@@ -115,7 +115,7 @@
         <div class="card">
          <div class="card-header">
            <h3 class="panel-title pull-left">Detail Customer</h3>
-            <a href="<?php echo site_url('/c_logistik/kelola_user');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
+            <a href="<?php echo site_url('/c_user/kelola_user');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>       
         </div>
           <div class="card-body">
             <div class="row">

@@ -105,7 +105,6 @@
    <ol class="breadcrumb">
       <li class="breadcrumb-item">Home</li>
       <li class="breadcrumb-item"><a href="#">Logistik</a></li>
-      <li class="breadcrumb-item active">Insert Detail Draft Permintaan</li>
    </ol>
    
 
