@@ -16,6 +16,7 @@ class m_barang extends CI_Model {
 			return array();
 		}
 	}
+	
 
 	function insert_barang($data){
 		$query = $this->db->insert('barang',$data);

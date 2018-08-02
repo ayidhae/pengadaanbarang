@@ -144,8 +144,8 @@
                     <td><?php  echo $bs->customer; ?></td>   
                     <td> <?php  echo $bs->nama_pengadaan; ?> </td>                     
                      <td>  
-                       <a href="<?php echo base_url('c_templateBAST/export_pdfCUST/'.$bs->pesanan_id);?>" class="btn btn-success"> <i class="fa fa-external-link"> </i> export c</a>
-                        <a href="<?php echo base_url('c_templateBAST/export_pdfVEND/'.$bs->pesanan_id);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> export v</a>                        
+                       <a href="<?php echo base_url('c_templateBAST/export_pdfCUST/'.$bs->pesanan_id);?>" class="btn btn-success"> </i> export customer </a>
+                        <a href="<?php echo base_url('c_templateBAST/export_pdfVEND/'.$bs->pesanan_id);?>" class="btn btn-primary"> </i> export vendor</a>                        
                     </td>
                   </tr>
                   <?php

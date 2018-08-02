@@ -160,6 +160,7 @@ class c_suratKeluar extends CI_Controller {
 
 	//form kirim SPH ke customer
 	function form_kirimSPH($id){
+		
 		$where = array('username' => $this->session->userdata('username'));
 		$data['nama_pnj'] = $this->m_user->ambilNama($where);
 		$id = base64_decode($id);		

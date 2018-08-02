@@ -34,10 +34,21 @@ class c_ulasan extends CI_Controller {
 	public function viewUlasanlog(){
 		
 		 $data ['ulasan'] = $this->m_ulasan->viewUlasanlog()->result();
-		 $data['data']=$this->m_ulasan->get_data_rating();
+		 // $data['report']=$this->m_ulasan->get_data_rating();
+		
 		$this->load->view('template/header');
 		$this->load->view('logistik/view_ulasanlog',$data);
-		$this->load->view('template/footer'); 
+		 $this->load->view('template/footer'); 
+	}
+
+		public function DetailUlasanlog(){
+		
+		 // $data ['ulasan'] = $this->m_ulasan->viewUlasanlog()->result();
+		 $data['report']=$this->m_ulasan->get_data_rating();
+		
+		$this->load->view('template/header');
+		$this->load->view('logistik/view_rating',$data);
+		 
 	}
 
 	function hapusUlasanlog($id_ulasan){
