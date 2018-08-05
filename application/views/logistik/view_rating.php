@@ -1,37 +1,37 @@
-<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
   <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
-   <style type="text/css">
+    <style type="text/css">
     body { font-family: sans-serif; }
-   </style>
+    </style>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
         <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>">Dashboard</a>
       </li>
     </ul>
+    
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        Selamat datang <?php echo $this->session->userdata('username');?>
+          Selamat datang <?php echo $this->session->userdata('username');?>
         </a>
         <div class="dropdown-menu dropdown-menu-right">
           <div class="dropdown-header text-center">
             <strong>Account</strong>
-          </div>          
+          </div>
           <a class="dropdown-item" href="<?php echo base_url('/c_user/viewProfile');?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('username');?></a>
           <a class="dropdown-item" href="<?php echo base_url('c_user/keluar'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
       </li>
     </ul>
-
   </header>
-
   <div class="app-body">
     <div class="sidebar">
       <nav class="sidebar-nav">
@@ -39,7 +39,6 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
           </li>
-
           <li class="nav-title">
             Menu
           </li>
@@ -89,7 +88,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress');?>"><i class="fa fa-tasks"></i> Kelola Progress Pengadaan</a>
               </li>
-          <li class="nav-item">
+           <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewStatuslog');?>"><i class="fa fa-shopping-cart"></i> Kelola status pesanan</a>
               </li>
             </ul>
@@ -102,82 +101,119 @@
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
-
     <!-- Main content -->
-    <main class="main">
-
+    <main class="main">      
       <!-- Breadcrumb -->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
         <li class="breadcrumb-item"><a href="#">Logistik</a></li>
-        <li class="breadcrumb-item active">Dashboard</li>
-
+        <li class="breadcrumb-item active">Rating</li>
         <!-- Breadcrumb Menu-->
       </ol>
-<!-- /.conainer-fluid -->
-   
+      <!-- /.conainer-fluid -->
+     
       <div class="container-fluid">
         <div class="card card-accent-success">
       <div class="card-header">
         <h3 class="panel-title pull-left">
-       Ulasan
+         Rating
         </h3>
-        <a href="<?php echo site_url('c_ulasan/DetailUlasanlog');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-info"> </i> RATING</a>
+        <a href="<?php echo site_url('c_ulasan/viewUlasanlog');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-back"></i> Kembali</a>
        </div>
-  
-  <div class="card-body">
-    <table id="dataUlasan" class="table ">
-      <thead>
-    <tr>
-                  <th>no pesanan|nama vendor</th>
-                  <th> komentar dari </th>
-                 <!--  <th>barang dari vendor </th> -->
-          <!--         <th> rating </th> -->
-                    <th>Komentar</th>
-                
-
-                  
-
-                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php              
-                  
-                  foreach($ulasan as $ul):
-                
-                  ?>
-                  
-                  <tr>
-                  <td><?php echo $ul->pesanan_id ;?></td>
-                  <td><?php echo $ul->username ;?></td>
-                  <!--  <td><?php echo $ul->dari_vendor ;?></td> -->
-                  <!--     <td><?php echo $ul->rating ;?></td> -->
-                    <td><?php echo $ul->komentar ;?></td>
-          <!--           <td>
-            <center><a href="<?=base_url()?>c_ulasan/hapusUlasanlog/<?=$ul->id_ulasan?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a> </td>
-            </center> -->
+      <ul class="nav navbar-right panel_toolbox">
+        </ul>
       
-             
-            
-                  </tr>
-                  <?php
-                  endforeach;
-                  ?>
+          <div class="card-body">
       
-    </tbody>
-  </table>
-  
-  
-</div>
-</div>
-
-</div>
-</main>
-</div>
-
-</div>
-</div>
-</div>
-</main>
-</div>
+<!-- <!-- <!-- load library jquery dan highcharts -->
+<script src="<?php echo base_url();?>asset/js/jquery.js"></script>
+<script src="<?php echo base_url();?>asset/js/highcharts.js"></script>
+<!-- end load library -->
+ 
+<?php
+    /* Mengambil query report*/
+    foreach($report as $result){
+        $nama_vendor[] = $result->nama_vendor; //ambil bulan
+        $rating[] = (float) $result->rating; //ambil nilai
+    }
+    /* end mengambil query*/
+     
+?>
+ 
+<!-- Load chart dengan menggunakan ID -->
+<div id="report"></div>
+<!-- END load chart -->
+ 
+<!-- Script untuk memanggil library Highcharts -->
+<script type="text/javascript">
+$(function () {
+    $('#report').highcharts({
+        chart: {
+            type: 'column',
+            margin: 75,
+            options3d: {
+                enabled: false,
+                alpha: 10,
+                beta: 25,
+                depth: 70
+            }
+        },
+        title: {
+            text: ' Ulasan Dari Customer',
+            style: {
+                    fontSize: '10px',
+                    fontFamily: 'Verdana, sans-serif'
+            }
+        },
+        subtitle: {
+           text: 'Rating',
+           style: {
+                    fontSize: '10px',
+                    fontFamily: 'Verdana, sans-serif'
+            }
+        },
+        plotOptions: {
+            column: {
+                depth: 25
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        xAxis: {
+            categories:  <?php echo json_encode($nama_vendor);?>
+        },
+        exporting: { 
+            enabled: false 
+        },
+        yAxis: {
+            title: {
+                text: 'Jumlah'
+            },
+        },
+        tooltip: {
+             formatter: function() {
+                 return 'The value for <b>' + this.x + '</b> is <b>' + Highcharts.numberFormat(this.y,0) + '</b>, in '+ this.series.name;
+             }
+          },
+        series: [{
+            name: 'Report Data Rating',
+            data: <?php echo json_encode($rating);?>,
+            shadow : true,
+            dataLabels: {
+                enabled: true,
+                color: '#045396',
+                align: 'center',
+                formatter: function() {
+                     return Highcharts.numberFormat(this.y, 0);
+                }, // one decimal
+                y: 0, // 10 pixels down from the top
+                style: {
+                    fontSize: '13px',
+                    fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }]
+    });
+});
+        </script>

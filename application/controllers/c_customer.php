@@ -10,12 +10,12 @@ class c_customer extends CI_Controller {
 	}
 		 //call model
 	public function home(){
+		
 		$data['barang'] = $this->m_barang->getAllBarang('barang');
 		$this->load->view('template/header'); // default template
 		$this->load->view('customer/dashboard',$data); // dashboard vendornya
 		$this->load->view('template/footer'); 
 	}
-
 
 
 // kelola user

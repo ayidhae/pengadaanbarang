@@ -95,7 +95,7 @@
       
       
       <div class="container-fluid">
-        <H1>Data Barang</H1>
+        <H1>Data Barang = 3</H1>
         <body>
           <div class="row">
             <?php foreach($barang as $detail): ?>

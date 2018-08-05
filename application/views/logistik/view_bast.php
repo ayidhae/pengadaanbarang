@@ -146,6 +146,8 @@
                      <td>  
                        <a href="<?php echo base_url('c_templateBAST/export_pdfCUST/'.$bs->pesanan_id);?>" class="btn btn-primary btn-sm" title="Generate PDF Customer"><i class="fa fa-file-pdf-o"></i></a>
                         <a href="<?php echo base_url('c_templateBAST/export_pdfVEND/'.$bs->pesanan_id);?>" class="btn btn-primary btn-sm" title="Generate PDF Vendor"> <i class="fa fa-file-pdf-o"></i></a>                        
+                       <!-- <a href="<?php echo base_url('c_templateBAST/export_pdfCUST/'.$bs->pesanan_id);?>" class="btn btn-success"> </i> export customer </a>
+                        <a href="<?php echo base_url('c_templateBAST/export_pdfVEND/'.$bs->pesanan_id);?>" class="btn btn-primary"> </i> export vendor</a> -->                        
                     </td>
                   </tr>
                   <?php

@@ -102,14 +102,14 @@
     <table id="dataSuratKeluar" class="table ">
       <thead>
         <tr>
-          <th> tujuan </th>
-          <th> jenis surat </th>
-          <th> penanggung jawab </th>
-          <th> contact </th>
-          <th>nomor surat </th>
-          <th>tanggal</th>
-          <th> surat </th>
-          <th>pesan</th>
+          <th> Tujuan </th>
+          <th> Jenis Surat </th>
+          <th> Penanggung Jawab </th>
+          <th> Contact </th>
+          <th>Nomor Surat </th>
+          <th>Tanggal</th>
+          <th> Surat </th>
+          <th>Pesan</th>
           
           
         </tr>
