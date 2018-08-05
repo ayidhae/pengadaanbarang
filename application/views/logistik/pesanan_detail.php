@@ -117,7 +117,7 @@
         }
       ?>
       <h3 class="panel-title pull-left">
-       Insert Detail Data Pesanan
+       Insert Detail Pesanan
       </h3>
       <a href="<?php echo site_url('c_pesanan/viewPesanan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>
          </div>

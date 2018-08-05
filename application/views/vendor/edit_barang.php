@@ -144,7 +144,7 @@
                               
                             <div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-plus">Edit</i></button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-plus">Simpan</i></button>
                                 <a class="btn btn-danger" href="<?php echo base_url('c_barang/view_barang')?>"><i class="fa fa-close"></i> Batal</a>
                               </div>
                             </div>
@@ -195,7 +195,7 @@
       <!--button upload end-->
       <button type="submit"  class="btn btn-success" value="submit"><i class="fa fa-check icon-white"></i> Simpan</button>
          </form>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Batall</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
         </div>
         </table>
   </fieldset>

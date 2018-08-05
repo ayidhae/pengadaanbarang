@@ -9,7 +9,8 @@ class m_barang extends CI_Model {
 
 	//untuk logistik direktur customer
 	function getAllBarang(){
-		$hasil = $this->db->get('barang');
+		$hasil = $this->db->query('select * from barang join vendor on vendor.username=barang.username');
+		// $hasil = $this->db->get('barang');
 		if($hasil->num_rows() > 0){
 			return $hasil->result();
 		} else {

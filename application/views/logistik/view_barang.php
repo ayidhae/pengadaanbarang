@@ -35,7 +35,7 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
+            <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
           </li>
           <li class="nav-title">
             Menu
@@ -120,6 +120,7 @@
                   <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
                   <div> 
                     <p> <?=$detail->jenis ?> </p>
+                    <p> <?=$detail->nama_perusahaan ?> </p>
                   </div>
                   </div>
                 </div>

@@ -74,8 +74,9 @@
       </ol>
       <div class="container-fluid">
         <div class="card card-accent-success">
-          <div class="card-header">
-            <h3>  kotak masuk </h3>
+          <div class="card-header">            
+            <h3>  kotak masuk </h3>  
+
           </div>
            <div class="pull-right">
 
@@ -91,16 +92,16 @@
                     <th>Tanggal</th>
                     <th>Surat </th>
                     <th>Pesan</th>
-                    <th>Aksi</th>                                                                                
+                    <th>Aksi</th>                                                                                    
                   </tr>
                 </thead>
                 <tbody>
-                  <?php              
+                  <?php           
                   $i = 1; 
-                  foreach($surat_masuk as $sm):
-                
-                  ?>
-                  
+                  foreach($surat_masuk as $sm):                   
+                  ?>     
+
+
                   <tr>
                   <td><?php echo $i; ?></td>
                   <td><?php echo $sm['username'] ;?></td>
@@ -108,7 +109,8 @@
                    <td><?php echo $sm['no_surat'] ;?></td>
                    <td><?php echo date('d-m-Y H:i:s',strtotime($sm['tgl_surat'])) ?></td>                  
                      <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$sm['file']."' target='_blank'>".$sm['file']."</a>"?></td>                       
-                       <td><?php echo $sm['pesan'];$i++;?></td>                                                                                
+                       <td><?php echo $sm['pesan'];$i++; ?></td>                       
+
                     <td> 
                       <?php 
                       if($sm['jenis_surat'] == 'spk'){
@@ -120,10 +122,12 @@
                    
                   </center>                          
                     </tr>
+
+
                   <?php
                   endforeach;
                   ?>
-                 
+                                
                 </tbody>
               </table>            
 </div>
