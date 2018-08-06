@@ -74,7 +74,8 @@
           <div class="card text-white bg-red py-5 d-md-down-none" style="width:44%">
             <div class="card-body text-center">
               <div>
-                <h2>Aplikasi Pengadaan Barang</h2>                
+                <h2>Aplikasi Pengadaan Barang</h2>     
+                           
               </div>
             </div>
           </div>

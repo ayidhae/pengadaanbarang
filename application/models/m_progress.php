@@ -32,7 +32,6 @@ class m_progress extends CI_Model {
    $this->db->delete($table);
  }
 
-
  function getIdProgress(){
    $this->db->select('RIGHT(progress_pengadaan.id_progress,4) as no', FALSE);
    $this->db->order_by('id_progress','DESC');    
@@ -45,7 +44,7 @@ class m_progress extends CI_Model {
   else {            
     $kode = 1;    
   }
-  $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
+  $kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
   $kodejadi = "PROGRESS-".$kodemax;    
   return $kodejadi;
 }
