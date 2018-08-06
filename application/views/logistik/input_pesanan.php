@@ -179,7 +179,7 @@
    
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
             
           </div>
         </div>

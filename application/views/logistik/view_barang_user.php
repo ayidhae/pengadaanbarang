@@ -35,8 +35,9 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
-          <li class="nav-title">
+            <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
+          </li>
+      <li class="nav-title">
             Menu
           </li>
           <li class="nav-item">
@@ -85,8 +86,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress');?>"><i class="fa fa-tasks"></i> Kelola Progress Pengadaan</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_statusPesanan/input');?>"><i class="fa fa-shopping-cart"></i> Kelola Status Pesanan</a>
+           <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewStatuslog');?>"><i class="fa fa-shopping-cart"></i> Kelola status pesanan</a>
               </li>
             </ul>
           </li>
@@ -98,51 +99,44 @@
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
-    <!-- Main content -->
-    <main class="main">
-      
-      <!-- Breadcrumb -->
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Logistik</a></li>
-        <li class="breadcrumb-item active">Detail customer</li>
-        <!-- Breadcrumb Menu-->
-      </ol>
-      <!-- /.conainer-fluid -->
-    <?php foreach($customer as $detail): ?>
-              <div class="card">
-                <div class="card-header">
-                  <i class="fa fa-align-justify"></i> Detail 
-                  <a href="<?php echo site_url('/c_user/kelola_user');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>               
-                </div>
-                <div class="card-body">
-                  <table class="table table-responsive-sm">
-                    <thead>
-                      <tr>
-                        <th>Npwp</th>
-                        <th>Nama Perusahaan</th>
-                        <th>Alamat Perusahaan</th>
-                        <th>Email</th>
-                        <th>Contact</th>
-                        <th>Username</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><?php echo $detail->npwp ;?></td>
-                        <td><?php echo $detail->nama_perusahaan ;?></td>
-                        <td><?php echo $detail->alamat_perusahaan;?></td>
-                        <td><?php echo $detail->email;?></td>
-                        <td><?php echo $detail->contact;?></td>
-                        <td><?php echo $detail->username;?></td>    
-                        <td><?php echo $detail->status;?></td>                                                
-                      </tr>                                  
-                    </tbody>
-                  </table>                 
+<!-- Main content -->
+<main class="main">
+<!-- Breadcrumb -->
+<ol class="breadcrumb">
+<li class="breadcrumb-item">Home</li>
+<li class="breadcrumb-item"><a href="#">Logistik</a></li>
+<li class="breadcrumb-item active">Data Barang</li>
+<!-- Breadcrumb Menu-->
+</ol>
+<!-- /.conainer-fluid -->
+
+<div class="container-fluid"> 
+
+        <H1>Data Barang</H1>
+        <body>
+          <div class="row">
+
+            <?php foreach($barang as $detail): ?>
+              <div class="col-sm-3 col-md-3">
+                <div class="card">
+                  <div class="card-header">
+                    <h3> <?=$detail->namabarang?></h3>
+                  </div>
+                  <div class="card-body">
+                  <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
+                  <div> 
+                    <p> <?=$detail->jenis ?> </p>
+                  </div>
+                  </div>
                 </div>
               </div>
-    <?php endforeach; ?>
+            <?php endforeach; ?>
+          </div>
+        </body>
+        </div>
 </div>
 </main>
+</div>
+</div>
+</div>
 </div>

@@ -118,7 +118,7 @@ foreach($editpesanan->result_array() as $row){
       <div class="card card-accent-success">
          <div class="card-header">
       <h3 class="panel-title pull-left">
-       Edit Data
+       Edit Pesanan
       </h3>
       <a href="<?php echo site_url('c_pesanan/viewPesanan');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>
          </div>
@@ -142,7 +142,7 @@ foreach($editpesanan->result_array() as $row){
      
         <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Update</button>
+          <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan </button>
  
         </div>
         </div>

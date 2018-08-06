@@ -231,7 +231,7 @@ foreach($mdraft->result_array() as $row){
         </div> -->
         <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Ubah</button>
+          <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan </button>
       <!--     <button type="reset" class="btn btn-warning"><i class="fa fa-ban"></i> Reset</button> -->
         </div>
         </div>

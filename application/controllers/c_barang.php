@@ -23,6 +23,14 @@ class c_barang extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+	public function view_barang_user($username){
+		$where = array('username' => $username);;
+		$data['barang'] = $this->m_barang->getBarang($where,'barang')->result();
+		$this->load->view('template/header');
+		$this->load->view('logistik/view_barang_user',$data);
+		$this->load->view('template/footer');
+	}
+
 	function delete_barang($idbarang){
 		$where=array(
             'idbarang'=>$idbarang

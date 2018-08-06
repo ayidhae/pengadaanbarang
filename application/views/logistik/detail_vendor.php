@@ -91,7 +91,7 @@
               <div class="card">
                 <div class="card-header">
                   <i class="fa fa-align-justify"></i> Detail
-                  <a href="<?php echo site_url('/c_logistik/kelola_user');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>    
+                  <a href="<?php echo site_url('/c_user/kelola_user');?>" class="btn btn-sm btn-success pull-right"><i class="fa fa-reply"></i> Kembali</a>    
                 </div>
                 <div class="card-body">
                   <table class="table table-responsive-sm">

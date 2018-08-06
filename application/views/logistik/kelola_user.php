@@ -143,7 +143,9 @@
                      <td>  
                        <a href="<?php echo base_url('/c_vendor/detail_user/'.$user['username']);?>" class="btn btn-success"> <i class="fa fa-external-link"> </i> detail</a>
                         <a href="<?php echo base_url('/c_vendor/edit_user/'.$user['username']);?>" class="btn btn-primary"> <i class="fa fa-pencil"></i> Edit</a>
+                        <a href="<?php echo base_url('/c_barang/view_barang_user/'.$user['username']);?>" class="btn btn-warning"> <i class="fa fa-list"> </i> Barang</a>
                         <a href="<?php echo base_url('/c_vendor/delete_user/'.$user['username']);?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data?')"> <i class="fa fa-trash"> </i> Delete</a>
+
                     </td>
                   </tr>
                   <?php
