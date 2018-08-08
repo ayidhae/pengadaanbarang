@@ -74,12 +74,7 @@
           <div class="card text-white bg-red py-5 d-md-down-none" style="width:44%">
             <div class="card-body text-center">
               <div>
-<<<<<<< HEAD
                 <h2>Aplikasi Pengadaan Barang</h2>     
-                           
-=======
-                <h2>Aplikasi Pengadaan Barang</h2>   
->>>>>>> 329d9867b9be40f504adccf3ab5689e24772e463
               </div>
             </div>
           </div>
