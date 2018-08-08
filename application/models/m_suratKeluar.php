@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class m_suratKeluar extends CI_Model {
 
 
-
       function viewSuratKeluar($where,$table){
         $this->db->select('*');
         $this->db->from($table);

@@ -15,7 +15,6 @@ class c_suratMasuk extends CI_Controller {
 	// 	$this->load->view('template/footer'); 
 	// }
 
-
 	public function surat_masukDirektur(){  //dihalaman direktur
 		$data ['surat_masuk'] = $this->m_suratMasuk->kotak_masuk_direktur($this->session->userdata('username'));
 		$this->load->view('template/header');

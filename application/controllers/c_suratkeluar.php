@@ -46,12 +46,14 @@ class c_suratKeluar extends CI_Controller {
 
 //DIBAWAH ADALAH INPUT SURAT KELUAR DIHALAMAN CUSTOMER
 	function inputSuratKeluarDirektur(){	
+	date_default_timezone_set("Asia/Jakarta");
+    $tgl_surat = date('Y-m-d h:i:s');
     $username = $this->input->post('tujuan');
     $penanggung_jawab  = $this->input->post('penanggung_jawab');
     $no_hp =  $this->input->post('no_hp');
     $jenis_surat = $this->input->post('jenis_surat');
     $no_surat = $this->input->post('no_surat');
-    $tgl_surat =$this->input->post('tgl_surat');
+ 
     
     $config['upload_path'] 		= 'asset/upload/surat_keluar';
 		$config['allowed_types'] 	= 'gif|jpg|png|pdf|xlsx';
@@ -155,7 +157,6 @@ class c_suratKeluar extends CI_Controller {
 
 	//form kirim SPH ke customer
 	function form_kirimSPH($id){
-		
 		$where = array('username' => $this->session->userdata('username'));
 		$data['nama_pnj'] = $this->m_user->ambilNama($where);
 		$id = base64_decode($id);		
@@ -166,29 +167,18 @@ class c_suratKeluar extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	
-	// function inputSuratCustomer()
-	// 	{
-	// 		$data = array(
-	// 			'username' => $this->m_suratKeluar->ambilDataUsernameCustomer(),
-	// 			// 'hak_akses' => $this->m_suratkeluarcust->ambilDataUsernameLogist(),
-				
-	// 		);
-
-	// 	$this->load->view('template/header');
-	// 	$this->load->view('logistik/input_suratKeluarCust', $data);
-	// 	$this->load->view('template/footer');
-	// }
 	
-
+	
+//aksi sph
 	function inputSuratKeluarCustomer(){
 		
-
+	date_default_timezone_set("Asia/Jakarta");
+    $tgl_surat = date('Y-m-d h:i:s');
     $tujuan_customer = $this->input->post('tujuan_customer');
     $penanggung_jawab = $this->input->post('penanggung_jawab');
     $no_hp = $this->input->post('no_hp');
     $jenis_surat = $this->input->post('jenis_surat');
     $no_surat = $this->input->post('no_surat');
-    $tgl_surat = date('Y-m-d h:i:s');
     $pesan = $this->input->post('pesan');
     $config['upload_path'] 		= 'asset/upload/surat_keluar';
 		$config['allowed_types'] 	= 'gif|jpg|png|pdf|doc|docx';

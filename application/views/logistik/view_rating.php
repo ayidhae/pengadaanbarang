@@ -163,6 +163,7 @@ $(function () {
             style: {
                     fontSize: '10px',
                     fontFamily: 'Verdana, sans-serif'
+
             }
         },
         subtitle: {
@@ -181,6 +182,7 @@ $(function () {
             enabled: false
         },
         xAxis: {
+
             categories:  <?php echo json_encode($nama_vendor);?>
         },
         exporting: { 
@@ -193,7 +195,7 @@ $(function () {
         },
         tooltip: {
              formatter: function() {
-                 return 'The value for <b>' + this.x + '</b> is <b>' + Highcharts.numberFormat(this.y,0) + '</b>, in '+ this.series.name;
+                 return 'nilai vendor <b>' + this.x + '</b> adalah <b>' + Highcharts.numberFormat(this.y,0) + '</b>, di '+ this.series.name;
              }
           },
         series: [{
@@ -202,7 +204,9 @@ $(function () {
             shadow : true,
             dataLabels: {
                 enabled: true,
-                color: '#045396',
+                color: '#434348',
+
+           
                 align: 'center',
                 formatter: function() {
                      return Highcharts.numberFormat(this.y, 0);
@@ -217,3 +221,9 @@ $(function () {
     });
 });
         </script>
+        </div>
+        </div>
+        </div>
+        </main>
+        </div>
+        </body>

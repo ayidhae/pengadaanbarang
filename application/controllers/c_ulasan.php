@@ -48,6 +48,7 @@ class c_ulasan extends CI_Controller {
 		
 		$this->load->view('template/header');
 		$this->load->view('logistik/view_rating',$data);
+
 		 
 	}
 

@@ -114,7 +114,7 @@
                     <th> surat </th>
                     <th>pesan</th>
                      <th> balas </th> 
-                    
+                  
                   </tr>
                 </thead>
                 <tbody>
@@ -123,7 +123,7 @@
                   foreach($surat_masuk as $st):
                   
                   ?>
-                  
+        
                   <tr>
                     <td><?php echo $i; ?></td>
                     <td><?php echo $st['username'] ;?></td>

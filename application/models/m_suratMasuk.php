@@ -12,7 +12,6 @@ class m_suratMasuk extends CI_Model {
   }
 }
 
-
 function kotak_masuk_customer($kotak_masuk){
   if($kotak_masuk) {
     $sql = "SELECT * FROM surat_keluar WHERE tujuan_customer = ? ORDER BY tgl_surat DESC";

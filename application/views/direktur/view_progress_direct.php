@@ -96,7 +96,7 @@
           </div>
            <div class="pull-right">
 
-  
+
 <button type="button"  class="btn btn-danger" data-toggle="modal" data-target="#myModal"><h5><i class="fa fa-print"> cetak laporan  </i></h5></button>
     </div>
     <div class="pull-left">
@@ -124,11 +124,13 @@
                   foreach($progress as $prog):
                 
                   ?>
-                  
+                
                   <tr>
                    <td><?php echo $i; ?></td>
                     <td><?php echo $prog->pesanan_id ;?></td> 
-                    <td><?=date('F d Y', strtotime($prog->tanggal));?></td>    
+                  <!--   <td><?=date('F d Y', strtotime($prog->tanggal));?></td>  -->  
+                 
+                    <td><?php echo date('d-m-Y',strtotime($prog->tanggal))?></td>
                     <td><?php echo $prog->nama_customer ;?></td>  
                    <td><?php echo $prog->nama_vendor ;?></td>                                   
                   
