@@ -4,12 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class c_suratKeluar extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_suratKeluar');
-		// $this->load->model('m_suratMasuk');
-		
-		// $this->load->model('m_customer');
-		// $this->load->model('m_vendor');
-		// $this->load->model('m_pesanan');
+		$this->load->model('m_suratKeluar');		
 		$this->load->model('model_template');
 		$this->load->model('m_user');
 
