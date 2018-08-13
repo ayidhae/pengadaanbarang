@@ -117,7 +117,7 @@ class c_pesanan extends CI_Controller {
 
 	
 	 	public function insert_detail(){
-		$this->form_validation->set_rules('nama_barang', 'Nama Barang','required|alpha_numeric_spaces');		
+		$this->form_validation->set_rules('nama_barang', 'Nama Barang','required');		
 		$this->form_validation->set_rules('satuan', 'Satuan','required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('vol', 'Volume','required|numeric');
 			if ($this->form_validation->run() == TRUE){
