@@ -45,7 +45,7 @@ function kotak_masuk_vendor($kotak_masuk){
 
 function getApprove(){
  // return $this->db->get_where($table,$where);
-  return $query=$this->db->query("SELECT * FROM surat_keluar where status_approve='YA'")->result();
+  return $query=$this->db->query("SELECT * FROM surat_keluar where status_approve='YA' ORDER BY tgl_surat DESC")->result();
 }
 
 function getTidakApprove(){

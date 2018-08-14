@@ -15,19 +15,19 @@ class c_login extends CI_Controller
 	}
 
 	function index() {
-		// if($this->session->has_userdata('username')){
-		// 		if($this->session->userdata('hak_akses')=='logistik' && $this->session->userdata('status') == 'aktif'){
-		// 			redirect('c_user/homeLogistik');
-		// 		}elseif($this->session->userdata('hak_akses')=='direktur'){
-		// 			redirect('c_user/homeDirektur');
-		// 		}elseif ($this->session->userdata('hak_akses')=='customer' && $this->session->userdata('status') == 'aktif') {
-		// 			redirect('c_customer/home');
-		// 		}else{
-		// 			redirect('c_vendor/home');
-		// 		}
-		// }else{
+		if($this->session->has_userdata('username')){
+				if($this->session->userdata('hak_akses')=='logistik'){
+					redirect('c_user/homeLogistik');
+				}elseif($this->session->userdata('hak_akses')=='direktur'){
+					redirect('c_user/homeDirektur');
+				}elseif ($this->session->userdata('hak_akses')=='customer' && $this->session->userdata('status') == 'aktif') {
+					redirect('c_customer/home');
+				}elseif($this->session->userdata('hak_akses')=='vendor' && $this->session->userdata('status') == 'aktif'){
+					redirect('c_vendor/home');
+				}
+		}else{
 			$this->load->view('utama/login-page');
-		// }
+		}
 		
 	}
 
@@ -76,7 +76,7 @@ class c_login extends CI_Controller
                      <script type=text/javascript>alert("Status tidak aktif");</script>
 
         		<?php
-        		$this->index();
+        		$this->load->view('utama/login-page');
 			}
 		} else if($cekCustomer->num_rows() == 1)
 			{
@@ -95,7 +95,7 @@ class c_login extends CI_Controller
 				?>
                      <script type=text/javascript>alert("Status tidak aktif");</script>
         		<?php
-        		$this->index();
+        		$this->load->view('utama/login-page');
 			}
 		} else {
 			 ?>
