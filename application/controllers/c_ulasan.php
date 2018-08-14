@@ -52,12 +52,11 @@ class c_ulasan extends CI_Controller {
 		 
 	}
 
-	function hapusUlasanlog($id_ulasan){
-        $where=array('id_ulasan' => $id_ulasan);
-        $this->m_ulasan->delete($where,'ulasan');
-        redirect('c_ulasan/viewUlasanlog');
-        }
-
+	// function hapusUlasanlog($id_ulasan){
+ //        $where=array('id_ulasan' => $id_ulasan);
+ //        $this->m_ulasan->delete($where,'ulasan');
+ //        redirect('c_ulasan/viewUlasanlog');
+ //        }
 
 
 

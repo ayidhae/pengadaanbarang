@@ -16,7 +16,6 @@ class c_templateBAST extends CI_Controller {
 		// $this->load->view('template/header');
 		// $this->load->view('logistik/contoh',$data);
 
-	
 		$data['bast'] 	= $this->model_template->get_all_bast();	
 		// echo json_encode($data['bast']);
 		$this->load->view('template/header');

@@ -128,9 +128,9 @@
                   <tr>
                    <td><?php echo $i; ?></td>
                     <td><?php echo $prog->pesanan_id ;?></td> 
-                  <!--   <td><?=date('F d Y', strtotime($prog->tanggal));?></td>  -->  
-                 
-                    <td><?php echo date('d-m-Y',strtotime($prog->tanggal))?></td>
+              <td><?=date('F d Y', strtotime($prog->tanggal));?></td>  
+<!--                 
+                    <td><?php echo date('d-m-Y',strtotime($prog->tanggal))?></td> -->
                     <td><?php echo $prog->nama_customer ;?></td>  
                    <td><?php echo $prog->nama_vendor ;?></td>                                   
                   

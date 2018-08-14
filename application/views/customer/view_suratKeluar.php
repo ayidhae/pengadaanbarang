@@ -24,7 +24,7 @@
       </a> -->
       <div class="dropdown-menu dropdown-menu-right">
         
-        
+      
         <div class="dropdown-header text-center">
           <strong>Settings</strong>
         </div>
@@ -95,6 +95,11 @@
 <div class="container-fluid">
 <div class="card card-accent-success">
   <div class="card-header">
+      <?php
+                if ($this->session->flashdata('msg')){
+                  echo $this->session->flashdata('msg');
+                }
+              ?>
     <h5>  Surat keluar </h5>
   </div>
   
@@ -102,6 +107,7 @@
     <table id="dataSuratKeluar" class="table ">
       <thead>
         <tr>
+        <th> No</th>
           <th> Tujuan </th>
           <th> Jenis Surat </th>
           <th> Penanggung Jawab </th>
@@ -116,12 +122,13 @@
       </thead>
       <tbody>
         <?php
-        
+                $i = 1; 
         foreach($surat_keluar as $ul):
         
         ?>
         
         <tr>
+        <td> <?php echo $i?> </td>
           <td><?php echo $ul->tujuan_direktur ;?> <?php echo $ul->tujuan_logistik ;?> </td>
           <td><?php echo $ul->jenis_surat ;?></td>
           <td><?php echo $ul->penanggung_jawab ;?></td>
@@ -142,7 +149,7 @@
                     <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                   </div>
                   <div class="modal-body">
-                  <?php echo $ul->pesan ;?></td>
+                  <?php echo $ul->pesan ; $i++;?></td>
                   
                 </div>
                 <div class="form-group">

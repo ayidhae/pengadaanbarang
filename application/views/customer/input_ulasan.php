@@ -134,11 +134,11 @@
                         <?php
                         if($pesanan_id){
                         foreach($pesanan_id as $d){
-                        echo '<option id=' . $d['pesanan_id'] . '>' . $d['pesanan_id'] . '| '.$d['nama_vendor'].'</option>';
+                        echo '<option id=' . $d['pesanan_id'] . 'selected>' . $d['pesanan_id'] . '| '.$d['nama_vendor'].'</option>';
                         }
                         }
                         ?>
-                        
+                     
       
                       </select>
                     </div>

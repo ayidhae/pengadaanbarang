@@ -38,7 +38,6 @@ class c_progress extends CI_Controller {
 			//  	'nama_perusahaan' => $this->m_progress->ambilDataNamaVendor()
 				
 			//  );
-
 			$data['mdraft']	= $this->db->query('select * from pesanan order by pesanan_id ASC');
 	 	
          $this->load->view('template/header');

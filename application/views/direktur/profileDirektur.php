@@ -116,12 +116,12 @@
                           </div>
                           <div class="form-group">Username</label>
                             <div>
-                              <input class="form-control" type="text" name="username" value="<?php echo $user->username ;?>"">
+                              <input class="form-control" type="text" name="username" value="<?php echo $user->username ;?>" readonly>
                             </div>
                           </div>                      
 
                           <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
+                            <!-- <div class="col-sm-offset-2 col-sm-8"> -->
                               <button class="btn btn-primary"> <i class="fa fa-check">Ubah</i></button>
                               <button type="button"  class="btn btn-success" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil">Ubah Password</i></button>            
                             </div>

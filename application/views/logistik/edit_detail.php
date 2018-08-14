@@ -146,13 +146,13 @@ foreach($mdetail->result_array() as $row){
         <div class="form-group">
         <label class="control-label col-sm-2" for="vol">VOL</label>
         <div class="col-sm-10"> 
-          <input type="number" class="form-control" id="vol" name="vol" value="<?php echo $vol;?>" placeholder="Jumlah Barang" required>
+          <input type="text" class="form-control" id="vol" name="vol" value="<?php echo $vol;?>" placeholder="Jumlah Barang" required>
         </div>
         </div>
         <div class="form-group">
         <label class="control-label col-sm-2" for="harga">HARGA SATUAN</label>
         <div class="col-sm-10"> 
-          <input type="number" class="form-control" id="harga" name="harga" value="<?php echo $harga;?>" placeholder="Harga Satuan" required>
+          <input type="text" class="form-control" id="harga" name="harga" value="<?php echo $harga;?>" placeholder="Harga Satuan" required>
         </div>
         </div>
         <div class="form-group"> 
