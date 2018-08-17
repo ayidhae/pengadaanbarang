@@ -81,6 +81,7 @@ class c_templateBAST extends CI_Controller {
 		foreach ($data->result() as $row) {
 			$i['no']			= $no++;
 			$i['nama_barang']	= $row->nama_barang;
+			$i['spesifikasi_barang']	= $row->spesifikasi_barang;
 			$i['satuan']		= $row->satuan;
 			$i['vol']			= number_format($row->vol);
 			$nama_pengadaan		= $row->nama_pengadaan;
@@ -98,9 +99,6 @@ class c_templateBAST extends CI_Controller {
 		}
 
 		$in['content_data']	= $x;
-
-		$in['nama_pengadaan']		= $nama_pengadaan;
-		$in['customer']		= $nama_customer;
 
 		$in['nama_pengadaan']= $nama_pengadaan;
 		$in['nama_customer']= $nama_customer;
@@ -139,6 +137,7 @@ class c_templateBAST extends CI_Controller {
 		foreach ($data->result() as $row) {
 			$i['no']			= $no++;
 			$i['nama_barang']	= $row->nama_barang;
+			$i['spesifikasi_barang']	= $row->spesifikasi_barang;
 			$i['satuan']		= $row->satuan;
 			$i['vol']			= number_format($row->vol);
 			$nama_pengadaan		= $row->nama_pengadaan;
@@ -157,8 +156,6 @@ class c_templateBAST extends CI_Controller {
 		$in['content_data']		= $x;
 
 		$in['nama_pengadaan']	= $nama_pengadaan;
-		$in['nama_pengadaan']	=$nama_pengadaan;
-
 		$in['nama_vendor']		= $nama_vendor;
 		$in['hari']				= $nama_hari;
 		$in['tgl_bast']			= $tgl_bast;
