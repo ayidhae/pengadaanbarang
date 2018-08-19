@@ -8,6 +8,9 @@ class c_pesanan extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_pesanan');
 		$this->load->model('m_suratKeluar');
+		$this->load->model('model_template');
+
+
 	}
 
 
@@ -115,7 +118,7 @@ class c_pesanan extends CI_Controller {
 			$this->load->view('template/footer'); 		
 		}
 
-	
+
 	 	public function insert_detail(){
 		$this->form_validation->set_rules('nama_barang', 'Nama Barang','required');		
 		$this->form_validation->set_rules('satuan', 'Satuan','required|alpha_numeric_spaces');
@@ -194,7 +197,7 @@ public function viewStatuslog(){
 		
 
 	 	$data["editpesanan"]= $this->m_pesanan->edit("pesanan","pesanan_id='".$id."'");								
-
+		 $this->model_template->manualQuery("update pesanan set status='finish' where id='".$id."'");
 	 	$this->load->view('template/header');
 	 	$this->load->view('logistik/edit_status',$data);
 	 	$this->load->view('template/footer'); 

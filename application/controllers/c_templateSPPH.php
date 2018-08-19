@@ -7,6 +7,7 @@ class c_templateSPPH extends CI_Controller {
 		parent::__construct();
 		$this->load->model('model_template');
 		$this->load->model('m_pesanan');
+
 	}
 
 	public function viewTemplateSPPH(){
@@ -20,12 +21,12 @@ class c_templateSPPH extends CI_Controller {
 	}
 	
 
-
 	public function inputTemplateSPPH(){
 	
 		// $data['mdraft']	= $this->db->query('select * from pesanan p join template t on p.pesanan_id=t.pesanan_id where t.no_spph is null order by p.pesanan_id ASC');
 
 		// $data['mdraft']	= $this->db->query('select * from pesanan  order by pesanan_id ASC');
+		$data ['username'] = $this->model_template->ambilDataUsernameDirektur();
 		$data['mdraft']	= $this->m_pesanan->get_allPesanan();
 		// echo json_encode($data['mdraft']);
 		
@@ -41,6 +42,7 @@ class c_templateSPPH extends CI_Controller {
 		$nomorSPPH = 'BUT/LOG/SPPH/'.date("Y").'/'.date("m").'/'.str_pad($id,3, "0", STR_PAD_LEFT);
 
 		$data = array(
+			 'nama_direktur' => $this->input->post('nama_direktur'),
 			'pesanan_id' 	=> $this->input->post('pesanan_id'),
 			'no_spph' 	    => $nomorSPPH,
 			'tgl_spph' => date('Y-m-d'),
@@ -121,12 +123,14 @@ class c_templateSPPH extends CI_Controller {
 			$i['nama_barang']	= $row->nama_barang;
 			$i['satuan']		= $row->satuan;
 			$i['vol']		= $row->vol;
+
 			array_push($x,$i);
 			$in['pesanan_id']		= $row->pesanan_id;
 			$in['no_spph']	= $row->no_spph;
 			$in['tgl_spph']	= tanggal($row->tgl_spph).' '.nama_bulan(bulan($row->tgl_spph)).' '.tahun($row->tgl_spph);
 			$in['nama_pengadaan']		= $row->nama_pengadaan;
 			$in['kepada_vendor']		= $row->kepada_vendor;
+			$in['nama_direktur']		= $row->nama_direktur;
 		}
 		
 		$in['content_data'] = $x;

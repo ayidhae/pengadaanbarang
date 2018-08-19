@@ -106,6 +106,6 @@
 <table width="100%">
 	<tr><td><p>Hormat kami,</p></td></tr>
 	<tr><td><p>Bhakti Unggul Teknovasi</p></td></tr>
-	<tr><td><br/><br/><br/><br/><br/><p><strong><u>Totok Gunarto</u></strong></p></td></tr>
+	<tr><td><br/><br/><br/><br/><br/><p><strong><u>{nama_direktur}</u></strong></p></td></tr>
 	<tr><td><p>Direktur Utama</p></td></tr>
 </table>

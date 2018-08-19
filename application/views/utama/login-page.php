@@ -75,7 +75,9 @@
             <div class="card-body text-center">
               <div>
 
+
                 <h2>Aplikasi Pengadaan Barang</h2>     
+
 
               </div>
             </div>

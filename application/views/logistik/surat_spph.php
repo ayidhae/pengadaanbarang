@@ -104,6 +104,6 @@
 Hormat kami,<br/>
 PT.Bhakti Unggul Teknovasi<br/>
 <br/><br/><br/><br/><br/>
-<strong><u>Totok Gunarto</u></strong><br/>
+<strong><u>{nama_direktur}</u></strong><br/>
 Direktur Utama
 </p>

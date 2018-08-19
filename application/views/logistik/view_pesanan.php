@@ -62,6 +62,9 @@
            <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('/c_templateBAST/viewTemplateBAST');?>"><i class="fa fa-file-text-o"></i>BAST</a>
           </li>
+            <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/c_templateBAST/viewTemplateBAST');?>"><i class="fa fa-file-text-o"></i>SPOK</a>
+          </li>
               </ul>            
            <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>          
@@ -146,6 +149,12 @@
         if($pesanan->num_rows()>0){
         $no = 1;
         foreach ($pesanan->result() as $psn) {
+           if($psn->status=='progress'){
+                $act='<a href="'.site_url('c_pesanan/editPesanan/'.trim(base64_encode($psn->pesanan_id),'=').'').'" class="btn btn-warning btn-sm" title="edit"><i class="fa fa-pencil"></i></a>  <a href="'.site_url('c_pesanan/detail/'.trim(base64_encode($psn->pesanan_id),'=').'').'" class="btn btn-primary btn-sm" title="detail"><i class="fa fa-list"></i>  </a>';
+              }
+              else {
+                $act='<a href="#" class="btn btn-danger disabled" title="Edit" ><i class="fa fa-check"></i></a>';
+              }
         echo'
         <tr>
           <td width="5%" class="text-center">'.$no++.'</td>
@@ -156,9 +165,10 @@
             <td>'.$psn->nama_vendor.'</td>
           <td>'.date('d-m-Y H:i:s',strtotime($psn->tgl_input)).'</td>
           <td class="text-center">
-            <a href="'.site_url('c_pesanan/editPesanan/'.trim(base64_encode($psn->pesanan_id),'=').'').'" class="btn btn-warning btn-sm" title="edit"><i class="fa fa-pencil"></i>  </a>
-            <a href="'.site_url('c_pesanan/detail/'.trim(base64_encode($psn->pesanan_id),'=').'').'" class="btn btn-primary btn-sm" title="detail"><i class="fa fa-list"></i>  </a>
-            <a href="'.site_url('c_pesanan/hapus/'.trim(base64_encode($psn->pesanan_id),'=').'').'"  class="btn btn-danger btn-sm" title="hapus" onclick="return confirm(\'Apakah anda yakin ingin menghapus data?\')"> <i class="fa fa-trash"></i></a>
+          '.$act.'
+        
+          
+            
           </td>
         </tr>';
         }
