@@ -87,6 +87,7 @@ class m_pesanan extends CI_Model {
 	}
 
 	function ambilDataNamaVendor(){
+		$this->db->where('status','aktif');
 		$this->db->order_by('nama_perusahaan','asc');
 		$query = $this->db->get('vendor');
 		if($query->num_rows()>0)

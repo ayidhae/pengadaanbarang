@@ -127,6 +127,7 @@ class c_pesanan extends CI_Controller {
 				$data = array(				
 	 				'pesanan_id' => $this->input->post('pesanan_id'),
 					'nama_barang' => $this->input->post('nama_barang'),
+					'spesifikasi_barang' => $this->input->post('spesifikasi_barang'),
 	 				'satuan' => $this->input->post('satuan'),
 					// 'harga' => $this->input->post('harga'),
 	 				'vol' => $this->input->post('vol')

@@ -121,6 +121,7 @@ class c_templateSPPH extends CI_Controller {
 		foreach ($content->result() as $row) {
 			$i['no']			= $no++;
 			$i['nama_barang']	= $row->nama_barang;
+			$i['spesifikasi_barang'] = $row->spesifikasi_barang;
 			$i['satuan']		= $row->satuan;
 			$i['vol']		= $row->vol;
 

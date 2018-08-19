@@ -63,7 +63,7 @@
 				{no}
 			 </td>
 			 <td width="40%">
-				{nama_barang}
+				{nama_barang}/{spesifikasi_barang}
 			 </td>
 			 <td width="15%" align="right">
 				{vol}

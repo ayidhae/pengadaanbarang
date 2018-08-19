@@ -52,7 +52,7 @@
 				{no}
 			 </td>
 			 <<td>
-				{nama_barang}
+				{nama_barang}/{spesifikasi_barang}
 			 </td>
 			 <td align="center">
 				{vol}

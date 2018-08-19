@@ -138,6 +138,14 @@
           <input type="text" class="form-control" id="nama_barang" name="nama_barang" placeholder="Nama Barang" required>
         </div>
         </div>
+        
+        <div class="form-group">
+        <label for="tipe" class="col-md-8 control-label">Spesifikasi Barang </label>
+        <div class="col-md-7 required">
+        <textarea name="spesifikasi_barang" class="form-control"  rows="7" cols="80" ></textarea>
+        </div>
+        </div>
+
         <div class="form-group">
         <label class="control-label col-sm-2" for="satuan">SATUAN</label>
         <div class="col-sm-10"> 
@@ -167,7 +175,8 @@
                   <tr>
                     <th class="text-center">NO</th>
                     <th class="text-center">NAMA BARANG</th>
-          <th class="text-center">SATUAN</th>
+                    <th class="text-center">SPESIFIKASI </th>
+                    <th class="text-center">SATUAN</th>
                     <th class="text-right">VOL</th>
                     <th class="text-right">HARGA </th>
                     <th class="text-right">SUBTOTAL</th>
@@ -183,6 +192,7 @@
               <tr>
                 <td width="5%" class="text-center">'.$no++.'</td>
                 <td class="text-center">'.$row->nama_barang.'</td>
+                <td class="text-center">'.$row->spesifikasi_barang.'</td>
                 <td class="text-center">'.$row->satuan.'</td>
                 <td class="text-right">'.$row->vol.'&nbsp;&nbsp;</td>
                 <td class="text-right">'.number_format($row->harga).'&nbsp;&nbsp;</td>
