@@ -66,9 +66,9 @@ class c_barang extends CI_Controller {
 					'idbarang'=>$idbarang
 				);
 		$this->m_barang->update_barang($where,$data,"barang");
-		$this->load->view('template/header');
-		$this->load->view('logistik/view_barang',$data);
-		$this->load->view('template/footer');	}
+		redirect(base_url('c_user/homeLogistik'));
+	}
+
 	//update data barang
 	public function update_barang($idbarang){
 		$this->form_validation->set_rules('namabarang', 'Nama Barang','required|alpha_numeric_spaces');
