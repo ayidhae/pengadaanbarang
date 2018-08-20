@@ -31,6 +31,14 @@ class c_barang extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+	public function detail($idbarang){
+		$where = array('idbarang' => $idbarang);
+		$data['barang'] = $this->m_barang->detail($where,'barang')->result();
+		$this->load->view('template/header');
+		$this->load->view('logistik/detail_barang',$data);
+		$this->load->view('template/footer');
+	}
+
 	function delete_barang($idbarang){
 		$where=array(
             'idbarang'=>$idbarang
@@ -49,6 +57,18 @@ class c_barang extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+	public function updateStatus($idbarang){
+		$status=$this->input->post('status');
+		$data=array(
+					'status' =>$status,					
+					);
+		$where = array(
+					'idbarang'=>$idbarang
+				);
+		$this->m_barang->update_barang($where,$data,"barang");
+		$this->load->view('template/header');
+		$this->load->view('logistik/view_barang',$data);
+		$this->load->view('template/footer');	}
 	//update data barang
 	public function update_barang($idbarang){
 		$this->form_validation->set_rules('namabarang', 'Nama Barang','required|alpha_numeric_spaces');
@@ -97,6 +117,9 @@ class c_barang extends CI_Controller {
 
 	public function add_barang(){
 		$this->form_validation->set_rules('namabarang', 'Nama Barang','required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('harga', 'Harga','required|numeric');
+		$harga = $this->input->post('harga');
+		$harga_but = $harga*10/100;
 		$id = $this->m_barang->getIdBarang();
 		if ($this->form_validation->run() == TRUE){	
 			$config['upload_path']   = 'asset/img/barang/'; 
@@ -118,9 +141,13 @@ class c_barang extends CI_Controller {
 				$data = array(
 					'idbarang' => $id,
 					'namabarang' => $this->input->post('namabarang'),
+					'spesifikasi_barang' => $this->input->post('spesifikasi_barang'),
+					'harga' => $harga,
+					'harga_but' => $harga_but+$harga,
 					'gambar' => $upload['file_name'],
 					'jenis' => $this->input->post('jenis'),
-					'username' => $this->session->userdata('username')
+					'username' => $this->session->userdata('username'),
+					'status' => 'Tidak'
 				);		
 				
 				$this->session->set_flashdata('msg','<div class="alert alert-success text-center"> <a href="" class="close" data-dismiss="alert" aria-label="close">&times; </a>Data barang berhasil ditambahkan</div>');

@@ -91,6 +91,14 @@
                               <input class="form-control" type="text" name="namabarang" value="" required>
                             </div>
                           </div>
+
+                          <div class="form-group">
+                          <label fcontrol-label">Spesifikasi Barang </label>
+                          <div class="">
+                          <textarea name="spesifikasi_barang" class="form-control"  rows="7" cols="80" ></textarea>
+                          </div>
+                          </div>
+
                           <div class="form-group">
                             <label for="sel1" >Jenis</label>
                             <select name="jenis" class="form-control" id="sel1">
@@ -101,6 +109,14 @@
                             <option value="Peralatan wisuda dan pesta" >Peralatan wisuda dan pesta</option>
                             </select>
                           </div>
+
+                           <div class="form-group">
+                            <label class="control-label">Harga Barang</label>
+                            <div class="">
+                              <input class="form-control" type="text" name="harga" placeholder="Harga Barang" required>
+                            </div>
+                          </div>
+
                           <div class="form-group">
                             <label class="control-label">Gambar</label>
                             <div>

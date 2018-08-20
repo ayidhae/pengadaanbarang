@@ -35,7 +35,7 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
+            <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
           </li>
           <li class="nav-title">
             Menu
@@ -65,7 +65,7 @@
               </ul>            
            <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>          
-            <ul class="nav-dropdown-items">		
+            <ul class="nav-dropdown-items">   
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_suratKeluar/viewSuratKeluarLogistik');?>"><i class="fa fa-share"></i> Surat Keluar</a>
               </li>
@@ -101,38 +101,96 @@
     </div>
     <!-- Main content -->
     <main class="main">
-      
       <!-- Breadcrumb -->
-   
-        <div class="container-fluid"> 
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item"><a href="#">Logistik</a></li>
+        <li class="breadcrumb-item active">Kelola Profil</li>
+        <!-- Breadcrumb Menu-->
+      </ol>
+      <?php foreach($barang as $b): ?>
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+              <?php
+                if ($this->session->flashdata('msg')){
+                  echo $this->session->flashdata('msg');
+                }
+              ?>
+            <h5> <i class="fa fa-check"></i> Detail Barang</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-9">              
+                <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
+                <div class="panel-body">
+                  <div class="form-horizontal">
+                    <form action="<?php echo base_url(). 'c_barang/updateStatus/'.$b->idbarang; ?>" method="post">
+                       <input class="form-control" type="text" name="username" value="<?php echo $b->idbarang ;?>" hidden>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label">Nama </label>
+                            <div class="">
+                              <input class="form-control" type="text" name="nama" value="<?php echo $b->namabarang ;?>" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group">Jenis Barang</label>
+                            <div>
+                              <input class="form-control" type="text" name="username" value="<?php echo $b->jenis ;?>" readonly>
+                            </div>
+                          </div>             
 
-        <H1>Data Barang</H1>
-        <body>
-          <div class="row">
+                          <div class="form-group">Spesifikasi </label>
+                            <div>
+                              <input class="form-control" type="text" name="no_hp" value="<?php echo $b->spesifikasi_barang ;?>" readonly>
+                            </div>
+                          </div>          
 
-            <?php foreach($barang as $detail): ?>
-              <div class="col-sm-3 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h3> <?=$detail->namabarang?></h3>
-                  </div>
-                  <div class="card-body">
-                  <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
-                  <div> 
-                    <p> <?=$detail->jenis ?> </p>
-                    <p> <?=$detail->nama_perusahaan ?> </p>
-                    <p>
-                      <a  class='btn btn-primary' href="<?php echo base_url('/c_barang/detail/'.$detail->idbarang);?>"> detail </a>
-                    </p>
-                  </div>
+                          <div class="form-group">Harga </label>
+                            <div>
+                              <input class="form-control" type="text" name="no_hp" value="<?php echo $b->harga ;?>" readonly>
+                            </div>
+                          </div>          
+
+                          <div class="form-group">Harga BUT</label>
+                            <div>
+                              <input class="form-control" type="text" name="no_hp" value="<?php echo $b->harga_but ;?>" readonly>
+                            </div>
+                          </div> 
+
+                          <div class="form-group">
+                            <label class="control-label">Status</label>
+                            <div>
+                            <?php if ($b->status=='Ya') {?>
+                              <label class="radio-inline"><input type="radio" name="status" checked="<?= $b->status=='Ya'?'checked':'';?>" value="Ya"> Ya</input></label>
+                              <label class="radio-inline"><input type="radio" name="status"  value="Tidak">Tidak</input></label>
+                            <?php } else { ?>
+                              <label class="radio-inline"><input type="radio" name="status"  value="Ya">Ya</input></label>
+                              <label class="radio-inline"><input type="radio" name="status" checked="<?= $b->status=='Tidak'?'checked':'';?>" value="tidak"> Tidak </input></label>                    
+                            <?php } ?>                                                    
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <button class="btn btn-primary"> <i class="fa fa-check">Simpan</i></button>         
+                            </div>
+                          </div>
+                        </div>                        
+                      </div>
+                      
+                      <?php endforeach; ?>
+                    </form>
+                    </div>  <!-- end form-horizontal -->
+                    </div> <!-- end panel-body -->
                   </div>
                 </div>
               </div>
-            <?php endforeach; ?>
+            </div>
           </div>
-        </body>
-        </div>
-
+        </main>
+      </div>
       
-</main>
-</div>
+      <!-- Modal -->
+
+    

@@ -10,8 +10,8 @@ class c_customer extends CI_Controller {
 	}
 		 //call model
 	public function home(){
-		
-		$data['barang'] = $this->m_barang->getAllBarang('barang');
+		$where = array('status' => 'Ya');
+		$data['barang'] = $this->m_barang->getBarang($where,'barang')->result();
 		$this->load->view('template/header'); // default template
 		$this->load->view('customer/dashboard',$data); // dashboard vendornya
 		$this->load->view('template/footer'); 
