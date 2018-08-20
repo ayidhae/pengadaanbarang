@@ -96,6 +96,13 @@
                               </div>
 
                               <div class="form-group">
+                                <label class="control-label">Spesifikasi Barang</label>
+                                <div class="">
+                                  <input class="form-control" type="text" name="spesifikasi_barang" value="<?php echo $detail->spesifikasi_barang ;?>" required>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
                                 <label for="sel1" >Jenis</label>
                                 <select name="jenis" class="form-control" id="sel1">
                                   <?php
@@ -133,6 +140,13 @@
                                 </select>
                               </div>
                             
+                              <div class="form-group">
+                                <label class="control-label">Harga</label>
+                                <div class="">
+                                  <input class="form-control" type="text" name="harga" value="<?php echo $detail->harga;?>" required>
+                                </div>
+                              </div>
+
                               <div class="form-group pull-left">
                                 <label class="control-label">Gambar</label>
                                 <div>

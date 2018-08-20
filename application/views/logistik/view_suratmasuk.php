@@ -242,35 +242,7 @@
 
               <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$st['file']."' target='_blank'>".$st['file']."</a>"?></td> 
                <td><?php echo $st['pesan'];?></td> 
-               <!--  DIBAWAH UNTUK MODAL   -->
-                    <!-- <td
-                      <a href="#view<?php echo $st['id_surat'] ;?>" data-toggle="modal"> <button type="button" class="btn btn-primary"><i class="fa fa-external-link"> </i> pesan<span class="" aria-hidden="true"></span></button></a></td> -->
-                      <!-- Modal Tambah -->
-                      <!-- div   role="dialog" tabindex="" id="view<?php echo  $st['id_surat']; ?>" class="modal fade">
-                        <div class="modal-dialog">
-                          
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 class="modal-title">pesan</h4>
-                              <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                            </div>
-                            <div class="modal-body">
-                            <?php echo $st['pesan'] ;?></td>
-                            
-                          </div>
-                          <div class="form-group">
-                            
-                            <div class="modal-footer">
-                              
-                              <button type="button" class="btn btn-warning" data-dismiss="modal"> Back</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- END Modal Tambah -->
-               <!--   <a href="" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i></a></td></center> -->
+               
              </tr>
              <?php
            endforeach;

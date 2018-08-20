@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Agu 2018 pada 10.40
+-- Waktu pembuatan: 20 Agu 2018 pada 05.04
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 5.6.36
 
@@ -31,20 +31,26 @@ SET time_zone = "+00:00";
 CREATE TABLE `barang` (
   `idbarang` varchar(20) NOT NULL,
   `namabarang` varchar(20) NOT NULL,
+  `spesifikasi_barang` varchar(150) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `harga_but` int(11) DEFAULT NULL,
   `gambar` varchar(20) NOT NULL,
   `jenis` varchar(30) NOT NULL,
-  `username` varchar(20) NOT NULL
+  `username` varchar(20) NOT NULL,
+  `status` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `barang`
 --
 
-INSERT INTO `barang` (`idbarang`, `namabarang`, `gambar`, `jenis`, `username`) VALUES
-('BARANG-0001', 'kursi baru', 'Untitled161.jpg', 'peralatan kantor', 'info'),
-('BARANG-0002', 'Server', 'server.jpg', 'Jaringan IT dan Telekomunikasi', 'mwd'),
-('BARANG-0003', 'Komputer', 'kmptr.jpg', 'Jaringan IT dan Telekomunikasi', 'mwd'),
-('BARANG-0004', 'komputer ASUS', 'kmptr3.jpg', 'Jaringan IT dan Telekomunikasi', 'gas');
+INSERT INTO `barang` (`idbarang`, `namabarang`, `spesifikasi_barang`, `harga`, `harga_but`, `gambar`, `jenis`, `username`, `status`) VALUES
+('BARANG-0001', 'kursi baru', 'Asus', 5000, 5500, 'Untitled161.jpg', 'peralatan kantor', 'info', 'Tidak'),
+('BARANG-0002', 'Server', '', 0, NULL, 'server.jpg', 'Jaringan IT dan Telekomunikasi', 'mwd', 'Ya'),
+('BARANG-0003', 'Komputer', '', 0, NULL, 'kmptr.jpg', 'Jaringan IT dan Telekomunikasi', 'mwd', NULL),
+('BARANG-0004', 'komputer ASUS', '', 0, NULL, 'kmptr3.jpg', 'Jaringan IT dan Telekomunikasi', 'gas', NULL),
+('BARANG-0005', 'warna', 'asus', 5000, 500, 'warna1.jpg', 'peralatan kantor', 'mwd', 'tidak'),
+('BARANG-0006', 'kursi baru', 'asus', 5000, 5500, 'warna2.jpg', 'peralatan kantor', 'mwd', 'Ya');
 
 -- --------------------------------------------------------
 

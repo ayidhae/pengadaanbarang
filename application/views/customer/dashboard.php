@@ -108,6 +108,9 @@
                   <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
                   <div>
                     <p> <?=$detail->jenis ?> </p>
+                    <p> <?=$detail->spesifikasi_barang ?> </p>
+                    <p> <?=$detail->harga_but ?> </p>
+                  
                   </div>
                 </div>
               </div>
