@@ -131,10 +131,12 @@
           <table id="dataCustomer" class="table ">
             <thead>
               <tr>
-                <TH>No</TH>
+
+                <th>No</th>
+                <th> penanggung jawab </th>
+
                 <th>Asal </th>
                 <th> jenis_surat </th>
-                <th> penanggung jawab </th>
                 <th> contact </th>
                 <th>nomor surat </th>
                 <th>tanggal</th>
@@ -145,18 +147,22 @@
             </thead>
             <tbody>
              <?php              
-             $i = 1; 
+
+             $i = 1;
+
              foreach($surat_approve as $st):
 
               ?>
 
               <tr>
-              <td><?php echo $i; ?></td>
+
+                <td><?php echo $i;?></td>
+                <td><?php echo $st->penanggung_jawab ;?></td>
                <td><?php echo $st->username ;?></td> 
                <td><?php echo $st->jenis_surat ;?></td>
-               <td><?php echo $st->penanggung_jawab ;?></td>
+               
                <td><?php echo $st->no_hp ;?></td>
-               <td><?php echo $st->no_surat ;?></td>
+               <td><?php echo $st->no_surat ;$i++?></td>
                <td><?php echo date('d-m-Y',strtotime($st->tgl_surat))?></td>
 
                <td><?php echo "<br><b>File : </b><i><a href='".base_URL()."asset/upload/surat_keluar/".$st->file."' target='_blank'>".$st->file."</a>" ;$i++;?></td> 

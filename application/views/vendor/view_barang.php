@@ -89,6 +89,7 @@
                 <thead>
                   <tr>
                     <th>No</th>
+                    <th>dari</th>
                     <th>Id Barang</th>
                     <th>Nama Barang</th>
                     <th>Jenis Barang</th>
@@ -105,6 +106,7 @@
                   
                   <tr>
                     <td><?php  echo $no; ?></td>
+                     <td><?php echo $brg->username ;?></td>
                     <td><?php echo $brg->idbarang ;?></td>
                     <td><?php echo $brg->namabarang ;?></td>                                     
                     <td><?php echo $brg->jenis ;?></td>                                     

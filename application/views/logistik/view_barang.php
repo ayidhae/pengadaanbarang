@@ -99,43 +99,67 @@
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
-    <!-- Main content -->
+       <!-- Main content -->
     <main class="main">
-      
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">Vendor</li>      
+        <!-- Breadcrumb Menu-->
+      </ol>
       <!-- Breadcrumb -->
-   
-        <div class="container-fluid"> 
 
-        <H1>Data Barang</H1>
-        <body>
-          <div class="row">
-
-            <?php foreach($barang as $detail): ?>
-              <div class="col-sm-3 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h3> <?=$detail->namabarang?></h3>
-                  </div>
-                  <div class="card-body">
-                  <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
-                  <div> 
-                    <p> <?=$detail->jenis ?> </p>
-                    <p> <?=$detail->nama_perusahaan ?> </p>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
-        </body>
-        </div>
-
-        <?php echo form_open('warna/insert') ?>
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="merah"> merah
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="kuning"> kuning
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="hijau"> hijau
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="biru"> biru
-    <input type="submit"   name="tampil" value="Simpan">
-  <?php echo form_close()?>
-</main>
-</div>
+      <div class="container-fluid">
+        <div class="card card-accent-success">
+          <div class="card-header">
+            <h3 class="panel-title pull-left">Kelola Barang</h3>
+           
+       </div>
+             <?php
+                if ($this->session->flashdata('msg')){
+                  echo $this->session->flashdata('msg');
+                }
+              ?>
+          <div class="card-body">
+            
+            <div>
+              
+              <table id="dataBarang" class="table ">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>dari</th>
+                    <th>Nama Barang</th>
+                    <th>Jenis Barang</th>
+                    <th>Gambar</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php              
+                  $no = 0;
+                  foreach($barang as $brg):
+                  $no++;
+                  ?>
+                  
+                  <tr>
+                    <td><?php  echo $no; ?></td>
+                    <td><?php echo $brg->username ;?></td>
+                    <td><?php echo $brg->namabarang ;?></td>                                     
+                    <td><?php echo $brg->jenis ;?></td>                                     
+                     <td> <img src="<?php echo base_url('asset/img/barang/').$brg->gambar; ?>" width=200></td>  
+                    <td>                    
+                        <a  href="<?php echo base_url('/c_user/edit_barang/'.$brg->idbarang);?>" class="btn btn-success"> <i class="fa fa-pencil"></i> Edit</a>
+                        <a href="<?php echo base_url('/c_barang/delete_barang/'.$brg->idbarang);?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data?')"> <i class="fa fa-trash"> </i> Delete</a>
+                    </td>
+                  </tr>
+                  <?php
+                  endforeach;
+                  ?>
+                </tbody>
+              </table>
+              
+            </div>
+    </div>
+  </div>      
+        </main>
+      </div>
