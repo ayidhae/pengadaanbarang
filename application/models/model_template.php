@@ -65,7 +65,20 @@ class model_template extends CI_Model {
 		$query=$this->db->query("select * from template order by id asc");
 		return $query;
 	}
-	
+	function ambilDataUsernameDirektur(){
+        $this->db->where('hak_akses', 'direktur');
+        $this->db->order_by('nama ','asc');
+        $query = $this->db->get('user');
+        if($query->num_rows()>0)
+        {
+          return $query->result();
+        }
+        else
+        {
+          return false;
+        }
+      }      
+
 	function get_content_spph($id='')
 	{
 		$query=$this->db->query("select * from template h 
@@ -138,7 +151,7 @@ class model_template extends CI_Model {
 		$query=$this->db->query("select v.nama_perusahaan as vendor,c.nama_perusahaan as customer,p.pesanan_id,p.nama_pengadaan from vendor v join pesanan p on p.nama_vendor=v.username join customer c on c.username=p.nama_customer");
 		return $query->result();
 	}
-
+	
 	function get_content_bast($id)
 	{
 		$query=$this->db->query("select v.nama_perusahaan as vendor ,c.nama_perusahaan as customer,p.pesanan_id,p.nama_pengadaan,d.detail_id,d.nama_barang,d.spesifikasi_barang,d.satuan,d.harga,d.vol from vendor v JOIN pesanan p on p.nama_vendor=v.username JOIN customer c ON c.username=p.nama_customer JOIN pesanan_detail d ON d.pesanan_id=p.pesanan_id WHERE p.pesanan_id='".$id."' ");

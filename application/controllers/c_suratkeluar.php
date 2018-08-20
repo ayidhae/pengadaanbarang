@@ -4,7 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class c_suratKeluar extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_suratKeluar');
+
+
+		$this->load->model('m_suratKeluar');		
+
 		$this->load->model('model_template');
 		$this->load->model('m_user');
 
@@ -33,7 +36,6 @@ class c_suratKeluar extends CI_Controller {
 		 $this->load->view('customer/input_suratKeluarDirekt', $data);
 		 $this->load->view('template/footer');
 	}
-
 
 
 //DIBAWAH ADALAH INPUT SURAT KELUAR DIHALAMAN CUSTOMER

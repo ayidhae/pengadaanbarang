@@ -12,7 +12,7 @@
     </style>
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
-        <a class="nav-link" href="<?php echo base_url('/c_logistik/home');?>">Dashboard</a>
+        <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>">Dashboard</a>
       </li>
     </ul>
     <ul class="nav navbar-nav ml-auto">
@@ -37,7 +37,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>"><i class="icon-speedometer"></i>Logistik Dashboard </a>
           </li>
-          <li class="nav-title">
+      <li class="nav-title">
             Menu
           </li>
           <li class="nav-item">
@@ -60,12 +60,12 @@
             <a class="nav-link" href="<?php echo base_url('/c_templateSPK/viewTemplateSPK');?>"><i class="fa fa-file-text-o"></i>SPK</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/c_templateBAST/viewTemplateBAST');?>"><i class="fa fa-file-text-o"></i>BAST</a>
+            <a class="nav-link" href="<?php echo base_url('/c_templateBAST/sidang');?>"><i class="fa fa-file-text-o"></i>BAST</a>
           </li>
               </ul>            
            <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>          
-            <ul class="nav-dropdown-items">		
+            <ul class="nav-dropdown-items">   
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_suratKeluar/viewSuratKeluarLogistik');?>"><i class="fa fa-share"></i> Surat Keluar</a>
               </li>
@@ -86,8 +86,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_progress/viewProgress');?>"><i class="fa fa-tasks"></i> Kelola Progress Pengadaan</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewStatusLog');?>"><i class="fa fa-shopping-cart"></i> Kelola Status Pesanan</a>
+           <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('/c_pesanan/viewStatuslog');?>"><i class="fa fa-shopping-cart"></i> Kelola status pesanan</a>
               </li>
             </ul>
           </li>
@@ -99,46 +99,46 @@
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
-    <!-- Main content -->
-    <main class="main">
-      
-      <!-- Breadcrumb -->
-   
-        <div class="container-fluid"> 
+<!-- Main content -->
+<main class="main">
+<!-- Breadcrumb -->
+<ol class="breadcrumb">
+<li class="breadcrumb-item">Home</li>
+<li class="breadcrumb-item"><a href="#">Logistik</a></li>
+<li class="breadcrumb-item active">Draft Permintaan</li>
+<!-- Breadcrumb Menu-->
+</ol>
+<!-- /.conainer-fluid -->
 
-        <H1>Data Barang</H1>
-        <body>
-          <div class="row">
-
-            <?php foreach($barang as $detail): ?>
-              <div class="col-sm-3 col-md-3">
-                <div class="card">
-                  <div class="card-header">
-                    <h3> <?=$detail->namabarang?></h3>
-                  </div>
-                  <div class="card-body">
-                  <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
-                  <div> 
-                    <p> <?=$detail->jenis ?> </p>
-                    <p> <?=$detail->nama_perusahaan ?> </p>
-                    <p>
-                      <a  class='btn btn-primary' href="<?php echo base_url('/c_barang/detail/'.$detail->idbarang);?>"> detail </a>
-                    </p>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
-        </body>
-        </div>
-
-        <?php echo form_open('warna/insert') ?>
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="merah"> merah
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="kuning"> kuning
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="hijau"> hijau
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="biru"> biru
-    <input type="submit"   name="tampil" value="Simpan">
-  <?php echo form_close()?>
+<div class="container-fluid">
+<div class="card card-accent-success">
+  <div class="card-header">
+     <?php
+        if ($this->session->flashdata('msg')){
+          echo $this->session->flashdata('msg');
+        }
+      ?>
+    <h3 class="panel-title pull-left">
+    SPOK
+    </h3>
+  </div>
+  <ul class="nav navbar-right panel_toolbox">
+  </ul>
+  
+  <div class="card-body">
+  
+    <table id="dataVendor" class="table ">
+      <thead>
+       
+        
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
 </main>
+</div>
+</div>
+</div>
 </div>

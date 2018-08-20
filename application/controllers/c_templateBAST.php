@@ -8,6 +8,7 @@ class c_templateBAST extends CI_Controller {
 		$this->load->model('model_template');		
 	}
 
+
 	public function viewTemplateBAST(){
 
 		

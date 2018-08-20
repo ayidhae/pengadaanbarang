@@ -106,6 +106,7 @@
       <li class="breadcrumb-item"><a href="#">Logistik</a></li>
       <li class="breadcrumb-item active">Tambah Template SPPH</li>
    </ol>
+
    <div class="container-fluid">
       <div class="card card-accent-success">
          <div class="card-header">
@@ -162,12 +163,21 @@
           <textarea class="form-control" rows="4" id="kepada_vendor" name="kepada_vendor" placeholder="Input Kepada" required></textarea>
         </div>
         </div>
-       <!--  <div class="form-group">
-        <label class="control-label col-sm-2" for="tgl_surat">TANGGAL SURAT</label>
-        <div class="col-sm-10"> 
-          <input type="date" class="form-control" id="tgl_surat" name="tgl_surat" placeholder="Input tanggal surat" required>
-        </div>
-        </div> -->
+     <div class="form-group ">
+                      <label for="tipe" class="col-md-3 control-label">tujuan</label>
+                      <div class="col-md-7 required">
+                        <select class="form-control select2" style="min-width:250px;" required name="nama_direktur" id="nama_direktur" >
+                          
+                          <?php
+                          if($username){
+                          foreach($username as $d){
+                          echo "<option value='$d->nama'>$d->nama</option>";
+                          }
+                          }
+                          ?>
+                        </select>
+                      </div>
+                    </div>
         
         <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">

@@ -76,6 +76,7 @@ class c_templateSPH extends CI_Controller {
 			$in['tgl_sph']	= tanggal($row->tgl_sph).' '.nama_bulan(bulan($row->tgl_sph)).' '.tahun($row->tgl_sph);
 			$in['nama_pengadaan']		= $row->nama_pengadaan;
 			$in['kepada_customer']  = $row->kepada_customer;
+				$in['nama_direktur']  = $row->nama_direktur;
 			$in['total_harga']		= number_format($total_harga);
 			$in['total']		= number_format($row->total);
 			$in['terbilang']	= terbilang($total_harga);
@@ -105,6 +106,7 @@ class c_templateSPH extends CI_Controller {
 		$in2['ppn']			= number_format($ppn);
 		$in2['total_harga']	= number_format($total_harga);
 		$in2['terbilang']	= terbilang($total_harga);
+		$in2['nama_direktur']  = $row->nama_direktur;
 		
 		$html_page1 	= $this->parser->parse('logistik/surat_sph', $in, TRUE);
 		 $html_page2 	= $this->parser->parse('logistik/surat_sph_lampiran2', $in2, TRUE);
