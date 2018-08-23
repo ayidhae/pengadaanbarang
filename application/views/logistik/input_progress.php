@@ -199,12 +199,25 @@
           
           </select>
                    
-                          
+                          <div class="form-group ">
+                    <label >Progress </label>  
+                    <div >
+                      <select class="form-control select2"  required name="progress" id="" equired>
+                        <option></option>
+                        <option>SPPH dikirim ke vendor</option>
+                        <option>SPH dikirim ke customer</option>
+                        <option>SPK dikirim ke vendor</option>
+                        <option>Barang sedang disiapkan</option>
+                        <option>Barang dikirim</option>
+                      </select>
+
+                    </div>
+                  </div>  
                      
-                          <div class="form-group">
+                      <!--     <div class="form-group">
                             <label>progress</label>
                             <input name="progress" class="form-control" required>
-                            
+                             -->
                           </div>
                           <div class="form-group">
                             <label>kendala</label><br>

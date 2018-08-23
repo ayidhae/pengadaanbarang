@@ -65,7 +65,7 @@
               </ul>            
            <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>          
-            <ul class="nav-dropdown-items">		
+            <ul class="nav-dropdown-items">   
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_suratKeluar/viewSuratKeluarLogistik');?>"><i class="fa fa-share"></i> Surat Keluar</a>
               </li>
@@ -99,67 +99,69 @@
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     </div>
-       <!-- Main content -->
+    <!-- Main content -->
     <main class="main">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item">Vendor</li>      
+      <!-- Breadcrumb -->
+   
+        
         <!-- Breadcrumb Menu-->
       </ol>
-      <!-- Breadcrumb -->
-
+      
+      
       <div class="container-fluid">
-        <div class="card card-accent-success">
-          <div class="card-header">
-            <h3 class="panel-title pull-left">Kelola Barang</h3>
+        <H1>Data Barang</H1>
+        <body>
+          <div class="row">
            
-       </div>
-             <?php
-                if ($this->session->flashdata('msg')){
-                  echo $this->session->flashdata('msg');
-                }
-              ?>
-          <div class="card-body">
-            
-            <div>
-              
-              <table id="dataBarang" class="table ">
-                <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>dari</th>
-                    <th>Nama Barang</th>
-                    <th>Jenis Barang</th>
-                    <th>Gambar</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php              
-                  $no = 0;
-                  foreach($barang as $brg):
-                  $no++;
-                  ?>
-                  
-                  <tr>
-                    <td><?php  echo $no; ?></td>
-                    <td><?php echo $brg->username ;?></td>
-                    <td><?php echo $brg->namabarang ;?></td>                                     
-                    <td><?php echo $brg->jenis ;?></td>                                     
-                     <td> <img src="<?php echo base_url('asset/img/barang/').$brg->gambar; ?>" width=200></td>  
-                    <td>                    
-                        <a  href="<?php echo base_url('/c_user/edit_barang/'.$brg->idbarang);?>" class="btn btn-success"> <i class="fa fa-pencil"></i> Edit</a>
-                        <a href="<?php echo base_url('/c_barang/delete_barang/'.$brg->idbarang);?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data?')"> <i class="fa fa-trash"> </i> Delete</a>
-                    </td>
-                  </tr>
-                  <?php
-                  endforeach;
-                  ?>
-                </tbody>
-              </table>
-              
-            </div>
-    </div>
-  </div>      
-        </main>
+            <?php foreach($barang as $detail): ?>
+              <div class="col-sm-3 col-md-3">
+                <div class="card">
+                  <div class="card-header">
+                    <h3> <?=$detail->namabarang?></h3>
+                  </div>
+                  <div class="card-body">
+                  <img src="<?php echo base_url('asset/img/barang/').$detail->gambar; ?>" alt="menu" style="height: 200px; width: 200px;">
+                  <div> 
+                    <p> <?=$detail->jenis ?> </p>
+                    <p> <?=$detail->nama_perusahaan ?> </p>
+                    <p>
+                      <a  class='btn btn-primary' href="<?php echo base_url('/c_barang/detail/'.$detail->idbarang);?>"> detail </a>
+                    </p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </body>
+        </div>
+
+</main>
+</div>
+</body>
+          </div>
+        </body>
       </div>
+      
+    </main>
+  </div>
+  
+  <!-- /.conainer-fluid -->
+</main>
+</div>
+<!--Start of Tawk.to Script-->
+<!--  <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5ac440b44b401e45400e5212/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script> -->
+<!--End of Tawk.to Script-->
+</body>
+</body>
+</div>

@@ -161,10 +161,24 @@ foreach($mdata->result_array() as $row){
         <div class="col-sm-10"> 
           <textarea class="form-control" rows="4" id="kepada_vendor" name="kepada_vendor" placeholder="Input Kepada" required ><?php echo $kepada_vendor;?></textarea>
         </div>
+          <div class="form-group ">
+                     <!--  <label for="tipe" class="col-md-3 control-label">tujuan</label> -->
+                      <div class="col-md-7 required">
+                        <select class="form-control select2" style="min-width:250px;" required name="nama_direktur" id="nama_direktur" hidden>
+                          
+                          <?php
+                          if($username){
+                          foreach($username as $d){
+                          echo "<option value='$d->nama'>$d->nama</option>";
+                          }
+                          }
+                          ?>
+                        </select>
+                      </div>
         <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan </button>
-          
+        
         </div>
         </div>
       </form>

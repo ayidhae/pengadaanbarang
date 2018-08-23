@@ -24,6 +24,7 @@ class c_templateSPK extends CI_Controller {
 		$id = base64_decode($id);
 		$data['mdraft']= $this->m_pesanan->get_allPesanan();
 		// $data['mdraft']= $this->db->query('select * from pesanan order by pesanan_id ASC');
+			$data ['username'] = $this->model_template->ambilDataUsernameDirektur();
 		$data["mdata"]= $this->model_template->edit("template","id='".$id."'");								
 		$this->load->view('template/header');
 		$this->load->view('logistik/edit_templateSPK',$data);
@@ -48,6 +49,7 @@ class c_templateSPK extends CI_Controller {
 		$in["no_rekening_vendor"]	= $this->input->post('no_rekening_vendor');
 		$in["nama_rekening_vendor"]	= $this->input->post('nama_rekening_vendor');
 		$in["bank_rekening_vendor"]	= $this->input->post('bank_rekening_vendor');
+		 $in['nama_direktur'] = $this->input->post('nama_direktur');
 		$in["tgl_spk"]	= date('Y-m-d');
 		$this->model_template->update('template',$in,'id');
 	
@@ -93,6 +95,7 @@ class c_templateSPK extends CI_Controller {
 			 $in["no_rekening_vendor"]	= $row->no_rekening_vendor;
 			 $in["nama_rekening_vendor"]	= $row->nama_rekening_vendor;
 			 $in["bank_rekening_vendor"]	= $row->bank_rekening_vendor;
+			 $in['nama_direktur']  = $row->nama_direktur;
 			
 			 $in['tgl_spk']			= tanggal($row->tgl_spk).' '.nama_bulan(bulan($row->tgl_spk)).' '.tahun($row->tgl_spk);
 		
@@ -109,7 +112,7 @@ class c_templateSPK extends CI_Controller {
 			array_push($x,$i);
 			}
 
-		
+	
 		
 		$in['total']		= number_format($total);
 		$in['ppn']			= number_format($total*10/100);

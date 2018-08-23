@@ -229,6 +229,20 @@ foreach($mdraft->result_array() as $row){
           <input type="date" class="form-control" id="tgl_spk" name="tgl_spk" value="<?php echo $tgl_spk;?>" placeholder="Input tgl surat" required>
         </div>
         </div> -->
+        <div class="form-group ">
+                     <!--  <label for="tipe" class="col-md-3 control-label">tujuan</label> -->
+                      <div class="col-md-7 required">
+                        <select class="form-control select2" style="min-width:250px;" required name="nama_direktur" id="nama_direktur" hidden>
+                          
+                          <?php
+                          if($username){
+                          foreach($username as $d){
+                          echo "<option value='$d->nama'>$d->nama</option>";
+                          }
+                          }
+                          ?>
+                        </select>
+                      </div>
         <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Simpan </button>

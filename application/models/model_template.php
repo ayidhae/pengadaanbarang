@@ -158,6 +158,7 @@ class model_template extends CI_Model {
 		// $query=$this->db->query("select * from vendor v JOIN pesanan p on p.nama_vendor=v.username JOIN customer c ON c.username=p.nama_customer JOIN pesanan_detail d ON d.pesanan_id=p.pesanan_id WHERE p.pesanan_id='PESAN001'");
 		return $query;
 	}
+	
 
 	// function get_content_bast($id)
 	// {

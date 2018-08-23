@@ -11,6 +11,7 @@
     <style type="text/css">
     body { font-family: sans-serif; }
     </style>
+
     <ul class="nav navbar-nav d-md-down-none">
       <li class="nav-item px-3">
         <a class="nav-link" href="<?php echo base_url('/c_user/homeLogistik');?>">Dashboard</a>
@@ -195,12 +196,13 @@ $(function () {
         },
         tooltip: {
              formatter: function() {
-                 return 'nilai vendor <b>' + this.x + '</b> adalah <b>' + Highcharts.numberFormat(this.y,0) + '</b>, di '+ this.series.name;
+                 return 'nilai vendor <b>' + this.x + '</b> adalah <b>' + Highcharts.numberFormat(this.y,2) + '</b>, di '+ this.series.name;
              }
           },
         series: [{
             name: 'Report Data Rating',
             data: <?php echo json_encode($rating);?>,
+
             shadow : true,
             dataLabels: {
                 enabled: true,
@@ -209,7 +211,7 @@ $(function () {
            
                 align: 'center',
                 formatter: function() {
-                     return Highcharts.numberFormat(this.y, 0);
+                     return Highcharts.numberFormat(this.y, 2);
                 }, // one decimal
                 y: 0, // 10 pixels down from the top
                 style: {
