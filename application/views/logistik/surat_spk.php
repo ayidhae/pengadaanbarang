@@ -12,7 +12,7 @@
             <p>:</p>
          </td>
          <td>
-            <p>Totok Gunarto</p>
+          <p>{nama_direktur}</p>
          </td>
       </tr>
       <tr>

@@ -65,7 +65,7 @@
               </ul>            
            <li class="nav-item nav-dropdown"> 
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-file"></i>Dokumen</a>          
-            <ul class="nav-dropdown-items">		
+            <ul class="nav-dropdown-items">   
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('/c_suratKeluar/viewSuratKeluarLogistik');?>"><i class="fa fa-share"></i> Surat Keluar</a>
               </li>
@@ -101,15 +101,18 @@
     </div>
     <!-- Main content -->
     <main class="main">
-      
       <!-- Breadcrumb -->
    
-        <div class="container-fluid"> 
-
+        
+        <!-- Breadcrumb Menu-->
+      </ol>
+      
+      
+      <div class="container-fluid">
         <H1>Data Barang</H1>
         <body>
           <div class="row">
-
+           
             <?php foreach($barang as $detail): ?>
               <div class="col-sm-3 col-md-3">
                 <div class="card">
@@ -133,6 +136,36 @@
         </body>
         </div>
 
+<<<<<<< HEAD
        
+=======
+>>>>>>> ee281e62631501c49192e58cac840dbc2bc4e3ab
 </main>
+</div>
+</body>
+          </div>
+        </body>
+      </div>
+      
+    </main>
+  </div>
+  
+  <!-- /.conainer-fluid -->
+</main>
+</div>
+<!--Start of Tawk.to Script-->
+<!--  <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5ac440b44b401e45400e5212/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script> -->
+<!--End of Tawk.to Script-->
+</body>
+</body>
 </div>

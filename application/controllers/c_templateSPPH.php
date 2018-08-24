@@ -57,6 +57,7 @@ class c_templateSPPH extends CI_Controller {
 	function edit($id){
 		$id = base64_decode($id);
 		// $data['mdraft']= $this->db->query('select * from pesanan order by pesanan_id ASC');
+		$data ['username'] = $this->model_template->ambilDataUsernameDirektur();
 		$data['mdraft']	= $this->m_pesanan->get_allPesanan();
 		$data["mdata"]= $this->model_template->edit("template","id='".$id."'");								
 		$this->load->view('template/header');
@@ -83,6 +84,7 @@ class c_templateSPPH extends CI_Controller {
 		if ($this->form_validation->run() == TRUE){
 			$in['id'] 			= $this->input->post('id');
 			$in['pesanan_id'] 	= $this->input->post('pesanan_id');
+			 $in['nama_direktur'] = $this->input->post('nama_direktur');
 			$in["no_spph"] 	= $this->input->post('no_spph');
 			$in["nama_pengadaan"]		= $this->input->post('nama_pengadaan');
 			$in["kepada_vendor"]		= $this->input->post('kepada_vendor');

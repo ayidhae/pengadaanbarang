@@ -164,9 +164,9 @@
         </div>
         </div>
      <div class="form-group ">
-                      <label for="tipe" class="col-md-3 control-label">tujuan</label>
+                      <!-- <label for="tipe" class="col-md-3 control-label">tujuan</label> -->
                       <div class="col-md-7 required">
-                        <select class="form-control select2" style="min-width:250px;" required name="nama_direktur" id="nama_direktur" >
+                        <select class="form-control select2" style="min-width:250px;" required name="nama_direktur" id="nama_direktur" hidden>
                           
                           <?php
                           if($username){

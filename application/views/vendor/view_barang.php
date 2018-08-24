@@ -69,7 +69,6 @@
         <!-- Breadcrumb Menu-->
       </ol>
       <!-- Breadcrumb -->
-
       <div class="container-fluid">
         <div class="card card-accent-success">
           <div class="card-header">
@@ -89,11 +88,10 @@
                 <thead>
                   <tr>
                     <th>No</th>
+                    <th>dari</th>
                     <th>Id Barang</th>
                     <th>Nama Barang</th>
-                    <th>Spesifikasi</th>
                     <th>Jenis Barang</th>
-                    <th>Harga</th>
                     <th>Gambar</th>
                     <th>Action</th>
                   </tr>
@@ -107,11 +105,10 @@
                   
                   <tr>
                     <td><?php  echo $no; ?></td>
+                     <td><?php echo $brg->username ;?></td>
                     <td><?php echo $brg->idbarang ;?></td>
-                    <td><?php echo $brg->namabarang ;?></td>  
-                    <td><?php echo $brg->spesifikasi_barang ;?></td>  
-                    <td><?php echo $brg->jenis ;?></td>      
-                    <td><?php echo $brg->harga ;?></td>      
+                    <td><?php echo $brg->namabarang ;?></td>                                     
+                    <td><?php echo $brg->jenis ;?></td>                                     
                      <td> <img src="<?php echo base_url('asset/img/barang/').$brg->gambar; ?>" width=200></td>  
                     <td>                    
                         <a href="<?php echo base_url('/c_barang/edit_barang/'.$brg->idbarang);?>" class="btn btn-success"> <i class="fa fa-pencil"></i> Edit</a>

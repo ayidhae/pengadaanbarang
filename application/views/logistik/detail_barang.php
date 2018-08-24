@@ -147,7 +147,7 @@
                             </div>
                           </div>          
 
-                          <div class="form-group">Harga </label>
+                          <div class="form-group">Harga dari vendor</label>
                             <div>
                               <input class="form-control" type="text" name="no_hp" value="<?php echo $b->harga ;?>" readonly>
                             </div>
@@ -160,7 +160,7 @@
                           </div> 
 
                           <div class="form-group">
-                            <label class="control-label">Status</label>
+                            <label class="control-label">ditampilkan?</label>
                             <div>
                             <?php if ($b->status=='Ya') {?>
                               <label class="radio-inline"><input type="radio" name="status" checked="<?= $b->status=='Ya'?'checked':'';?>" value="Ya"> Ya</input></label>

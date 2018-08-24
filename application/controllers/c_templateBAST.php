@@ -124,7 +124,6 @@ class c_templateBAST extends CI_Controller {
 				
 	// 	// $id 	= base64_decode($id);
 	// }
-
 	function export_pdfVEND($id='')
 	{
 		date_default_timezone_set("Asia/Jakarta");

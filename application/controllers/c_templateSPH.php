@@ -24,6 +24,7 @@ class c_templateSPH extends CI_Controller {
 	$id = base64_decode($id);
  	$data['mdraft']= $this->db->query('select * from pesanan order by pesanan_id ASC');
  	$data["mdata"]= $this->model_template->edit("template","id='".$id."'");	
+ 	$data ['username'] = $this->model_template->ambilDataUsernameDirektur();
 
 
 		$this->load->view('template/header');
@@ -37,6 +38,7 @@ class c_templateSPH extends CI_Controller {
 		$in['id'] 			= $this->input->post('id');
 		$in['pesanan_id'] 	= $this->input->post('pesanan_id');
 		$in["no_sph"] 	= $this->input->post('no_sph');
+		 $in['nama_direktur'] = $this->input->post('nama_direktur');
 		$in["lampiran"]		= $this->input->post('lampiran');
 		$in["tgl_sph"]	= date('Y-m-d');
 		$in["nama_pengadaan"]		= $this->input->post('nama_pengadaan');

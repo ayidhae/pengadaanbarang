@@ -6,7 +6,6 @@ class c_progress extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_progress');
 		
-
 	}
 		 //call model
 	// public function home(){
@@ -60,7 +59,8 @@ class c_progress extends CI_Controller {
         'nama_customer' => $customer,
         'nama_vendor' =>$vendor,
         'progress'      =>$progress,
-        'kendala'     =>$kendala
+        'kendala'     =>$kendala,
+       'username' => $this->session->userdata('username')
         );
         $this->m_progress->inputProgress($data, 'progress_pengadaan');
         var_dump( $this->m_progress->inputProgresss);

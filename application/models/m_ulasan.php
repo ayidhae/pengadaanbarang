@@ -50,6 +50,7 @@ class m_ulasan extends CI_Model {
   
 }
 
+
 function get_data_rating(){
         $query = $this->db->query("SELECT nama_vendor,AVG(rating) AS rating FROM ulasan GROUP BY nama_vendor");
          
