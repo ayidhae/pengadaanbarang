@@ -133,12 +133,6 @@
         </body>
         </div>
 
-        <?php echo form_open('warna/insert') ?>
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="merah"> merah
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="kuning"> kuning
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="hijau"> hijau
-    <input type="checkbox" name="check_list[]" alt="Checkbox" value="biru"> biru
-    <input type="submit"   name="tampil" value="Simpan">
-  <?php echo form_close()?>
+       
 </main>
 </div>
