@@ -88,9 +88,10 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>dari</th>
                     <th>Id Barang</th>
                     <th>Nama Barang</th>
+                    <th>Spesifikasi</th>
+                    <th>Harga</th>
                     <th>Jenis Barang</th>
                     <th>Gambar</th>
                     <th>Action</th>
@@ -105,9 +106,10 @@
                   
                   <tr>
                     <td><?php  echo $no; ?></td>
-                     <td><?php echo $brg->username ;?></td>
                     <td><?php echo $brg->idbarang ;?></td>
-                    <td><?php echo $brg->namabarang ;?></td>                                     
+                    <td><?php echo $brg->namabarang ;?></td> 
+                    <td><?php echo $brg->spesifikasi_barang ;?></td> 
+                    <td><?php echo $brg->harga ;?></td> 
                     <td><?php echo $brg->jenis ;?></td>                                     
                      <td> <img src="<?php echo base_url('asset/img/barang/').$brg->gambar; ?>" width=200></td>  
                     <td>                    

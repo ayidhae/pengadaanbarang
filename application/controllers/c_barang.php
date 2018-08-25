@@ -75,9 +75,15 @@ class c_barang extends CI_Controller {
 			if ($this->form_validation->run() == TRUE){	
 				$namabarang=$this->input->post('namabarang');
 				$jenis=$this->input->post('jenis');	
+				$spesifikasi=$this->input->post('spesifikasi_barang');
+				$harga=$this->input->post('harga');
+				$harga_but=$this->input->post('harga_but');
 				$data=array(
 					'namabarang' =>$namabarang,
-					'jenis'=>$jenis				
+					'jenis'=>$jenis,
+					'spesifikasi_barang'=>$spesifikasi,
+					'harga'=>$harga,
+					'harga_but'=>$harga_but
 					);
 				$where=array(
 					'idbarang'=>$idbarang
